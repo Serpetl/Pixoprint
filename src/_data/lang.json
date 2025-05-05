@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "title": {
+      "en": "Pixoprint — signage & branded spaces",
+      "fi": "Pixoprint — opasteet & brändätyt tilat"
+    },
+    "description": {
+      "en": "We produce high-quality signage and branded visual solutions throughout Finland.",
+      "fi": "Tuotamme korkealaatuiset opasteet ja visuaaliset brändiratkaisut koko Suomeen."
+    }
+  },
+  "nav": {
+    "products": {
+      "en": "Products",
+      "fi": "Tuotteet"
+    },
+    "services": {
+      "en": "Services",
+      "fi": "Palvelut"
+    },
+    "about": {
+      "en": "About",
+      "fi": "Meistä"
+    },
+    "contact": {
+      "en": "Contact",
+      "fi": "Yhteystiedot"
+    },
+    "lang_en": {
+      "en": "In English",
+      "fi": "In English"
+    },
+    "lang_fi": {
+      "en": "Suomeksi",
+      "fi": "Suomeksi"
+    }
+  },
+  "hero": {
+    "title": {
+      "en": "Signage & branded spaces",
+      "fi": "Opasteet & brändätyt tilat"
+    },
+    "subtitle": {
+      "en": "From concept to installation — comprehensive production",
+      "fi": "Konseptista asennukseen — kokonaisvaltainen tuotanto"
+    },
+    "cta": {
+      "en": "Request a free quote",
+      "fi": "Pyydä ilmainen tarjous"
+    }
+  },
+  "counter": {
+    "years": {
+      "en": "Years of experience",
+      "fi": "Vuosien kokemus"
+    },
+    "clients": {
+      "en": "Satisfied clients",
+      "fi": "Tyytyväiset asiakkaat"
+    },
+    "signs": {
+      "en": "3D illuminated signs",
+      "fi": "3D-valaistut kyltit"
+    }
+  },
+  "footer": {
+    "hours": {
+      "en": "Weekdays 9.00 - 18.00",
+      "fi": "arkisin 9.00 - 18.00"
+    },
+    "description": {
+      "en": "Modern and unified space solutions that reflect your brand identity: lightboxes, wall and window films, and signage systems – all in one place.",
+      "fi": "Modernit ja yhtenäiset tilaratkaisut, jotka heijastavat brändisi identiteettiä: valomainokset, seinä- ja ikkunakalvot sekä opastejärjestelmät – kaikki yhdessä käsissä."
+    },
+    "contact": {
+      "en": "Contact Information",
+      "fi": "Yhteystiedot"
+    }
+  },
+
+  "page": {
+    "vehicle-wrap": {
+      "title": {
+        "en": "Vehicle Wrapping",
+        "fi": "Ajoneuvoteippaus"
+      },
+      "description": {
+        "en": "Custom advertising wraps for company cars and fleets.",
+        "fi": "Autojen ja pakettiautojen teippaukset — tehokas liikkuva mainos."
+      }
+    },
+    "cnc-works": {
+      "title": {
+        "en": "CNC Works",
+        "fi": "CNC-työt"
+      },
+      "description": {
+        "en": "Versatile CNC milling for various materials and shapes.",
+        "fi": "Monipuoliset CNC-jyrsintäpalvelut eri materiaaleille ja muotoiluille."
+      }
+    },
+    "laser-cutting": {
+      "title": {
+        "en": "Laser Cutting",
+        "fi": "Laserleikkaus"
+      },
+      "description": {
+        "en": "High-quality, precise laser cutting for custom projects.",
+        "fi": "Tarkkaa ja siistiä leikkausjälkeä kyltteihin ja koristeisiin."
+      }
+    },
+    "led-neon": {
+      "title": {
+        "en": "LED Neon",
+        "fi": "LED-Neon"
+      },
+      "description": {
+        "en": "Modern LED neon lighting for indoor and outdoor use.",
+        "fi": "Modernit LED-neonvalot sisä- ja ulkokäyttöön."
+      }
+    },
+    "about": {
+      "title": {
+        "en": "About Us",
+        "fi": "Meistä"
+      },
+      "description": {
+        "en": "Experts in visual marketing and signage with over 20 years of experience.",
+        "fi": "Yli 20 vuoden kokemus visuaalisesta markkinoinnista ja opasteista."
+      }
+    },
+    "print-products": {
+      "title": {
+        "en": "Print Products",
+        "fi": "Painotuotteet"
+      },
+      "description": {
+        "en": "Brochures, business cards, posters, and more — all your business needs.",
+        "fi": "Esitteet, käyntikortit, julisteet ja muut tulosteet yrityksille."
+      }
+    },
+    "services": {
+      "title": {
+        "en": "Services",
+        "fi": "Palvelumme"
+      },
+      "description": {
+        "en": "Complete solutions from design to delivery.",
+        "fi": "Täyden palvelun ratkaisut suunnittelusta toteutukseen."
+      }
+    },
+    "design": {
+      "title": {
+        "en": "Graphic Design",
+        "fi": "Suunnittelu"
+      },
+      "description": {
+        "en": "Professional graphic design that helps you stand out.",
+        "fi": "Ammattimainen graafinen suunnittelu tukemaan yrityksesi brändiä."
+      }
+    },
+    "wrapping": {
+      "title": {
+        "en": "Window Wrapping",
+        "fi": "Mainosteippaus"
+      },
+      "description": {
+        "en": "From window graphics to large-scale prints — discover our solutions.",
+        "fi": "Ikkunateippaukset, lattiatarrat ja muut mainospinnat yrityksille."
+      }
+    },
+    "textile-printing": {
+      "title": {
+        "en": "Textile Printing",
+        "fi": "Tekstiilipainatus"
+      },
+      "description": {
+        "en": "High-quality printing of logos and graphics on clothing.",
+        "fi": "Logot ja grafiikat vaatteisiin – laadukkaasti painettuna."
+      }
+    },
+    "large-prints": {
+      "title": {
+        "en": "Large Format Prints",
+        "fi": "Tulosteet"
+      },
+      "description": {
+        "en": "Posters, stickers, window films — all in one place.",
+        "fi": "Suurkuvatulosteet, tarrat, julisteet ja ikkunakalvot."
+      }
+    },
+    "products": {
+      "title": {
+        "en": "Products",
+        "fi": "Tuotteet"
+      },
+      "description": {
+        "en": "A wide range of visual marketing products — from lightboxes to wraps.",
+        "fi": "Valikoima markkinointituotteita — valomainoksista teippauksiin."
+      }
+    },
+    "lightbox": {
+      "title": {
+        "en": "Lightbox Signs",
+        "fi": "Valomainos"
+      },
+      "description": {
+        "en": "We design and produce impactful illuminated signs for your brand.",
+        "fi": "Suunnittelemme ja valmistamme näyttävät valomainokset yrityksille."
+      }
+    },
+    "contact": {
+      "title": {
+        "en": "Contact",
+        "fi": "Yhteystiedot"
+      },
+      "description": {
+        "en": "Get in touch — we’re happy to help!",
+        "fi": "Ota yhteyttä — autamme mielellämme!"
+      }
+    }
+  }
+}

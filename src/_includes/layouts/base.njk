@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="{{ description | t(locale) }}">
+  <title>{{ title | t(locale) }} | Pixoprint</title>
+  <link rel="canonical" href="https://serpetl.github.io/Pix{{ canonical or '/' }}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ baseurl }}/assets/img/favicon.ico" type="image/x-icon">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ baseurl }}/assets/css/style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title | t(locale) }} | Pixoprint">
+  <meta property="og:description" content="{{ description | t(locale) }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://serpetl.github.io/Pix{{ canonical or '/' }}">
+  <meta property="og:image" content="{{ baseurl }}/assets/img/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title | t(locale) }} | Pixoprint">
+  <meta name="twitter:description" content="{{ description | t(locale) }}">
+  <meta name="twitter:image" content="{{ baseurl }}/assets/img/og-image.jpg">
+</head>
+
+<body>
+
+  {% include "partials/header.njk" %}
+
+  <main id="main" role="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+  <div class="backdrop" id="backdrop"></div>
+
+  <script src="{{ baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

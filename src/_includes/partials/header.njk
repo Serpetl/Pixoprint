@@ -1,0 +1,51 @@
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <!-- Логотип -->
+    <a href="{{ baseurl }}/{{ locale }}/" class="logo">
+      <img src="{{ baseurl }}/assets/img/logo.svg" alt="Pixoprint logo - visual marketing solutions">
+    </a>
+
+    <!-- Навигация для десктопа -->
+    <nav class="main-nav">
+      <a href="{{ baseurl }}/{{ locale }}/products/">{{ "nav.products" | t(locale) }}</a>
+      <a href="{{ baseurl }}/{{ locale }}/services/">{{ "nav.services" | t(locale) }}</a>
+      <a href="{{ baseurl }}/{{ locale }}/about/">{{ "nav.about" | t(locale) }}</a>
+      <a href="{{ baseurl }}/{{ locale }}/contact/">{{ "nav.contact" | t(locale) }}</a>
+
+      {% if locale == "fi" %}
+        <a href="{{ baseurl }}{{ alternateLocalePath or '/en/' }}">
+          {{ "nav.lang_en" | t(locale) }}
+        </a>
+      {% else %}
+        <a href="{{ baseurl }}{{ alternateLocalePath or '/fi/' }}">
+          {{ "nav.lang_fi" | t(locale) }}
+        </a>
+      {% endif %}
+    </nav>
+
+    <!-- Бургер -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Мобильное меню -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="{{ baseurl }}/{{ locale }}/products/">{{ "nav.products" | t(locale) }}</a>
+    <a href="{{ baseurl }}/{{ locale }}/services/">{{ "nav.services" | t(locale) }}</a>
+    <a href="{{ baseurl }}/{{ locale }}/about/">{{ "nav.about" | t(locale) }}</a>
+    <a href="{{ baseurl }}/{{ locale }}/contact/">{{ "nav.contact" | t(locale) }}</a>
+
+    {% if locale == "fi" %}
+      <a href="{{ baseurl }}{{ alternateLocalePath or '/en/' }}" class="lang-switch">
+        {{ "nav.lang_en" | t(locale) }}
+      </a>
+    {% else %}
+      <a href="{{ baseurl }}{{ alternateLocalePath or '/fi/' }}" class="lang-switch">
+        {{ "nav.lang_fi" | t(locale) }}
+      </a>
+    {% endif %}
+  </nav>
+</header>

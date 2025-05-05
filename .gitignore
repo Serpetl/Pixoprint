@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Eleventy build output
+_site/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# dependencies
+node_modules/
+
+# build output
+_site/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

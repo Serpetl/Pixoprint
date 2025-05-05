@@ -1,0 +1,16 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": "*.njk",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}

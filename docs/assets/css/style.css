@@ -1,0 +1,394 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  color: #222;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+
+/* HEADER */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.logo img {
+  max-height: 20px;
+  margin: 6px 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.main-nav a:last-child {
+  font-weight: 600;
+  color: #1863dc;
+}
+
+.main-nav a:last-child:hover {
+  text-decoration: underline;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10;
+  background: none;
+  border: none;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transition: 0.3s ease;
+}
+
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.mobile-nav {
+  flex-direction: column;
+  background: #fff;
+  width: clamp(200px, 25vw, 300px);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+  z-index: 10;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav.active {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.mobile-nav a {
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  text-decoration: none;
+  color: #18191a;
+  display: block;
+}
+
+.mobile-nav a:last-child {
+  font-weight: 600;
+  color: #1863dc;
+}
+
+/* BACKDROP */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+  z-index: 5;
+}
+
+.backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 34vh;
+  background: #f5f5f5;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #1863dc;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+/* COUNTERS */
+#counters {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1863dc;
+}
+
+.counter-line {
+  display: block;
+}
+
+.counter {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .counter-line {
+    display: none;
+  }
+  .counter {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+  }
+  .counter div {
+    text-align: center;
+  }
+  .counter span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1863dc;
+  }
+}
+
+/* SERVICES */
+.grid.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+
+.services article {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 6px;
+  flex: 1 1 220px;
+  max-width: 300px;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 1rem;
+}
+
+.service-grid .grid-item {
+  flex: 1 1 calc(100% - 2rem);
+  max-width: 100%;
+  display: block;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.service-grid .grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-grid img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.service-grid h3 {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+.site-footer {
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.footer-cta {
+  background-color: #221f1f;
+  padding: 5rem 1rem;
+}
+
+.footer-cta .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-cta-left .logo {
+  max-width: 180px;
+  margin-bottom: 1rem;
+}
+
+footer-cta-left .phone {
+  font-size: calc(25px + (7px * ((100vw - 320px) / 55)));
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 375px) {
+  .footer-cta-left .phone {
+    font-size: 32px;
+  }
+}
+
+.footer-cta-left .hours {
+  font-size: 1.2rem;
+}
+
+.footer-cta-right {
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.footer-main {
+  background-color: #f5f5f5;
+  color: #000;
+  padding: 2rem 1rem;
+}
+
+.footer-main-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.social-icons a {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  color: inherit;
+}
+
+.footer-contact .logo {
+  max-width: 150px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact .label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.footer-bottom {
+  background-color: #eee;
+  color: #000;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    margin-left: auto;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+@media (min-width: 600px) {
+  .logo img {
+    max-height: 25px;
+    margin: 10px 0;
+  }
+  .service-grid .grid-item {
+    flex: 1 1 calc(50% - 1.5rem);
+    max-width: calc(50% - 1.5rem);
+  }
+}
+
+@media (min-width: 900px) {
+  .logo img {
+    max-height: 35px;
+    margin: 15px 0;
+  }
+  .service-grid .grid-item {
+    flex: 1 1 calc(33.333% - 1.5rem);
+    max-width: calc(33.333% - 1.5rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+  .logo img {
+    max-height: 45px;
+    margin: 20px 0;
+  }
+}
