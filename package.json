@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "eleventy --serve",
-    "build": "set ELEVENTY_ENV=prod && eleventy",
+    "build": "cross-env ELEVENTY_ENV=prod eleventy",
     "deploy": "npm run build && git add docs && git commit -m \"Deploy\" && git push",
     "format": "prettier --write ."
   },
