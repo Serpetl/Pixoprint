@@ -47,6 +47,10 @@
     "cta": {
       "en": "Request a free quote",
       "fi": "Pyydä ilmainen tarjous"
+    },
+    "ribbon": {
+      "en": "Kaikki printtitarvikkeet saman katon alla",
+      "fi": "Kaikki printtitarvikkeet saman katon alla"
     }
   },
   "counter": {

@@ -1,14 +1,19 @@
 ---
 layout: layouts/base.njk
-permalink: "/en/index.html"
+permalink: '/en/index.html'
 locale: en
 title: meta.title
 ---
 
 <section class="hero">
-  <h1>{{ "hero.title" | t(locale) }}</h1>
-  <p>{{ "hero.subtitle" | t(locale) }}</p>
-  <a href="#contact" class="btn">{{ "hero.cta" | t(locale) }}</a>
+  <div class="container">
+    <h1>{{ "hero.title" | t(locale) }}</h1>
+    <p>{{ "hero.subtitle" | t(locale) }}</p>
+    <a href="#contact" class="btn">{{ "hero.cta" | t(locale) }}</a>
+  </div>
+  <div class="hero-ribbon">
+    <p>{{ "hero.ribbon" | t(locale) }}</p>
+  </div>
 </section>
 
 <section id="counters" class="counters">
@@ -35,44 +40,67 @@ title: meta.title
 </section>
 
 <section id="service-grid" class="grid service-grid">
-  <a href="{{ baseurl }}/en/wrapping/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/wrap.jpg" alt="{{ 'page.wrapping.title' | t(locale) }}">
-    <h3>{{ "page.wrapping.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/cnc-works/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/cnc-works.jpg" alt="{{ 'page.cnc-works.title' | t(locale) }}">
-    <h3>{{ "page.cnc-works.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/design/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/design.jpg" alt="{{ 'page.design.title' | t(locale) }}">
-    <h3>{{ "page.design.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/laser-cutting/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/laser-cutting.jpg" alt="{{ 'page.laser-cutting.title' | t(locale) }}">
-    <h3>{{ "page.laser-cutting.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/led-neon/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/led-neon.jpg" alt="{{ 'page.led-neon.title' | t(locale) }}">
-    <h3>{{ "page.led-neon.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/lightbox/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/lightbox.jpg" alt="{{ 'page.lightbox.title' | t(locale) }}">
-    <h3>{{ "page.lightbox.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/large-prints/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/prints.jpg" alt="{{ 'page.large-prints.title' | t(locale) }}">
-    <h3>{{ "page.large-prints.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/textile-printing/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/textile-print.jpg" alt="{{ 'page.textile-printing.title' | t(locale) }}">
-    <h3>{{ "page.textile-printing.title" | t(locale) }}</h3>
-  </a>
-  <a href="{{ baseurl }}/en/vehicle-wrap/" class="grid-item">
-    <img src="{{ baseurl }}/assets/img/vehicle-wrap.jpg" alt="{{ 'page.vehicle-wrap.title' | t(locale) }}">
-    <h3>{{ "page.vehicle-wrap.title" | t(locale) }}</h3>
-  </a>
+  <div class="container">
+    <a href="{{ baseurl }}/en/wrapping/" class="grid-item">
+      <img src="{{ baseurl }}/assets/img/wrap.jpg" alt="{{ 'page.wrapping.title' | t(locale) }}" />
+      <h3>{{ "page.wrapping.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/cnc-works/" class="grid-item">
+      <img
+        src="{{ baseurl }}/assets/img/cnc-works.jpg"
+        alt="{{ 'page.cnc-works.title' | t(locale) }}"
+      />
+      <h3>{{ "page.cnc-works.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/design/" class="grid-item">
+      <img src="{{ baseurl }}/assets/img/design.jpg" alt="{{ 'page.design.title' | t(locale) }}" />
+      <h3>{{ "page.design.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/laser-cutting/" class="grid-item">
+      <img
+        src="{{ baseurl }}/assets/img/laser-cutting.jpg"
+        alt="{{ 'page.laser-cutting.title' | t(locale) }}"
+      />
+      <h3>{{ "page.laser-cutting.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/led-neon/" class="grid-item">
+      <img
+        src="{{ baseurl }}/assets/img/led-neon.jpg"
+        alt="{{ 'page.led-neon.title' | t(locale) }}"
+      />
+      <h3>{{ "page.led-neon.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/lightbox/" class="grid-item">
+      <img
+        src="{{ baseurl }}/assets/img/lightbox.jpg"
+        alt="{{ 'page.lightbox.title' | t(locale) }}"
+      />
+      <h3>{{ "page.lightbox.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/large-prints/" class="grid-item">
+      <img
+        src="{{ baseurl }}/assets/img/prints.jpg"
+        alt="{{ 'page.large-prints.title' | t(locale) }}"
+      />
+      <h3>{{ "page.large-prints.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/textile-printing/" class="grid-item">
+      <img
+        src="{{ baseurl }}/assets/img/textile-print.jpg"
+        alt="{{ 'page.textile-printing.title' | t(locale) }}"
+      />
+      <h3>{{ "page.textile-printing.title" | t(locale) }}</h3>
+    </a>
+    <a href="{{ baseurl }}/en/vehicle-wrap/" class="grid-item">
+      <img
+        src="{{ baseurl }}/assets/img/vehicle-wrap.jpg"
+        alt="{{ 'page.vehicle-wrap.title' | t(locale) }}"
+      />
+      <h3>{{ "page.vehicle-wrap.title" | t(locale) }}</h3>
+    </a>
+  </div>
 </section>
 
 <section id="clients" class="carousel">
-  {# insert <img> logos here — handle slider with JS or CSS #}
+  {# insert <img /> logos here — handle slider with JS or CSS #}
 </section>
