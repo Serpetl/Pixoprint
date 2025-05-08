@@ -169,7 +169,39 @@ body {
   align-items: center;
   text-align: center;
   min-height: 500px;
-  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg picture,
+.hero-bg img,
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  top: 0;
+  left: 0;
+}
+
+.hero-video {
+  z-index: 1;
+}
+
+.hero-bg picture {
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Поверх фона и видео */
+  color: #fff;
   padding: 4rem 1rem;
 }
 .hero-ribbon {
@@ -480,4 +512,96 @@ footer-cta-left .phone {
     max-height: 45px;
     margin: 20px 0;
   }
+}
+/* SOLUTION BLOCK */
+.solution {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 4rem 1rem;
+}
+
+.solution-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.solution-left {
+  flex: 1 1 300px;
+}
+
+.solution-left h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.solution-left p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.solution-right {
+  flex: 1 1 300px;
+}
+
+.solution-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.solution-right li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  border-top: 2px solid #e33a75;
+  padding-top: 0.5rem;
+}
+
+/* CONTACT FORM */
+.contact-form-section {
+  background: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.contact-form-section h2 {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+
+.contact-form-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form-section textarea {
+  min-height: 120px;
+}
+
+.contact-form-section button {
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form-section button:hover {
+  background: #e33a75;
 }

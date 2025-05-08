@@ -83,34 +83,52 @@
 
   <main id="main" role="main">
     
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 <section class="hero">
-  <div class="container">
-    <h1>Opasteet &amp; brändätyt tilat</h1>
-    <p>Konseptista asennukseen — kokonaisvaltainen tuotanto</p>
-    <a href="#contact" class="btn">Pyydä ilmainen tarjous</a>
+  <div class="hero-bg">
+    <picture>
+      <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/hero-mobile.jpg" />
+      <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/hero-tablet.jpg" />
+      <img
+        src="/Pixoprint/assets/img/hero-desktop.jpg"
+        alt="Pixoprint hero background"
+        loading="lazy"
+        class="hero-fallback"
+      />
+    </picture>
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/Pixoprint/assets/video/hero.mp4" type="video/mp4" />
+    </video>
   </div>
-  <div class="hero-ribbon">
+  <div class="container hero-content">
+    <h1 data-aos="zoom-in-up">Opasteet &amp; brändätyt tilat</h1>
+    <p data-aos="zoom-in-up" data-aos-delay="100">Konseptista asennukseen — kokonaisvaltainen tuotanto</p>
+    <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200"
+      >Pyydä ilmainen tarjous</a
+    >
+  </div>
+  <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
     <p>Kaikki printtitarvikkeet saman katon alla</p>
   </div>
 </section>
 
-<section id="counters" class="counters">
+<section id="counters" class="counters" data-aos="fade-up">
   <div class="counter-line">
     <span>20+ Vuosien kokemus</span> •
     <span>1500+ Tyytyväiset asiakkaat</span> •
     <span>850+ 3D-valaistut kyltit</span>
   </div>
-
   <div class="counter animated">
-    <div>
+    <div data-aos="flip-left">
       <span data-count="20">0</span>+
       <p>Vuosien kokemus</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="100">
       <span data-count="1500">0</span>+
       <p>Tyytyväiset asiakkaat</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="200">
       <span data-count="850">0</span>+
       <p>3D-valaistut kyltit</p>
     </div>
@@ -119,57 +137,82 @@
 
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    <a href="/Pixoprint/fi/wrapping/" class="grid-item">
+    <a href="/Pixoprint/fi/wrapping/" class="grid-item" data-aos="zoom-in-up">
       <img src="/Pixoprint/assets/img/wrap.jpg" alt="Mainosteippaus" />
       <h3>Mainosteippaus</h3>
     </a>
-    <a href="/Pixoprint/fi/cnc-works/" class="grid-item">
+    <a
+      href="/Pixoprint/fi/cnc-works/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="/Pixoprint/assets/img/cnc-works.jpg"
         alt="CNC-työt"
       />
       <h3>CNC-työt</h3>
     </a>
-    <a href="/Pixoprint/fi/design/" class="grid-item">
+    <a href="/Pixoprint/fi/design/" class="grid-item" data-aos="zoom-in-up" data-aos-delay="200">
       <img src="/Pixoprint/assets/img/design.jpg" alt="Suunnittelu" />
       <h3>Suunnittelu</h3>
     </a>
-    <a href="/Pixoprint/fi/laser-cutting/" class="grid-item">
+    <a href="/Pixoprint/fi/laser-cutting/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="/Pixoprint/assets/img/laser-cutting.jpg"
         alt="Laserleikkaus"
       />
       <h3>Laserleikkaus</h3>
     </a>
-    <a href="/Pixoprint/fi/led-neon/" class="grid-item">
+    <a
+      href="/Pixoprint/fi/led-neon/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="/Pixoprint/assets/img/led-neon.jpg"
         alt="LED-Neon"
       />
       <h3>LED-Neon</h3>
     </a>
-    <a href="/Pixoprint/fi/lightbox/" class="grid-item">
+    <a
+      href="/Pixoprint/fi/lightbox/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="/Pixoprint/assets/img/lightbox.jpg"
         alt="Valomainos"
       />
       <h3>Valomainos</h3>
     </a>
-    <a href="/Pixoprint/fi/large-prints/" class="grid-item">
+    <a href="/Pixoprint/fi/large-prints/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="/Pixoprint/assets/img/prints.jpg"
         alt="Tulosteet"
       />
       <h3>Tulosteet</h3>
     </a>
-    <a href="/Pixoprint/fi/textile-printing/" class="grid-item">
+    <a
+      href="/Pixoprint/fi/textile-printing/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="/Pixoprint/assets/img/textile-print.jpg"
         alt="Tekstiilipainatus"
       />
       <h3>Tekstiilipainatus</h3>
     </a>
-    <a href="/Pixoprint/fi/vehicle-wrap/" class="grid-item">
+    <a
+      href="/Pixoprint/fi/vehicle-wrap/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="/Pixoprint/assets/img/vehicle-wrap.jpg"
         alt="Ajoneuvoteippaus"
@@ -179,9 +222,67 @@
   </div>
 </section>
 
-<section id="clients" class="carousel">
+<section id="clients" class="carousel" data-aos="fade-up">
   
 </section>
+
+<section class="solution" data-aos="fade-up">
+  <div class="container solution-flex">
+    <div class="solution-left">
+      <h2>Kattava ongelmanratkaisu:</h2>
+      <p>Teknisestä ja graafisesta suunnittelusta tuotantoon ja sijoitteluun varmistamme, että visuaalinen ilme on todella erinomainen joka vaiheessa.</p>
+    </div>
+    <div class="solution-right">
+      <ul>
+        <li data-aos="flip-up"><span></span>Graafinen suunnittelu</li>
+        <li data-aos="flip-up" data-aos-delay="100">
+          <span></span>Kattava projektinhallinta, lupa
+        </li>
+        <li data-aos="flip-up" data-aos-delay="200">
+          <span></span>Tuotanto, sijoitus
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <span></span>Takuu, seuranta
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-form-section" data-aos="zoom-in-up">
+  <div class="container">
+    <h2>Ota yhteyttä, kysy lisää tai pyydä tarjous!</h2>
+    <form>
+      <input
+        type="text"
+        name="name"
+        placeholder="Etunimi ja Sukunimi"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Sähköposti"
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="Viesti"
+        required
+      ></textarea>
+      <button type="submit">Lähetä</button>
+    </form>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 500,
+    once: true,
+    easing: 'ease-out-cubic'
+  })
+</script>
 
   </main>
 

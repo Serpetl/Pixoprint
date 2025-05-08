@@ -83,34 +83,52 @@
 
   <main id="main" role="main">
     
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 <section class="hero">
-  <div class="container">
-    <h1>Signage &amp; branded spaces</h1>
-    <p>From concept to installation — comprehensive production</p>
-    <a href="#contact" class="btn">Request a free quote</a>
+  <div class="hero-bg">
+    <picture>
+      <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/hero-mobile.jpg" />
+      <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/hero-tablet.jpg" />
+      <img
+        src="/Pixoprint/assets/img/hero-desktop.jpg"
+        alt="Pixoprint hero background"
+        loading="lazy"
+        class="hero-fallback"
+      />
+    </picture>
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/Pixoprint/assets/video/hero.mp4" type="video/mp4" />
+    </video>
   </div>
-  <div class="hero-ribbon">
+  <div class="container hero-content">
+    <h1 data-aos="zoom-in-up">Signage &amp; branded spaces</h1>
+    <p data-aos="zoom-in-up" data-aos-delay="100">From concept to installation — comprehensive production</p>
+    <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200"
+      >Request a free quote</a
+    >
+  </div>
+  <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
     <p>Kaikki printtitarvikkeet saman katon alla</p>
   </div>
 </section>
 
-<section id="counters" class="counters">
+<section id="counters" class="counters" data-aos="fade-up">
   <div class="counter-line">
     <span>20+ Years of experience</span> •
     <span>1500+ Satisfied clients</span> •
     <span>850+ 3D illuminated signs</span>
   </div>
-
   <div class="counter animated">
-    <div>
+    <div data-aos="flip-left">
       <span data-count="20">0</span>+
       <p>Years of experience</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="100">
       <span data-count="1500">0</span>+
       <p>Satisfied clients</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="200">
       <span data-count="850">0</span>+
       <p>3D illuminated signs</p>
     </div>
@@ -119,57 +137,82 @@
 
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    <a href="/Pixoprint/en/wrapping/" class="grid-item">
+    <a href="/Pixoprint/en/wrapping/" class="grid-item" data-aos="zoom-in-up">
       <img src="/Pixoprint/assets/img/wrap.jpg" alt="Window Wrapping" />
       <h3>Window Wrapping</h3>
     </a>
-    <a href="/Pixoprint/en/cnc-works/" class="grid-item">
+    <a
+      href="/Pixoprint/en/cnc-works/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="/Pixoprint/assets/img/cnc-works.jpg"
         alt="CNC Works"
       />
       <h3>CNC Works</h3>
     </a>
-    <a href="/Pixoprint/en/design/" class="grid-item">
+    <a href="/Pixoprint/en/design/" class="grid-item" data-aos="zoom-in-up" data-aos-delay="200">
       <img src="/Pixoprint/assets/img/design.jpg" alt="Graphic Design" />
       <h3>Graphic Design</h3>
     </a>
-    <a href="/Pixoprint/en/laser-cutting/" class="grid-item">
+    <a href="/Pixoprint/en/laser-cutting/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="/Pixoprint/assets/img/laser-cutting.jpg"
         alt="Laser Cutting"
       />
       <h3>Laser Cutting</h3>
     </a>
-    <a href="/Pixoprint/en/led-neon/" class="grid-item">
+    <a
+      href="/Pixoprint/en/led-neon/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="/Pixoprint/assets/img/led-neon.jpg"
         alt="LED Neon"
       />
       <h3>LED Neon</h3>
     </a>
-    <a href="/Pixoprint/en/lightbox/" class="grid-item">
+    <a
+      href="/Pixoprint/en/lightbox/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="/Pixoprint/assets/img/lightbox.jpg"
         alt="Lightbox Signs"
       />
       <h3>Lightbox Signs</h3>
     </a>
-    <a href="/Pixoprint/en/large-prints/" class="grid-item">
+    <a href="/Pixoprint/en/large-prints/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="/Pixoprint/assets/img/prints.jpg"
         alt="Large Format Prints"
       />
       <h3>Large Format Prints</h3>
     </a>
-    <a href="/Pixoprint/en/textile-printing/" class="grid-item">
+    <a
+      href="/Pixoprint/en/textile-printing/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="/Pixoprint/assets/img/textile-print.jpg"
         alt="Textile Printing"
       />
       <h3>Textile Printing</h3>
     </a>
-    <a href="/Pixoprint/en/vehicle-wrap/" class="grid-item">
+    <a
+      href="/Pixoprint/en/vehicle-wrap/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="/Pixoprint/assets/img/vehicle-wrap.jpg"
         alt="Vehicle Wrapping"
@@ -179,9 +222,67 @@
   </div>
 </section>
 
-<section id="clients" class="carousel">
+<section id="clients" class="carousel" data-aos="fade-up">
   
 </section>
+
+<section class="solution" data-aos="fade-up">
+  <div class="container solution-flex">
+    <div class="solution-left">
+      <h2>Comprehensive solution:</h2>
+      <p>From technical design and permits to production and installation – visual quality is ensured at every stage.</p>
+    </div>
+    <div class="solution-right">
+      <ul>
+        <li data-aos="flip-up"><span></span>Graphic design</li>
+        <li data-aos="flip-up" data-aos-delay="100">
+          <span></span>Full project management
+        </li>
+        <li data-aos="flip-up" data-aos-delay="200">
+          <span></span>Production &amp; installation
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <span></span>Guarantee &amp; follow-up
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-form-section" data-aos="zoom-in-up">
+  <div class="container">
+    <h2>Contact us, ask more or request a quote!</h2>
+    <form>
+      <input
+        type="text"
+        name="name"
+        placeholder="Full name"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="E-mail"
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="Message"
+        required
+      ></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 500,
+    once: true,
+    easing: 'ease-out-cubic'
+  })
+</script>
 
   </main>
 
