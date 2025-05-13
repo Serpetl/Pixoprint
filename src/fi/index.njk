@@ -5,34 +5,52 @@ locale: fi
 title: meta.title
 ---
 
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 <section class="hero">
-  <div class="container">
-    <h1>{{ "hero.title" | t(locale) }}</h1>
-    <p>{{ "hero.subtitle" | t(locale) }}</p>
-    <a href="#contact" class="btn">{{ "hero.cta" | t(locale) }}</a>
+  <div class="hero-bg">
+    <picture>
+      <source media="(max-width: 480px)" srcset="{{ baseurl }}/assets/img/hero-mobile.jpg" />
+      <source media="(max-width: 768px)" srcset="{{ baseurl }}/assets/img/hero-tablet.jpg" />
+      <img
+        src="{{ baseurl }}/assets/img/hero-desktop.jpg"
+        alt="Pixoprint hero background"
+        loading="lazy"
+        class="hero-fallback"
+      />
+    </picture>
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="{{ baseurl }}/assets/video/hero.mp4" type="video/mp4" />
+    </video>
   </div>
-  <div class="hero-ribbon">
+  <div class="container hero-content">
+    <h1 data-aos="zoom-in-up">{{ "hero.title" | t(locale) }}</h1>
+    <p data-aos="zoom-in-up" data-aos-delay="100">{{ "hero.subtitle" | t(locale) }}</p>
+    <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200"
+      >{{ "hero.cta" | t(locale) }}</a
+    >
+  </div>
+  <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
     <p>{{ "hero.ribbon" | t(locale) }}</p>
   </div>
 </section>
 
-<section id="counters" class="counters">
+<section id="counters" class="counters" data-aos="fade-up">
   <div class="counter-line">
     <span>20+ {{ "counter.years" | t(locale) }}</span> •
     <span>1500+ {{ "counter.clients" | t(locale) }}</span> •
     <span>850+ {{ "counter.signs" | t(locale) }}</span>
   </div>
-
   <div class="counter animated">
-    <div>
+    <div data-aos="flip-left">
       <span data-count="20">0</span>+
       <p>{{ "counter.years" | t(locale) }}</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="100">
       <span data-count="1500">0</span>+
       <p>{{ "counter.clients" | t(locale) }}</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="200">
       <span data-count="850">0</span>+
       <p>{{ "counter.signs" | t(locale) }}</p>
     </div>
@@ -41,57 +59,82 @@ title: meta.title
 
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    <a href="{{ baseurl }}/fi/wrapping/" class="grid-item">
+    <a href="{{ baseurl }}/fi/wrapping/" class="grid-item" data-aos="zoom-in-up">
       <img src="{{ baseurl }}/assets/img/wrap.jpg" alt="{{ 'page.wrapping.title' | t(locale) }}" />
       <h3>{{ "page.wrapping.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/cnc-works/" class="grid-item">
+    <a
+      href="{{ baseurl }}/fi/cnc-works/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="{{ baseurl }}/assets/img/cnc-works.jpg"
         alt="{{ 'page.cnc-works.title' | t(locale) }}"
       />
       <h3>{{ "page.cnc-works.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/design/" class="grid-item">
+    <a href="{{ baseurl }}/fi/design/" class="grid-item" data-aos="zoom-in-up" data-aos-delay="200">
       <img src="{{ baseurl }}/assets/img/design.jpg" alt="{{ 'page.design.title' | t(locale) }}" />
       <h3>{{ "page.design.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/laser-cutting/" class="grid-item">
+    <a href="{{ baseurl }}/fi/laser-cutting/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="{{ baseurl }}/assets/img/laser-cutting.jpg"
         alt="{{ 'page.laser-cutting.title' | t(locale) }}"
       />
       <h3>{{ "page.laser-cutting.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/led-neon/" class="grid-item">
+    <a
+      href="{{ baseurl }}/fi/led-neon/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="{{ baseurl }}/assets/img/led-neon.jpg"
         alt="{{ 'page.led-neon.title' | t(locale) }}"
       />
       <h3>{{ "page.led-neon.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/lightbox/" class="grid-item">
+    <a
+      href="{{ baseurl }}/fi/lightbox/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="{{ baseurl }}/assets/img/lightbox.jpg"
         alt="{{ 'page.lightbox.title' | t(locale) }}"
       />
       <h3>{{ "page.lightbox.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/large-prints/" class="grid-item">
+    <a href="{{ baseurl }}/fi/large-prints/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="{{ baseurl }}/assets/img/prints.jpg"
         alt="{{ 'page.large-prints.title' | t(locale) }}"
       />
       <h3>{{ "page.large-prints.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/textile-printing/" class="grid-item">
+    <a
+      href="{{ baseurl }}/fi/textile-printing/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="{{ baseurl }}/assets/img/textile-print.jpg"
         alt="{{ 'page.textile-printing.title' | t(locale) }}"
       />
       <h3>{{ "page.textile-printing.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/vehicle-wrap/" class="grid-item">
+    <a
+      href="{{ baseurl }}/fi/vehicle-wrap/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="{{ baseurl }}/assets/img/vehicle-wrap.jpg"
         alt="{{ 'page.vehicle-wrap.title' | t(locale) }}"
@@ -101,6 +144,77 @@ title: meta.title
   </div>
 </section>
 
-<section id="clients" class="carousel">
+<section id="clients" class="carousel" data-aos="fade-up">
   {# insert <img /> logos here — handle slider with JS or CSS #}
 </section>
+
+<section class="solution" data-aos="fade-up">
+  <div class="container solution-flex">
+    <div class="solution-left">
+      <h2>{{ "contactBlock.solutionTitle" | t(locale) }}</h2>
+      <p>{{ "contactBlock.solutionText" | t(locale) }}</p>
+    </div>
+    <div class="solution-right">
+      <ul>
+        <li data-aos="flip-up"><span></span>{{ "contactBlock.list.1" | t(locale) }}</li>
+        <li data-aos="flip-up" data-aos-delay="100">
+          <span></span>{{ "contactBlock.list.2" | t(locale) }}
+        </li>
+        <li data-aos="flip-up" data-aos-delay="200">
+          <span></span>{{ "contactBlock.list.3" | t(locale) }}
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <span></span>{{ "contactBlock.list.4" | t(locale) }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-form-section" data-aos="zoom-in-up">
+  <div class="container">
+    <h2>{{ "contactBlock.formTitle" | t(locale) }}</h2>
+    <form>
+      <input
+        type="text"
+        name="name"
+        placeholder="{{ 'contactBlock.form.name' | t(locale) }}"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="{{ 'contactBlock.form.email' | t(locale) }}"
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="{{ 'contactBlock.form.message' | t(locale) }}"
+        required
+      ></textarea>
+      <button type="submit">{{ "contactBlock.form.button" | t(locale) }}</button>
+    </form>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 500,
+    once: true,
+    easing: 'ease-out-cubic'
+  })
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.hero-video')
+    const fallback = document.querySelector('.hero-fallback')
+
+    if (video && fallback) {
+      video.addEventListener('canplay', function () {
+        fallback.style.display = 'none'
+        video.play()
+      })
+    }
+  })
+</script>

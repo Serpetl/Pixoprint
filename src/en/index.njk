@@ -5,102 +5,324 @@ locale: en
 title: meta.title
 ---
 
+<!-- Подключение AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- Секция HERO -->
 <section class="hero">
-  <div class="container">
-    <h1>{{ "hero.title" | t(locale) }}</h1>
-    <p>{{ "hero.subtitle" | t(locale) }}</p>
-    <a href="#contact" class="btn">{{ "hero.cta" | t(locale) }}</a>
+  <div class="hero-bg">
+    <!-- Используем WebP для изображений -->
+    <picture>
+      <source
+        media="(max-width: 480px)"
+        srcset="{{ baseurl }}/assets/img/hero-mobile.webp"
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 768px)"
+        srcset="{{ baseurl }}/assets/img/hero-tablet.webp"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 769px)"
+        srcset="{{ baseurl }}/assets/img/hero-desktop.webp"
+        type="image/webp"
+      />
+      <!-- Резервные JPEG/PNG -->
+      <source media="(max-width: 480px)" srcset="{{ baseurl }}/assets/img/hero-mobile.jpg" />
+      <source media="(max-width: 768px)" srcset="{{ baseurl }}/assets/img/hero-tablet.jpg" />
+      <img
+        src="{{ baseurl }}/assets/img/hero-desktop.jpg"
+        alt="Pixoprint hero background"
+        loading="lazy"
+        class="hero-fallback"
+      />
+    </picture>
+
+    <!-- Видео с lazy load -->
+    <video muted loop playsinline class="hero-video" aria-hidden="true">
+      <source src="{{ baseurl }}/assets/video/hero.mp4" type="video/mp4" />
+      <!-- Fallback для браузеров без поддержки video -->
+      <img
+        src="{{ baseurl }}/assets/img/hero-desktop.jpg"
+        alt="Hero background fallback"
+        class="hero-fallback"
+      />
+    </video>
   </div>
-  <div class="hero-ribbon">
+
+  <div class="container hero-content" data-aos="zoom-in-up">
+    <h1>{{ "hero.title" | t(locale) }}</h1>
+    <p data-aos="zoom-in-up" data-aos-delay="100">{{ "hero.subtitle" | t(locale) }}</p>
+    <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200">
+      {{ "hero.cta" | t(locale) }}
+    </a>
+  </div>
+
+  <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
     <p>{{ "hero.ribbon" | t(locale) }}</p>
   </div>
 </section>
 
-<section id="counters" class="counters">
+<!-- COUNTERS -->
+<section id="counters" class="counters" data-aos="fade-up">
   <div class="counter-line">
     <span>20+ {{ "counter.years" | t(locale) }}</span> •
     <span>1500+ {{ "counter.clients" | t(locale) }}</span> •
     <span>850+ {{ "counter.signs" | t(locale) }}</span>
   </div>
-
   <div class="counter animated">
-    <div>
+    <div data-aos="flip-left">
       <span data-count="20">0</span>+
       <p>{{ "counter.years" | t(locale) }}</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="100">
       <span data-count="1500">0</span>+
       <p>{{ "counter.clients" | t(locale) }}</p>
     </div>
-    <div>
+    <div data-aos="flip-left" data-aos-delay="200">
       <span data-count="850">0</span>+
       <p>{{ "counter.signs" | t(locale) }}</p>
     </div>
   </div>
 </section>
 
+<!-- SERVICE GRID -->
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    <a href="{{ baseurl }}/en/wrapping/" class="grid-item">
-      <img src="{{ baseurl }}/assets/img/wrap.jpg" alt="{{ 'page.wrapping.title' | t(locale) }}" />
+    <a href="{{ baseurl }}/en/wrapping/" class="grid-item" data-aos="zoom-in-up">
+      <img
+        src="{{ baseurl }}/assets/img/wrap.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/wrap-320.webp 320w,
+          {{ baseurl }}/assets/img/wrap-640.webp 640w,
+          {{ baseurl }}/assets/img/wrap-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+        alt="{{ 'page.wrapping.title' | t(locale) }}"
+        loading="lazy"
+      />
       <h3>{{ "page.wrapping.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/cnc-works/" class="grid-item">
+
+    <a
+      href="{{ baseurl }}/en/cnc-works/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="{{ baseurl }}/assets/img/cnc-works.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/cnc-works-320.webp 320w,
+          {{ baseurl }}/assets/img/cnc-works-640.webp 640w,
+          {{ baseurl }}/assets/img/cnc-works-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         alt="{{ 'page.cnc-works.title' | t(locale) }}"
+        loading="lazy"
       />
       <h3>{{ "page.cnc-works.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/design/" class="grid-item">
-      <img src="{{ baseurl }}/assets/img/design.jpg" alt="{{ 'page.design.title' | t(locale) }}" />
+
+    <a href="{{ baseurl }}/en/design/" class="grid-item" data-aos="zoom-in-up" data-aos-delay="200">
+      <img
+        src="{{ baseurl }}/assets/img/design.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/design-320.webp 320w,
+          {{ baseurl }}/assets/img/design-640.webp 640w,
+          {{ baseurl }}/assets/img/design-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+        alt="{{ 'page.design.title' | t(locale) }}"
+        loading="lazy"
+      />
       <h3>{{ "page.design.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/laser-cutting/" class="grid-item">
+
+    <a href="{{ baseurl }}/en/laser-cutting/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="{{ baseurl }}/assets/img/laser-cutting.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/laser-cutting-320.webp 320w,
+          {{ baseurl }}/assets/img/laser-cutting-640.webp 640w,
+          {{ baseurl }}/assets/img/laser-cutting-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         alt="{{ 'page.laser-cutting.title' | t(locale) }}"
+        loading="lazy"
       />
       <h3>{{ "page.laser-cutting.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/led-neon/" class="grid-item">
+
+    <a
+      href="{{ baseurl }}/en/led-neon/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="{{ baseurl }}/assets/img/led-neon.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/led-neon-320.webp 320w,
+          {{ baseurl }}/assets/img/led-neon-640.webp 640w,
+          {{ baseurl }}/assets/img/led-neon-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         alt="{{ 'page.led-neon.title' | t(locale) }}"
+        loading="lazy"
       />
       <h3>{{ "page.led-neon.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/lightbox/" class="grid-item">
+
+    <a
+      href="{{ baseurl }}/en/lightbox/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="{{ baseurl }}/assets/img/lightbox.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/lightbox-320.webp 320w,
+          {{ baseurl }}/assets/img/lightbox-640.webp 640w,
+          {{ baseurl }}/assets/img/lightbox-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         alt="{{ 'page.lightbox.title' | t(locale) }}"
+        loading="lazy"
       />
       <h3>{{ "page.lightbox.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/large-prints/" class="grid-item">
+
+    <a href="{{ baseurl }}/en/large-prints/" class="grid-item" data-aos="zoom-in-up">
       <img
         src="{{ baseurl }}/assets/img/prints.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/prints-320.webp 320w,
+          {{ baseurl }}/assets/img/prints-640.webp 640w,
+          {{ baseurl }}/assets/img/prints-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         alt="{{ 'page.large-prints.title' | t(locale) }}"
+        loading="lazy"
       />
       <h3>{{ "page.large-prints.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/textile-printing/" class="grid-item">
+
+    <a
+      href="{{ baseurl }}/en/textile-printing/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+    >
       <img
         src="{{ baseurl }}/assets/img/textile-print.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/textile-print-320.webp 320w,
+          {{ baseurl }}/assets/img/textile-print-640.webp 640w,
+          {{ baseurl }}/assets/img/textile-print-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         alt="{{ 'page.textile-printing.title' | t(locale) }}"
+        loading="lazy"
       />
       <h3>{{ "page.textile-printing.title" | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/en/vehicle-wrap/" class="grid-item">
+
+    <a
+      href="{{ baseurl }}/en/vehicle-wrap/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    >
       <img
         src="{{ baseurl }}/assets/img/vehicle-wrap.jpg"
+        srcset="
+          {{ baseurl }}/assets/img/vehicle-wrap-320.webp 320w,
+          {{ baseurl }}/assets/img/vehicle-wrap-640.webp 640w,
+          {{ baseurl }}/assets/img/vehicle-wrap-1024.webp 1024w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         alt="{{ 'page.vehicle-wrap.title' | t(locale) }}"
+        loading="lazy"
       />
       <h3>{{ "page.vehicle-wrap.title" | t(locale) }}</h3>
     </a>
   </div>
 </section>
 
-<section id="clients" class="carousel">
-  {# insert <img /> logos here — handle slider with JS or CSS #}
+<!-- CLIENTS -->
+<section id="clients" class="carousel" data-aos="fade-up">
+  <!-- Здесь можно разместить логотипы клиентов или слайдер -->
 </section>
+
+<!-- SOLUTION -->
+<section class="solution" data-aos="fade-up">
+  <div class="container solution-flex">
+    <div class="solution-left">
+      <h2>{{ "contactBlock.solutionTitle" | t(locale) }}</h2>
+      <p>{{ "contactBlock.solutionText" | t(locale) }}</p>
+    </div>
+    <div class="solution-right">
+      <ul>
+        <li data-aos="flip-up"><span></span>{{ "contactBlock.list.1" | t(locale) }}</li>
+        <li data-aos="flip-up" data-aos-delay="100">{{ "contactBlock.list.2" | t(locale) }}</li>
+        <li data-aos="flip-up" data-aos-delay="200">{{ "contactBlock.list.3" | t(locale) }}</li>
+        <li data-aos="flip-up" data-aos-delay="300">{{ "contactBlock.list.4" | t(locale) }}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="contact-form-section" data-aos="zoom-in-up">
+  <div class="container">
+    <h2>{{ "contactBlock.formTitle" | t(locale) }}</h2>
+    <form>
+      <input
+        type="text"
+        name="name"
+        placeholder="{{ 'contactBlock.form.name' | t(locale) }}"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="{{ 'contactBlock.form.email' | t(locale) }}"
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="{{ 'contactBlock.form.message' | t(locale) }}"
+        required
+      ></textarea>
+      <button type="submit">{{ "contactBlock.form.button" | t(locale) }}</button>
+    </form>
+  </div>
+</section>
+
+<!-- Подключение AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 500,
+    once: true,
+    easing: 'ease-out-cubic'
+  })
+</script>
+
+<!-- JS: скрытие фоллбэк картинки при готовности видео -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.hero-video')
+    const fallback = document.querySelector('.hero-fallback')
+
+    if (video && fallback) {
+      video.addEventListener('canplay', function () {
+        fallback.style.display = 'none'
+        video.play()
+      })
+    }
+  })
+</script>

@@ -223,5 +223,55 @@
         "fi": "Ota yhteyttä — autamme mielellämme!"
       }
     }
+  },
+  "contactBlock": {
+    "solutionTitle": {
+      "en": "Comprehensive solution:",
+      "fi": "Kattava ongelmanratkaisu:"
+    },
+    "solutionText": {
+      "en": "From technical design and permits to production and installation – visual quality is ensured at every stage.",
+      "fi": "Teknisestä ja graafisesta suunnittelusta tuotantoon ja sijoitteluun varmistamme, että visuaalinen ilme on todella erinomainen joka vaiheessa."
+    },
+    "list": {
+      "1": {
+        "en": "Graphic design",
+        "fi": "Graafinen suunnittelu"
+      },
+      "2": {
+        "en": "Full project management",
+        "fi": "Kattava projektinhallinta, lupa"
+      },
+      "3": {
+        "en": "Production & installation",
+        "fi": "Tuotanto, sijoitus"
+      },
+      "4": {
+        "en": "Guarantee & follow-up",
+        "fi": "Takuu, seuranta"
+      }
+    },
+    "formTitle": {
+      "en": "Contact us, ask more or request a quote!",
+      "fi": "Ota yhteyttä, kysy lisää tai pyydä tarjous!"
+    },
+    "form": {
+      "name": {
+        "en": "Full name",
+        "fi": "Etunimi ja Sukunimi"
+      },
+      "email": {
+        "en": "E-mail",
+        "fi": "Sähköposti"
+      },
+      "message": {
+        "en": "Message",
+        "fi": "Viesti"
+      },
+      "button": {
+        "en": "Send",
+        "fi": "Lähetä"
+      }
+    }
   }
 }
