@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary Meta Tags -->
-  <meta name="description" content="">
-  <title>Pixoprint — signage &amp; branded spaces | Pixoprint</title>
-  <link rel="canonical" href="https://serpetl.github.io/Pixoprint/">
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="" />
+    <title>Pixoprint — signage &amp; branded spaces | Pixoprint</title>
+    <link rel="canonical" href="https://serpetl.github.io/Pixoprint/" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/Pixoprint/assets/img/favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="icon" href="/Pixoprint/assets/img/favicon.ico" type="image/x-icon" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/Pixoprint/assets/css/style.css">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/Pixoprint/assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pixoprint — signage &amp; branded spaces | Pixoprint" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://serpetl.github.io/Pixoprint/" />
+    <meta property="og:image" content="/Pixoprint/assets/img/og-image.jpg" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pixoprint — signage &amp; branded spaces | Pixoprint">
-  <meta property="og:description" content="">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://serpetl.github.io/Pixoprint/">
-  <meta property="og:image" content="/Pixoprint/assets/img/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pixoprint — signage &amp; branded spaces | Pixoprint" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="/Pixoprint/assets/img/og-image.jpg" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pixoprint — signage &amp; branded spaces | Pixoprint">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="/Pixoprint/assets/img/og-image.jpg">
-</head>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 500,
+          once: true,
+          easing: 'ease-out-cubic'
+        })
+      })
+    </script>
+  </head>
 
-<body>
-
-  <header class="site-header">
+  <body>
+    <header class="site-header">
   <div class="container nav-wrapper">
     <!-- Логотип -->
     <a href="/Pixoprint/en/" class="logo">
@@ -84,258 +95,414 @@
 </header>
 
 
-  <main id="main" role="main">
-    
-<!-- Подключение AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <main id="main" role="main">
+<!-- HERO + COUNTERS -->
+<section class="hero-counters">
+  <section class="hero">
+    <div class="hero-bg">
+      <picture>
+        <source
+          media="(max-width: 480px)"
+          srcset="/Pixoprint/assets/img/main/hero-mobile.webp"
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 768px)"
+          srcset="/Pixoprint/assets/img/main/hero-tablet.webp"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 769px)"
+          srcset="/Pixoprint/assets/img/main/hero-desktop.webp"
+          type="image/webp"
+        />
+        <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/main/hero-mobile.jpg" />
+        <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/main/hero-tablet.jpg" />
+        <img
+          src="/Pixoprint/assets/img/main/hero-desktop.jpg"
+          alt="Pixoprint hero background"
+          loading="eager"
+          class="hero-fallback"
+        />
+      </picture>
 
-<!-- Секция HERO -->
-<section class="hero">
-  <div class="hero-bg">
-    <!-- Используем WebP для изображений -->
-    <picture>
-      <source
-        media="(max-width: 480px)"
-        srcset="/Pixoprint/assets/img/hero-mobile.webp"
-        type="image/webp"
-      />
-      <source
-        media="(max-width: 768px)"
-        srcset="/Pixoprint/assets/img/hero-tablet.webp"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 769px)"
-        srcset="/Pixoprint/assets/img/hero-desktop.webp"
-        type="image/webp"
-      />
-      <!-- Резервные JPEG/PNG -->
-      <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/hero-mobile.jpg" />
-      <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/hero-tablet.jpg" />
-      <img
-        src="/Pixoprint/assets/img/hero-desktop.jpg"
-        alt="Pixoprint hero background"
-        loading="lazy"
-        class="hero-fallback"
-      />
-    </picture>
-
-    <!-- Видео с lazy load -->
-    <video muted loop playsinline class="hero-video" aria-hidden="true">
-      <source src="/Pixoprint/assets/video/hero.mp4" type="video/mp4" />
-      <!-- Fallback для браузеров без поддержки video -->
-      <img
-        src="/Pixoprint/assets/img/hero-desktop.jpg"
-        alt="Hero background fallback"
-        class="hero-fallback"
-      />
-    </video>
-  </div>
-
-  <div class="container hero-content" data-aos="zoom-in-up">
-    <h1>Signage &amp; branded spaces</h1>
-    <p data-aos="zoom-in-up" data-aos-delay="100">From concept to installation — comprehensive production</p>
-    <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200">
-      Request a free quote
-    </a>
-  </div>
-
-  <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
-    <p>Kaikki printtitarvikkeet saman katon alla</p>
-  </div>
-</section>
-
-<!-- COUNTERS -->
-<section id="counters" class="counters" data-aos="fade-up">
-  <div class="counter-line">
-    <span>20+ Years of experience</span> •
-    <span>1500+ Satisfied clients</span> •
-    <span>850+ 3D illuminated signs</span>
-  </div>
-  <div class="counter animated">
-    <div data-aos="flip-left">
-      <span data-count="20">0</span>+
-      <p>Years of experience</p>
+      <video muted loop playsinline class="hero-video" aria-hidden="true">
+        <source src="/Pixoprint/assets/video/hero.mp4" type="video/mp4" />
+        <img
+          src="/Pixoprint/assets/img/main/hero-desktop.jpg"
+          alt="Hero background fallback"
+          class="hero-fallback"
+        />
+      </video>
     </div>
-    <div data-aos="flip-left" data-aos-delay="100">
-      <span data-count="1500">0</span>+
-      <p>Satisfied clients</p>
+
+    <div class="container hero-content" data-aos="zoom-in-up">
+      <h1>Signage &amp; branded spaces</h1>
+      <p data-aos="zoom-in-up" data-aos-delay="100">From concept to installation — comprehensive production</p>
+      <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200">
+        Request a free quote
+      </a>
+      <a href="#service-grid" class="scroll-down" aria-label="Scroll to services">↓</a>
     </div>
-    <div data-aos="flip-left" data-aos-delay="200">
-      <span data-count="850">0</span>+
-      <p>3D illuminated signs</p>
+
+    <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
+      <p>Kaikki printtitarvikkeet saman katon alla</p>
     </div>
-  </div>
+  </section>
+
+  <section id="counters" class="counters" data-aos="fade-up">
+    <div class="counter animated">
+      <div data-aos="flip-left">
+        <span data-count="20">0</span>+
+        <p>Years of experience</p>
+      </div>
+      <div data-aos="flip-left" data-aos-delay="100">
+        <span data-count="1500">0</span>+
+        <p>Satisfied clients</p>
+      </div>
+      <div data-aos="flip-left" data-aos-delay="200">
+        <span data-count="850">0</span>+
+        <p>3D illuminated signs</p>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- SERVICE GRID -->
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    <a href="/Pixoprint/en/wrapping/" class="grid-item" data-aos="zoom-in-up">
-      <img
-        src="/Pixoprint/assets/img/wrap.jpg"
-        srcset="
-          /Pixoprint/assets/img/wrap-320.webp 320w,
-          /Pixoprint/assets/img/wrap-640.webp 640w,
-          /Pixoprint/assets/img/wrap-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="Window Wrapping"
-        loading="lazy"
-      />
+     
+    <a
+      href="/Pixoprint/en/wrapping/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/wrap-240.webp 240w,
+                  /Pixoprint/assets/img/main/wrap-320.webp 320w,
+                  /Pixoprint/assets/img/main/wrap-480.webp 480w,
+                  /Pixoprint/assets/img/main/wrap-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/wrap-640.jpg"
+          srcset="/Pixoprint/assets/img/main/wrap-240.jpg 240w,
+                  /Pixoprint/assets/img/main/wrap-320.jpg 320w,
+                  /Pixoprint/assets/img/main/wrap-480.jpg 480w,
+                  /Pixoprint/assets/img/main/wrap-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.wrapping.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Window Wrapping</h3>
     </a>
-
+    
     <a
       href="/Pixoprint/en/cnc-works/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="100"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/cnc-works.jpg"
-        srcset="
-          /Pixoprint/assets/img/cnc-works-320.webp 320w,
-          /Pixoprint/assets/img/cnc-works-640.webp 640w,
-          /Pixoprint/assets/img/cnc-works-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="CNC Works"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/cnc-works-240.webp 240w,
+                  /Pixoprint/assets/img/main/cnc-works-320.webp 320w,
+                  /Pixoprint/assets/img/main/cnc-works-480.webp 480w,
+                  /Pixoprint/assets/img/main/cnc-works-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/cnc-works-640.jpg"
+          srcset="/Pixoprint/assets/img/main/cnc-works-240.jpg 240w,
+                  /Pixoprint/assets/img/main/cnc-works-320.jpg 320w,
+                  /Pixoprint/assets/img/main/cnc-works-480.jpg 480w,
+                  /Pixoprint/assets/img/main/cnc-works-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.cnc-works.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>CNC Works</h3>
     </a>
-
-    <a href="/Pixoprint/en/design/" class="grid-item" data-aos="zoom-in-up" data-aos-delay="200">
-      <img
-        src="/Pixoprint/assets/img/design.jpg"
-        srcset="
-          /Pixoprint/assets/img/design-320.webp 320w,
-          /Pixoprint/assets/img/design-640.webp 640w,
-          /Pixoprint/assets/img/design-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="Graphic Design"
-        loading="lazy"
-      />
+    
+    <a
+      href="/Pixoprint/en/design/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/design-240.webp 240w,
+                  /Pixoprint/assets/img/main/design-320.webp 320w,
+                  /Pixoprint/assets/img/main/design-480.webp 480w,
+                  /Pixoprint/assets/img/main/design-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/design-640.jpg"
+          srcset="/Pixoprint/assets/img/main/design-240.jpg 240w,
+                  /Pixoprint/assets/img/main/design-320.jpg 320w,
+                  /Pixoprint/assets/img/main/design-480.jpg 480w,
+                  /Pixoprint/assets/img/main/design-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.design.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Graphic Design</h3>
     </a>
-
-    <a href="/Pixoprint/en/laser-cutting/" class="grid-item" data-aos="zoom-in-up">
-      <img
-        src="/Pixoprint/assets/img/laser-cutting.jpg"
-        srcset="
-          /Pixoprint/assets/img/laser-cutting-320.webp 320w,
-          /Pixoprint/assets/img/laser-cutting-640.webp 640w,
-          /Pixoprint/assets/img/laser-cutting-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="Laser Cutting"
-        loading="lazy"
-      />
+    
+    <a
+      href="/Pixoprint/en/laser-cutting/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/laser-cutting-240.webp 240w,
+                  /Pixoprint/assets/img/main/laser-cutting-320.webp 320w,
+                  /Pixoprint/assets/img/main/laser-cutting-480.webp 480w,
+                  /Pixoprint/assets/img/main/laser-cutting-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/laser-cutting-640.jpg"
+          srcset="/Pixoprint/assets/img/main/laser-cutting-240.jpg 240w,
+                  /Pixoprint/assets/img/main/laser-cutting-320.jpg 320w,
+                  /Pixoprint/assets/img/main/laser-cutting-480.jpg 480w,
+                  /Pixoprint/assets/img/main/laser-cutting-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.laser-cutting.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Laser Cutting</h3>
     </a>
-
+    
     <a
       href="/Pixoprint/en/led-neon/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="100"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/led-neon.jpg"
-        srcset="
-          /Pixoprint/assets/img/led-neon-320.webp 320w,
-          /Pixoprint/assets/img/led-neon-640.webp 640w,
-          /Pixoprint/assets/img/led-neon-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="LED Neon"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/led-neon-240.webp 240w,
+                  /Pixoprint/assets/img/main/led-neon-320.webp 320w,
+                  /Pixoprint/assets/img/main/led-neon-480.webp 480w,
+                  /Pixoprint/assets/img/main/led-neon-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/led-neon-640.jpg"
+          srcset="/Pixoprint/assets/img/main/led-neon-240.jpg 240w,
+                  /Pixoprint/assets/img/main/led-neon-320.jpg 320w,
+                  /Pixoprint/assets/img/main/led-neon-480.jpg 480w,
+                  /Pixoprint/assets/img/main/led-neon-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.led-neon.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>LED Neon</h3>
     </a>
-
+    
     <a
       href="/Pixoprint/en/lightbox/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="200"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/lightbox.jpg"
-        srcset="
-          /Pixoprint/assets/img/lightbox-320.webp 320w,
-          /Pixoprint/assets/img/lightbox-640.webp 640w,
-          /Pixoprint/assets/img/lightbox-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="Lightbox Signs"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/lightbox-240.webp 240w,
+                  /Pixoprint/assets/img/main/lightbox-320.webp 320w,
+                  /Pixoprint/assets/img/main/lightbox-480.webp 480w,
+                  /Pixoprint/assets/img/main/lightbox-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/lightbox-640.jpg"
+          srcset="/Pixoprint/assets/img/main/lightbox-240.jpg 240w,
+                  /Pixoprint/assets/img/main/lightbox-320.jpg 320w,
+                  /Pixoprint/assets/img/main/lightbox-480.jpg 480w,
+                  /Pixoprint/assets/img/main/lightbox-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.lightbox.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Lightbox Signs</h3>
     </a>
-
-    <a href="/Pixoprint/en/large-prints/" class="grid-item" data-aos="zoom-in-up">
-      <img
-        src="/Pixoprint/assets/img/prints.jpg"
-        srcset="
-          /Pixoprint/assets/img/prints-320.webp 320w,
-          /Pixoprint/assets/img/prints-640.webp 640w,
-          /Pixoprint/assets/img/prints-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="Large Format Prints"
-        loading="lazy"
-      />
+    
+    <a
+      href="/Pixoprint/en/large-prints/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/prints-240.webp 240w,
+                  /Pixoprint/assets/img/main/prints-320.webp 320w,
+                  /Pixoprint/assets/img/main/prints-480.webp 480w,
+                  /Pixoprint/assets/img/main/prints-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/prints-640.jpg"
+          srcset="/Pixoprint/assets/img/main/prints-240.jpg 240w,
+                  /Pixoprint/assets/img/main/prints-320.jpg 320w,
+                  /Pixoprint/assets/img/main/prints-480.jpg 480w,
+                  /Pixoprint/assets/img/main/prints-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.large-prints.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Large Format Prints</h3>
     </a>
-
+    
     <a
       href="/Pixoprint/en/textile-printing/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="100"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/textile-print.jpg"
-        srcset="
-          /Pixoprint/assets/img/textile-print-320.webp 320w,
-          /Pixoprint/assets/img/textile-print-640.webp 640w,
-          /Pixoprint/assets/img/textile-print-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="Textile Printing"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/textile-print-240.webp 240w,
+                  /Pixoprint/assets/img/main/textile-print-320.webp 320w,
+                  /Pixoprint/assets/img/main/textile-print-480.webp 480w,
+                  /Pixoprint/assets/img/main/textile-print-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/textile-print-640.jpg"
+          srcset="/Pixoprint/assets/img/main/textile-print-240.jpg 240w,
+                  /Pixoprint/assets/img/main/textile-print-320.jpg 320w,
+                  /Pixoprint/assets/img/main/textile-print-480.jpg 480w,
+                  /Pixoprint/assets/img/main/textile-print-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.textile-printing.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Textile Printing</h3>
     </a>
-
+    
     <a
       href="/Pixoprint/en/vehicle-wrap/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="200"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/vehicle-wrap.jpg"
-        srcset="
-          /Pixoprint/assets/img/vehicle-wrap-320.webp 320w,
-          /Pixoprint/assets/img/vehicle-wrap-640.webp 640w,
-          /Pixoprint/assets/img/vehicle-wrap-1024.webp 1024w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-        alt="Vehicle Wrapping"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/vehicle-wrap-240.webp 240w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-320.webp 320w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-480.webp 480w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/vehicle-wrap-640.jpg"
+          srcset="/Pixoprint/assets/img/main/vehicle-wrap-240.jpg 240w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-320.jpg 320w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-480.jpg 480w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.vehicle-wrap.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Vehicle Wrapping</h3>
     </a>
+    
   </div>
-</section>
-
-<!-- CLIENTS -->
-<section id="clients" class="carousel" data-aos="fade-up">
-  <!-- Здесь можно разместить логотипы клиентов или слайдер -->
 </section>
 
 <!-- SOLUTION -->
@@ -347,10 +514,22 @@
     </div>
     <div class="solution-right">
       <ul>
-        <li data-aos="flip-up"><span></span>Graphic design</li>
-        <li data-aos="flip-up" data-aos-delay="100">Full project management</li>
-        <li data-aos="flip-up" data-aos-delay="200">Production &amp; installation</li>
-        <li data-aos="flip-up" data-aos-delay="300">Guarantee &amp; follow-up</li>
+        <li data-aos="fade-up" data-aos-delay="100" style="--delay: 0.3s">
+          <span class="progress-bar"></span>
+          Graphic design
+        </li>
+        <li data-aos="fade-up" data-aos-delay="200" style="--delay: 0.5s">
+          <span class="progress-bar"></span>
+          Full project management
+        </li>
+        <li data-aos="fade-up" data-aos-delay="300" style="--delay: 0.7s">
+          <span class="progress-bar"></span>
+          Production &amp; installation
+        </li>
+        <li data-aos="fade-up" data-aos-delay="400" style="--delay: 1s">
+          <span class="progress-bar"></span>
+          Guarantee &amp; follow-up
+        </li>
       </ul>
     </div>
   </div>
@@ -383,34 +562,30 @@
   </div>
 </section>
 
-<!-- Подключение AOS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 500,
-    once: true,
-    easing: 'ease-out-cubic'
-  })
-</script>
-
-<!-- JS: скрытие фоллбэк картинки при готовности видео -->
+<!-- JS: видео -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const video = document.querySelector('.hero-video')
     const fallback = document.querySelector('.hero-fallback')
 
     if (video && fallback) {
-      video.addEventListener('canplay', function () {
-        fallback.style.display = 'none'
-        video.play()
-      })
+      video
+        .play()
+        .then(() => {
+          fallback.style.display = 'none'
+        })
+        .catch(() => {
+          video.addEventListener('canplay', function () {
+            fallback.style.display = 'none'
+            video.play().catch(() => {})
+          })
+        })
     }
   })
 </script>
+</main>
 
-  </main>
-
-  <footer class="site-footer" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+    <footer class="site-footer" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
   <!-- Контактный блок -->
   <section class="footer-cta">
     <div class="container">
@@ -466,8 +641,8 @@
   </section>
 </footer>
 
-  <div class="backdrop" id="backdrop"></div>
+    <div class="backdrop" id="backdrop"></div>
 
-  <script src="/Pixoprint/assets/js/main.js"></script>
-</body>
+    <script src="/Pixoprint/assets/js/main.js"></script>
+  </body>
 </html>
