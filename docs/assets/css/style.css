@@ -216,7 +216,7 @@ main {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 1rem 0;
+  padding: 1rem 0 4rem;
 }
 /* @media (max-width: 768px) {
   #counters {
