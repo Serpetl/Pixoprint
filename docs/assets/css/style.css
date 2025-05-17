@@ -103,7 +103,7 @@ main {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  min-height: 70vh;
+  min-height: 65vh;
 }
 .hero-bg {
   position: absolute;
