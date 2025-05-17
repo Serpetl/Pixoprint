@@ -13,11 +13,14 @@
     <link rel="icon" href="/Pixoprint/assets/img/favicon.ico" type="image/x-icon" />
 
     <!-- Styles -->
+    <link rel="stylesheet" href="/Pixoprint/assets/css/header.css" />
     <link rel="stylesheet" href="/Pixoprint/assets/css/style.css" />
+    <link rel="stylesheet" href="/Pixoprint/assets/css/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Pixoprint — opasteet &amp; brändätyt tilat | Pixoprint" />
@@ -96,149 +99,416 @@
 
 
     <main id="main" role="main">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<!-- HERO + COUNTERS -->
+<section class="hero-counters">
+  <section class="hero">
+    <div class="hero-bg">
+      <picture>
+        <source
+          media="(max-width: 480px)"
+          srcset="/Pixoprint/assets/img/main/hero-mobile.webp"
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 768px)"
+          srcset="/Pixoprint/assets/img/main/hero-tablet.webp"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 769px)"
+          srcset="/Pixoprint/assets/img/main/hero-desktop.webp"
+          type="image/webp"
+        />
+        <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/main/hero-mobile.jpg" />
+        <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/main/hero-tablet.jpg" />
+        <img
+          src="/Pixoprint/assets/img/main/hero-desktop.jpg"
+          alt="Pixoprint hero background"
+          loading="eager"
+          class="hero-fallback"
+        />
+      </picture>
 
-<section class="hero">
-  <div class="hero-bg">
-    <picture>
-      <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/hero-mobile.jpg" />
-      <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/hero-tablet.jpg" />
-      <img
-        src="/Pixoprint/assets/img/hero-desktop.jpg"
-        alt="Pixoprint hero background"
-        loading="lazy"
-        class="hero-fallback"
-      />
-    </picture>
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="/Pixoprint/assets/video/hero.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="container hero-content">
-    <h1 data-aos="zoom-in-up">Opasteet &amp; brändätyt tilat</h1>
-    <p data-aos="zoom-in-up" data-aos-delay="100">Konseptista asennukseen — kokonaisvaltainen tuotanto</p>
-    <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200"
-      >Pyydä ilmainen tarjous</a
-    >
-  </div>
-  <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
-    <p>Kaikki printtitarvikkeet saman katon alla</p>
-  </div>
+      <video muted loop playsinline class="hero-video" aria-hidden="true">
+        <source src="/Pixoprint/assets/video/hero.mp4" type="video/mp4" />
+        <img
+          src="/Pixoprint/assets/img/main/hero-desktop.jpg"
+          alt="Hero background fallback"
+          class="hero-fallback"
+        />
+      </video>
+    </div>
+
+    <div class="container hero-content" data-aos="zoom-in-up">
+      <h1>Opasteet &amp; brändätyt tilat</h1>
+      <p data-aos="zoom-in-up" data-aos-delay="100">Konseptista asennukseen — kokonaisvaltainen tuotanto</p>
+      <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200">
+        Pyydä ilmainen tarjous
+      </a>
+      <a href="#service-grid" class="scroll-down" aria-label="Scroll to services">↓</a>
+    </div>
+
+    <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
+      <p>Kaikki printtitarvikkeet saman katon alla</p>
+    </div>
+  </section>
+
+  <section id="counters" class="counters" data-aos="fade-up">
+    <div class="counter animated">
+      <div data-aos="flip-left">
+        <span data-count="20">0</span>+
+        <p>Vuosien kokemus</p>
+      </div>
+      <div data-aos="flip-left" data-aos-delay="100">
+        <span data-count="1500">0</span>+
+        <p>Tyytyväiset asiakkaat</p>
+      </div>
+      <div data-aos="flip-left" data-aos-delay="200">
+        <span data-count="850">0</span>+
+        <p>3D-valaistut kyltit</p>
+      </div>
+    </div>
+  </section>
 </section>
 
-<section id="counters" class="counters" data-aos="fade-up">
-  <div class="counter-line">
-    <span>20+ Vuosien kokemus</span> •
-    <span>1500+ Tyytyväiset asiakkaat</span> •
-    <span>850+ 3D-valaistut kyltit</span>
-  </div>
-  <div class="counter animated">
-    <div data-aos="flip-left">
-      <span data-count="20">0</span>+
-      <p>Vuosien kokemus</p>
-    </div>
-    <div data-aos="flip-left" data-aos-delay="100">
-      <span data-count="1500">0</span>+
-      <p>Tyytyväiset asiakkaat</p>
-    </div>
-    <div data-aos="flip-left" data-aos-delay="200">
-      <span data-count="850">0</span>+
-      <p>3D-valaistut kyltit</p>
-    </div>
-  </div>
-</section>
-
+<!-- SERVICE GRID -->
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    <a href="/Pixoprint/fi/wrapping/" class="grid-item" data-aos="zoom-in-up">
-      <img src="/Pixoprint/assets/img/wrap.jpg" alt="Mainosteippaus" />
+     
+    <a
+      href="/Pixoprint/fi/wrapping/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/wrap-240.webp 240w,
+                  /Pixoprint/assets/img/main/wrap-320.webp 320w,
+                  /Pixoprint/assets/img/main/wrap-480.webp 480w,
+                  /Pixoprint/assets/img/main/wrap-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/wrap-640.jpg"
+          srcset="/Pixoprint/assets/img/main/wrap-240.jpg 240w,
+                  /Pixoprint/assets/img/main/wrap-320.jpg 320w,
+                  /Pixoprint/assets/img/main/wrap-480.jpg 480w,
+                  /Pixoprint/assets/img/main/wrap-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.wrapping.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Mainosteippaus</h3>
     </a>
+    
     <a
       href="/Pixoprint/fi/cnc-works/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="100"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/cnc-works.jpg"
-        alt="CNC-työt"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/cnc-works-240.webp 240w,
+                  /Pixoprint/assets/img/main/cnc-works-320.webp 320w,
+                  /Pixoprint/assets/img/main/cnc-works-480.webp 480w,
+                  /Pixoprint/assets/img/main/cnc-works-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/cnc-works-640.jpg"
+          srcset="/Pixoprint/assets/img/main/cnc-works-240.jpg 240w,
+                  /Pixoprint/assets/img/main/cnc-works-320.jpg 320w,
+                  /Pixoprint/assets/img/main/cnc-works-480.jpg 480w,
+                  /Pixoprint/assets/img/main/cnc-works-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.cnc-works.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>CNC-työt</h3>
     </a>
-    <a href="/Pixoprint/fi/design/" class="grid-item" data-aos="zoom-in-up" data-aos-delay="200">
-      <img src="/Pixoprint/assets/img/design.jpg" alt="Suunnittelu" />
+    
+    <a
+      href="/Pixoprint/fi/design/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/design-240.webp 240w,
+                  /Pixoprint/assets/img/main/design-320.webp 320w,
+                  /Pixoprint/assets/img/main/design-480.webp 480w,
+                  /Pixoprint/assets/img/main/design-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/design-640.jpg"
+          srcset="/Pixoprint/assets/img/main/design-240.jpg 240w,
+                  /Pixoprint/assets/img/main/design-320.jpg 320w,
+                  /Pixoprint/assets/img/main/design-480.jpg 480w,
+                  /Pixoprint/assets/img/main/design-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.design.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Suunnittelu</h3>
     </a>
-    <a href="/Pixoprint/fi/laser-cutting/" class="grid-item" data-aos="zoom-in-up">
-      <img
-        src="/Pixoprint/assets/img/laser-cutting.jpg"
-        alt="Laserleikkaus"
-      />
+    
+    <a
+      href="/Pixoprint/fi/laser-cutting/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/laser-cutting-240.webp 240w,
+                  /Pixoprint/assets/img/main/laser-cutting-320.webp 320w,
+                  /Pixoprint/assets/img/main/laser-cutting-480.webp 480w,
+                  /Pixoprint/assets/img/main/laser-cutting-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/laser-cutting-640.jpg"
+          srcset="/Pixoprint/assets/img/main/laser-cutting-240.jpg 240w,
+                  /Pixoprint/assets/img/main/laser-cutting-320.jpg 320w,
+                  /Pixoprint/assets/img/main/laser-cutting-480.jpg 480w,
+                  /Pixoprint/assets/img/main/laser-cutting-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.laser-cutting.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Laserleikkaus</h3>
     </a>
+    
     <a
       href="/Pixoprint/fi/led-neon/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="100"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/led-neon.jpg"
-        alt="LED-Neon"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/led-neon-240.webp 240w,
+                  /Pixoprint/assets/img/main/led-neon-320.webp 320w,
+                  /Pixoprint/assets/img/main/led-neon-480.webp 480w,
+                  /Pixoprint/assets/img/main/led-neon-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/led-neon-640.jpg"
+          srcset="/Pixoprint/assets/img/main/led-neon-240.jpg 240w,
+                  /Pixoprint/assets/img/main/led-neon-320.jpg 320w,
+                  /Pixoprint/assets/img/main/led-neon-480.jpg 480w,
+                  /Pixoprint/assets/img/main/led-neon-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.led-neon.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>LED-Neon</h3>
     </a>
+    
     <a
       href="/Pixoprint/fi/lightbox/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="200"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/lightbox.jpg"
-        alt="Valomainos"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/lightbox-240.webp 240w,
+                  /Pixoprint/assets/img/main/lightbox-320.webp 320w,
+                  /Pixoprint/assets/img/main/lightbox-480.webp 480w,
+                  /Pixoprint/assets/img/main/lightbox-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/lightbox-640.jpg"
+          srcset="/Pixoprint/assets/img/main/lightbox-240.jpg 240w,
+                  /Pixoprint/assets/img/main/lightbox-320.jpg 320w,
+                  /Pixoprint/assets/img/main/lightbox-480.jpg 480w,
+                  /Pixoprint/assets/img/main/lightbox-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.lightbox.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Valomainos</h3>
     </a>
-    <a href="/Pixoprint/fi/large-prints/" class="grid-item" data-aos="zoom-in-up">
-      <img
-        src="/Pixoprint/assets/img/prints.jpg"
-        alt="Tulosteet"
-      />
+    
+    <a
+      href="/Pixoprint/fi/large-prints/"
+      class="grid-item"
+      data-aos="zoom-in-up"
+      
+    >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/prints-240.webp 240w,
+                  /Pixoprint/assets/img/main/prints-320.webp 320w,
+                  /Pixoprint/assets/img/main/prints-480.webp 480w,
+                  /Pixoprint/assets/img/main/prints-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/prints-640.jpg"
+          srcset="/Pixoprint/assets/img/main/prints-240.jpg 240w,
+                  /Pixoprint/assets/img/main/prints-320.jpg 320w,
+                  /Pixoprint/assets/img/main/prints-480.jpg 480w,
+                  /Pixoprint/assets/img/main/prints-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.large-prints.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Tulosteet</h3>
     </a>
+    
     <a
       href="/Pixoprint/fi/textile-printing/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="100"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/textile-print.jpg"
-        alt="Tekstiilipainatus"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/textile-print-240.webp 240w,
+                  /Pixoprint/assets/img/main/textile-print-320.webp 320w,
+                  /Pixoprint/assets/img/main/textile-print-480.webp 480w,
+                  /Pixoprint/assets/img/main/textile-print-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/textile-print-640.jpg"
+          srcset="/Pixoprint/assets/img/main/textile-print-240.jpg 240w,
+                  /Pixoprint/assets/img/main/textile-print-320.jpg 320w,
+                  /Pixoprint/assets/img/main/textile-print-480.jpg 480w,
+                  /Pixoprint/assets/img/main/textile-print-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.textile-printing.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Tekstiilipainatus</h3>
     </a>
+    
     <a
       href="/Pixoprint/fi/vehicle-wrap/"
       class="grid-item"
       data-aos="zoom-in-up"
       data-aos-delay="200"
+      
     >
-      <img
-        src="/Pixoprint/assets/img/vehicle-wrap.jpg"
-        alt="Ajoneuvoteippaus"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/vehicle-wrap-240.webp 240w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-320.webp 320w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-480.webp 480w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="/Pixoprint/assets/img/main/vehicle-wrap-640.jpg"
+          srcset="/Pixoprint/assets/img/main/vehicle-wrap-240.jpg 240w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-320.jpg 320w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-480.jpg 480w,
+                  /Pixoprint/assets/img/main/vehicle-wrap-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="page.vehicle-wrap.title"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      
       <h3>Ajoneuvoteippaus</h3>
     </a>
+    
   </div>
 </section>
 
-<section id="clients" class="carousel" data-aos="fade-up">
-  
-</section>
-
+<!-- SOLUTION -->
 <section class="solution" data-aos="fade-up">
   <div class="container solution-flex">
     <div class="solution-left">
@@ -247,21 +517,28 @@
     </div>
     <div class="solution-right">
       <ul>
-        <li data-aos="flip-up"><span></span>Graafinen suunnittelu</li>
-        <li data-aos="flip-up" data-aos-delay="100">
-          <span></span>Kattava projektinhallinta, lupa
+        <li data-aos="fade-up" data-aos-delay="100" style="--delay: 0.3s">
+          <span class="progress-bar"></span>
+          Graafinen suunnittelu
         </li>
-        <li data-aos="flip-up" data-aos-delay="200">
-          <span></span>Tuotanto, sijoitus
+        <li data-aos="fade-up" data-aos-delay="200" style="--delay: 0.5s">
+          <span class="progress-bar"></span>
+          Kattava projektinhallinta, lupa
         </li>
-        <li data-aos="flip-up" data-aos-delay="300">
-          <span></span>Takuu, seuranta
+        <li data-aos="fade-up" data-aos-delay="300" style="--delay: 0.7s">
+          <span class="progress-bar"></span>
+          Tuotanto, sijoitus
+        </li>
+        <li data-aos="fade-up" data-aos-delay="400" style="--delay: 1s">
+          <span class="progress-bar"></span>
+          Takuu, seuranta
         </li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- CONTACT FORM -->
 <section id="contact" class="contact-form-section" data-aos="zoom-in-up">
   <div class="container">
     <h2>Ota yhteyttä, kysy lisää tai pyydä tarjous!</h2>
@@ -288,24 +565,24 @@
   </div>
 </section>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 500,
-    once: true,
-    easing: 'ease-out-cubic'
-  })
-</script>
+<!-- JS: видео -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const video = document.querySelector('.hero-video')
     const fallback = document.querySelector('.hero-fallback')
 
     if (video && fallback) {
-      video.addEventListener('canplay', function () {
-        fallback.style.display = 'none'
-        video.play()
-      })
+      video
+        .play()
+        .then(() => {
+          fallback.style.display = 'none'
+        })
+        .catch(() => {
+          video.addEventListener('canplay', function () {
+            fallback.style.display = 'none'
+            video.play().catch(() => {})
+          })
+        })
     }
   })
 </script>
@@ -370,5 +647,13 @@
     <div class="backdrop" id="backdrop"></div>
 
     <script src="/Pixoprint/assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      })
+    </script>
   </body>
 </html>
