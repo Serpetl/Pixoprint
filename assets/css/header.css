@@ -1,0 +1,131 @@
+/* === HEADER === */
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--light-gray);
+  padding: 0.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--black);
+}
+.logo img {
+  max-height: 20px;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+  transition: var(--transition-link);
+}
+.main-nav a:last-child {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+.main-nav a:last-child:hover {
+  text-decoration: underline;
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10;
+  background: none;
+  border: none;
+}
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--black);
+  transition: 0.3s ease;
+}
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.mobile-nav {
+  flex-direction: column;
+  background: var(--white);
+  width: clamp(200px, 25vw, 300px);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+  z-index: 10;
+  border: 1px solid var(--light-gray);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.mobile-nav.active {
+  max-height: 500px;
+  opacity: 1;
+}
+.mobile-nav a {
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  text-decoration: none;
+  color: #18191a;
+  display: block;
+}
+.mobile-nav a:last-child {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    margin-left: auto;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .logo img {
+    max-height: 35px;
+    margin: 15px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo img {
+    max-height: 45px;
+    margin: 20px 0;
+  }
+}
+/* LINK HOVERS */
+
+.main-nav a:hover,
+.mobile-nav a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  text-decoration: none;
+}

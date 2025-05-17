@@ -10,14 +10,14 @@ const paths = {
   dest: 'assets/img/'
 }
 
-// Очистка выходной директории
+// Очистка только папки main
 function clean() {
   return del([paths.dest])
 }
 
 // Масштабирование
 function resizeImages() {
-  const sizes = [320, 640, 1024]
+  const sizes = [240, 320, 480, 640]
 
   const tasks = sizes.map((size) => {
     return function resizeTask() {
@@ -34,8 +34,9 @@ function resizeImages() {
           gulp.dest((file) => {
             const dirname = path.dirname(file.path)
             const extname = path.extname(file.path)
-            const basename = path.basename(file.path, extname)
-            file.path = path.join(dirname, `${basename}-${size}${extname}`)
+            const basename = path.basename(file.path, extname).toLowerCase()
+            const ext = extname.toLowerCase()
+            file.path = path.join(dirname, `${basename}-${size}${ext}`)
             return paths.dest
           })
         )

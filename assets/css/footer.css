@@ -1,0 +1,236 @@
+/* === FOOTER BASE === */
+.site-footer {
+  font-family: sans-serif;
+  color: var(--white);
+}
+
+.footer-cta {
+  background-color: var(--dark-bg);
+  padding: 2rem 1rem;
+}
+
+.footer-main {
+  background-color: var(--light-gray);
+  color: var(--black);
+  padding: 2rem 1rem;
+}
+
+.footer-bottom {
+  background-color: var(--light-gray);
+  color: var(--black);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === FOOTER LAYOUT === */
+.footer-cta .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-main-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer-cta-left .logo,
+.footer-contact .logo {
+  max-width: 180px;
+  margin-bottom: 1rem;
+}
+
+.footer-cta-left .phone {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-cta-left .hours,
+.footer-contact .hours,
+.footer-contact .address {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.footer-cta-right {
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.footer-contact {
+  max-width: 400px;
+  text-align: left;
+}
+
+.footer-contact .label {
+  /* font-weight: 600; */
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact p {
+  margin: 0.25rem 0;
+}
+
+/* === FOOTER CONTACT LINKS === */
+.footer-contact a,
+.footer-cta .phone a,
+.footer-contact a[href^='mailto'],
+.footer-contact a[href^='tel'],
+.footer-contact a[href*='google.com/maps'] {
+  display: inline-block;
+  margin-top: 0.25rem;
+  text-decoration: none;
+  color: var(--black);
+  transition: var(--transition-link);
+}
+
+.footer-contact a[href^='tel'] {
+  font-weight: bold;
+}
+
+.footer-cta-left .phone a {
+  color: var(--white);
+}
+
+.footer-contact a:hover,
+.footer-cta .phone a:hover,
+.footer-contact a[href^='mailto']:hover,
+.footer-contact a[href^='tel']:hover,
+.footer-contact a[href*='google.com/maps']:hover {
+  color: var(--primary-color);
+  transform: var(--link-hover-scale);
+}
+
+.footer-contact i.fa-map-marker-alt {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* === SOCIAL ICONS === */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  font-size: 1.4rem;
+  color: inherit;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    filter 0.4s ease;
+}
+
+.social-icons i {
+  font-size: 1.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    filter 0.4s ease;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2);
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.social-icons a:hover i.fa-facebook-f {
+  color: #3b5998;
+}
+.social-icons a:hover i.fa-instagram {
+  color: #e1306c;
+}
+.social-icons a:hover i.fa-whatsapp {
+  color: #25d366;
+}
+.social-icons a:hover i.fa-youtube {
+  color: #ff0000;
+}
+.social-icons a:hover i.fa-tiktok {
+  color: #dc1a8f;
+}
+.social-icons a:hover i.fa-linkedin-in {
+  color: #0077b5;
+}
+
+/* === FOOTER MEDIA QUERIES === */
+@media (min-width: 375px) {
+  .social-icons a,
+  .social-icons i {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .social-icons a,
+  .social-icons i {
+    font-size: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-main-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-main-flex > * {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-cta-left,
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-contact .social-icons {
+    justify-content: center;
+  }
+
+  .footer-contact a {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-contact .hours,
+  .footer-contact .address {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .social-icons a,
+  .social-icons i {
+    font-size: 1.7rem;
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}

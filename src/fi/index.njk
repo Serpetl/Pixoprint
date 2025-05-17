@@ -5,149 +5,133 @@ locale: fi
 title: meta.title
 ---
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<!-- HERO + COUNTERS -->
+<section class="hero-counters">
+  <section class="hero">
+    <div class="hero-bg">
+      <picture>
+        <source
+          media="(max-width: 480px)"
+          srcset="{{ baseurl }}/assets/img/main/hero-mobile.webp"
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 768px)"
+          srcset="{{ baseurl }}/assets/img/main/hero-tablet.webp"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 769px)"
+          srcset="{{ baseurl }}/assets/img/main/hero-desktop.webp"
+          type="image/webp"
+        />
+        <source media="(max-width: 480px)" srcset="{{ baseurl }}/assets/img/main/hero-mobile.jpg" />
+        <source media="(max-width: 768px)" srcset="{{ baseurl }}/assets/img/main/hero-tablet.jpg" />
+        <img
+          src="{{ baseurl }}/assets/img/main/hero-desktop.jpg"
+          alt="Pixoprint hero background"
+          loading="eager"
+          class="hero-fallback"
+        />
+      </picture>
 
-<section class="hero">
-  <div class="hero-bg">
-    <picture>
-      <source media="(max-width: 480px)" srcset="{{ baseurl }}/assets/img/hero-mobile.jpg" />
-      <source media="(max-width: 768px)" srcset="{{ baseurl }}/assets/img/hero-tablet.jpg" />
-      <img
-        src="{{ baseurl }}/assets/img/hero-desktop.jpg"
-        alt="Pixoprint hero background"
-        loading="lazy"
-        class="hero-fallback"
-      />
-    </picture>
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="{{ baseurl }}/assets/video/hero.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="container hero-content">
-    <h1 data-aos="zoom-in-up">{{ "hero.title" | t(locale) }}</h1>
-    <p data-aos="zoom-in-up" data-aos-delay="100">{{ "hero.subtitle" | t(locale) }}</p>
-    <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200"
-      >{{ "hero.cta" | t(locale) }}</a
-    >
-  </div>
-  <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
-    <p>{{ "hero.ribbon" | t(locale) }}</p>
-  </div>
+      <video muted loop playsinline class="hero-video" aria-hidden="true">
+        <source src="{{ baseurl }}/assets/video/hero.mp4" type="video/mp4" />
+        <img
+          src="{{ baseurl }}/assets/img/main/hero-desktop.jpg"
+          alt="Hero background fallback"
+          class="hero-fallback"
+        />
+      </video>
+    </div>
+
+    <div class="container hero-content" data-aos="zoom-in-up">
+      <h1>{{ "hero.title" | t(locale) }}</h1>
+      <p data-aos="zoom-in-up" data-aos-delay="100">{{ "hero.subtitle" | t(locale) }}</p>
+      <a href="#contact" class="btn" data-aos="flip-up" data-aos-delay="200">
+        {{ "hero.cta" | t(locale) }}
+      </a>
+      <a href="#service-grid" class="scroll-down" aria-label="Scroll to services">↓</a>
+    </div>
+
+    <div class="hero-ribbon" data-aos="zoom-in" data-aos-delay="300">
+      <p>{{ "hero.ribbon" | t(locale) }}</p>
+    </div>
+  </section>
+
+  <section id="counters" class="counters" data-aos="fade-up">
+    <div class="counter animated">
+      <div data-aos="flip-left">
+        <span data-count="20">0</span>+
+        <p>{{ "counter.years" | t(locale) }}</p>
+      </div>
+      <div data-aos="flip-left" data-aos-delay="100">
+        <span data-count="1500">0</span>+
+        <p>{{ "counter.clients" | t(locale) }}</p>
+      </div>
+      <div data-aos="flip-left" data-aos-delay="200">
+        <span data-count="850">0</span>+
+        <p>{{ "counter.signs" | t(locale) }}</p>
+      </div>
+    </div>
+  </section>
 </section>
 
-<section id="counters" class="counters" data-aos="fade-up">
-  <div class="counter-line">
-    <span>20+ {{ "counter.years" | t(locale) }}</span> •
-    <span>1500+ {{ "counter.clients" | t(locale) }}</span> •
-    <span>850+ {{ "counter.signs" | t(locale) }}</span>
-  </div>
-  <div class="counter animated">
-    <div data-aos="flip-left">
-      <span data-count="20">0</span>+
-      <p>{{ "counter.years" | t(locale) }}</p>
-    </div>
-    <div data-aos="flip-left" data-aos-delay="100">
-      <span data-count="1500">0</span>+
-      <p>{{ "counter.clients" | t(locale) }}</p>
-    </div>
-    <div data-aos="flip-left" data-aos-delay="200">
-      <span data-count="850">0</span>+
-      <p>{{ "counter.signs" | t(locale) }}</p>
-    </div>
-  </div>
-</section>
-
+<!-- SERVICE GRID -->
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    <a href="{{ baseurl }}/fi/wrapping/" class="grid-item" data-aos="zoom-in-up">
-      <img src="{{ baseurl }}/assets/img/wrap.jpg" alt="{{ 'page.wrapping.title' | t(locale) }}" />
-      <h3>{{ "page.wrapping.title" | t(locale) }}</h3>
-    </a>
+    {% set services = [ { slug: 'wrapping', name: 'wrap' }, { slug: 'cnc-works', name: 'cnc-works',
+    delay: 100 }, { slug: 'design', name: 'design', delay: 200 }, { slug: 'laser-cutting', name:
+    'laser-cutting' }, { slug: 'led-neon', name: 'led-neon', delay: 100 }, { slug: 'lightbox', name:
+    'lightbox', delay: 200 }, { slug: 'large-prints', name: 'prints' }, { slug: 'textile-printing',
+    name: 'textile-print', delay: 100 }, { slug: 'vehicle-wrap', name: 'vehicle-wrap', delay: 200 }
+    ] %} {% for service in services %}
     <a
-      href="{{ baseurl }}/fi/cnc-works/"
+      href="{{ baseurl }}/fi/{{ service.slug }}/"
       class="grid-item"
       data-aos="zoom-in-up"
-      data-aos-delay="100"
+      {%
+      if
+      service.delay
+      %}data-aos-delay="{{ service.delay }}"
+      {%
+      endif
+      %}
     >
-      <img
-        src="{{ baseurl }}/assets/img/cnc-works.jpg"
-        alt="{{ 'page.cnc-works.title' | t(locale) }}"
-      />
-      <h3>{{ "page.cnc-works.title" | t(locale) }}</h3>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="{{ baseurl }}/assets/img/main/{{ service.name }}-240.webp 240w,
+                  {{ baseurl }}/assets/img/main/{{ service.name }}-320.webp 320w,
+                  {{ baseurl }}/assets/img/main/{{ service.name }}-480.webp 480w,
+                  {{ baseurl }}/assets/img/main/{{ service.name }}-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+        />
+        <img
+          src="{{ baseurl }}/assets/img/main/{{ service.name }}-640.jpg"
+          srcset="{{ baseurl }}/assets/img/main/{{ service.name }}-240.jpg 240w,
+                  {{ baseurl }}/assets/img/main/{{ service.name }}-320.jpg 320w,
+                  {{ baseurl }}/assets/img/main/{{ service.name }}-480.jpg 480w,
+                  {{ baseurl }}/assets/img/main/{{ service.name }}-640.jpg 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 899px) calc(50vw - 0.75rem),
+                 calc((100vw - 3rem) / 3)"
+          alt="{{ 'page.' + service.slug + '.title' | t(locale) }}"
+          loading="lazy"
+          width="640"
+          height="auto"
+        />
+      </picture>
+      {% set key = 'page.' + service.slug + '.title' %}
+      <h3>{{ key | t(locale) }}</h3>
     </a>
-    <a href="{{ baseurl }}/fi/design/" class="grid-item" data-aos="zoom-in-up" data-aos-delay="200">
-      <img src="{{ baseurl }}/assets/img/design.jpg" alt="{{ 'page.design.title' | t(locale) }}" />
-      <h3>{{ "page.design.title" | t(locale) }}</h3>
-    </a>
-    <a href="{{ baseurl }}/fi/laser-cutting/" class="grid-item" data-aos="zoom-in-up">
-      <img
-        src="{{ baseurl }}/assets/img/laser-cutting.jpg"
-        alt="{{ 'page.laser-cutting.title' | t(locale) }}"
-      />
-      <h3>{{ "page.laser-cutting.title" | t(locale) }}</h3>
-    </a>
-    <a
-      href="{{ baseurl }}/fi/led-neon/"
-      class="grid-item"
-      data-aos="zoom-in-up"
-      data-aos-delay="100"
-    >
-      <img
-        src="{{ baseurl }}/assets/img/led-neon.jpg"
-        alt="{{ 'page.led-neon.title' | t(locale) }}"
-      />
-      <h3>{{ "page.led-neon.title" | t(locale) }}</h3>
-    </a>
-    <a
-      href="{{ baseurl }}/fi/lightbox/"
-      class="grid-item"
-      data-aos="zoom-in-up"
-      data-aos-delay="200"
-    >
-      <img
-        src="{{ baseurl }}/assets/img/lightbox.jpg"
-        alt="{{ 'page.lightbox.title' | t(locale) }}"
-      />
-      <h3>{{ "page.lightbox.title" | t(locale) }}</h3>
-    </a>
-    <a href="{{ baseurl }}/fi/large-prints/" class="grid-item" data-aos="zoom-in-up">
-      <img
-        src="{{ baseurl }}/assets/img/prints.jpg"
-        alt="{{ 'page.large-prints.title' | t(locale) }}"
-      />
-      <h3>{{ "page.large-prints.title" | t(locale) }}</h3>
-    </a>
-    <a
-      href="{{ baseurl }}/fi/textile-printing/"
-      class="grid-item"
-      data-aos="zoom-in-up"
-      data-aos-delay="100"
-    >
-      <img
-        src="{{ baseurl }}/assets/img/textile-print.jpg"
-        alt="{{ 'page.textile-printing.title' | t(locale) }}"
-      />
-      <h3>{{ "page.textile-printing.title" | t(locale) }}</h3>
-    </a>
-    <a
-      href="{{ baseurl }}/fi/vehicle-wrap/"
-      class="grid-item"
-      data-aos="zoom-in-up"
-      data-aos-delay="200"
-    >
-      <img
-        src="{{ baseurl }}/assets/img/vehicle-wrap.jpg"
-        alt="{{ 'page.vehicle-wrap.title' | t(locale) }}"
-      />
-      <h3>{{ "page.vehicle-wrap.title" | t(locale) }}</h3>
-    </a>
+    {% endfor %}
   </div>
 </section>
 
-<section id="clients" class="carousel" data-aos="fade-up">
-  {# insert <img /> logos here — handle slider with JS or CSS #}
-</section>
-
+<!-- SOLUTION -->
 <section class="solution" data-aos="fade-up">
   <div class="container solution-flex">
     <div class="solution-left">
@@ -156,21 +140,28 @@ title: meta.title
     </div>
     <div class="solution-right">
       <ul>
-        <li data-aos="flip-up"><span></span>{{ "contactBlock.list.1" | t(locale) }}</li>
-        <li data-aos="flip-up" data-aos-delay="100">
-          <span></span>{{ "contactBlock.list.2" | t(locale) }}
+        <li data-aos="fade-up" data-aos-delay="100" style="--delay: 0.3s">
+          <span class="progress-bar"></span>
+          {{ "contactBlock.list.1" | t(locale) }}
         </li>
-        <li data-aos="flip-up" data-aos-delay="200">
-          <span></span>{{ "contactBlock.list.3" | t(locale) }}
+        <li data-aos="fade-up" data-aos-delay="200" style="--delay: 0.5s">
+          <span class="progress-bar"></span>
+          {{ "contactBlock.list.2" | t(locale) }}
         </li>
-        <li data-aos="flip-up" data-aos-delay="300">
-          <span></span>{{ "contactBlock.list.4" | t(locale) }}
+        <li data-aos="fade-up" data-aos-delay="300" style="--delay: 0.7s">
+          <span class="progress-bar"></span>
+          {{ "contactBlock.list.3" | t(locale) }}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="400" style="--delay: 1s">
+          <span class="progress-bar"></span>
+          {{ "contactBlock.list.4" | t(locale) }}
         </li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- CONTACT FORM -->
 <section id="contact" class="contact-form-section" data-aos="zoom-in-up">
   <div class="container">
     <h2>{{ "contactBlock.formTitle" | t(locale) }}</h2>
@@ -197,24 +188,24 @@ title: meta.title
   </div>
 </section>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 500,
-    once: true,
-    easing: 'ease-out-cubic'
-  })
-</script>
+<!-- JS: видео -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const video = document.querySelector('.hero-video')
     const fallback = document.querySelector('.hero-fallback')
 
     if (video && fallback) {
-      video.addEventListener('canplay', function () {
-        fallback.style.display = 'none'
-        video.play()
-      })
+      video
+        .play()
+        .then(() => {
+          fallback.style.display = 'none'
+        })
+        .catch(() => {
+          video.addEventListener('canplay', function () {
+            fallback.style.display = 'none'
+            video.play().catch(() => {})
+          })
+        })
     }
   })
 </script>
