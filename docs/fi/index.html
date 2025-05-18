@@ -9,13 +9,22 @@
     <title>Pixoprint — opasteet &amp; brändätyt tilat | Pixoprint</title>
     <link rel="canonical" href="https://serpetl.github.io/Pixoprint/" />
 
-<!-- Favicon -->
-<link rel="icon" href="/Pixoprint/assets/img/logo/favicon.ico" type="image/x-icon" />
-<link rel="icon" type="image/png" sizes="32x32" href="/Pixoprint/assets/img/logo/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/Pixoprint/assets/img/logo/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/Pixoprint/assets/img/logo/apple-touch-icon.png">
-<link rel="manifest" href="/Pixoprint/assets/img/logo/site.webmanifest">
-
+    <!-- Favicon -->
+    <link rel="icon" href="/Pixoprint/assets/img/logo/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Pixoprint/assets/img/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Pixoprint/assets/img/logo/favicon-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="/Pixoprint/assets/img/logo/apple-touch-icon.png" />
+    <link rel="manifest" href="/Pixoprint/assets/img/logo/site.webmanifest" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="/Pixoprint/assets/css/header.css" />
@@ -94,40 +103,48 @@
 <!-- HERO + COUNTERS -->
 <section class="hero-counters">
   <section class="hero">
+    <!-- HERO background: static picture + video -->
     <div class="hero-bg">
       <picture>
+        <!-- WEBP -->
         <source
+          type="image/webp"
           media="(max-width: 480px)"
-          srcset="/Pixoprint/assets/img/main/hero-mobile.webp"
-          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/hero-480.webp"
         />
         <source
+          type="image/webp"
           media="(max-width: 768px)"
-          srcset="/Pixoprint/assets/img/main/hero-tablet.webp"
-          type="image/webp"
+          srcset="/Pixoprint/assets/img/main/hero-640.webp"
         />
         <source
-          media="(min-width: 769px)"
-          srcset="/Pixoprint/assets/img/main/hero-desktop.webp"
           type="image/webp"
+          media="(min-width: 769px)"
+          srcset="/Pixoprint/assets/img/main/hero-640.webp"
         />
-        <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/main/hero-mobile.jpg" />
-        <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/main/hero-tablet.jpg" />
+
+        <!-- JPEG fallback -->
+        <source media="(max-width: 480px)" srcset="/Pixoprint/assets/img/main/hero-480.jpg" />
+        <source media="(max-width: 768px)" srcset="/Pixoprint/assets/img/main/hero-640.jpg" />
+
         <img
-          src="/Pixoprint/assets/img/main/hero-desktop.jpg"
+          src="/Pixoprint/assets/img/main/hero-640.jpg"
           alt="Pixoprint hero background"
           loading="eager"
           class="hero-fallback"
         />
       </picture>
 
-      <video muted loop playsinline class="hero-video" aria-hidden="true">
+      <video
+        muted
+        loop
+        playsinline
+        preload="auto"
+        class="hero-video"
+        aria-hidden="true"
+        poster="/Pixoprint/assets/img/main/hero-640.jpg"
+      >
         <source src="/Pixoprint/assets/video/hero.mp4" type="video/mp4" />
-        <img
-          src="/Pixoprint/assets/img/main/hero-desktop.jpg"
-          alt="Hero background fallback"
-          class="hero-fallback"
-        />
       </video>
     </div>
 
@@ -557,25 +574,45 @@
   </div>
 </section>
 
-<!-- JS: видео -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', () => {
     const video = document.querySelector('.hero-video')
-    const fallback = document.querySelector('.hero-fallback')
+    if (!video) return
 
-    if (video && fallback) {
-      video
-        .play()
-        .then(() => {
-          fallback.style.display = 'none'
-        })
-        .catch(() => {
-          video.addEventListener('canplay', function () {
-            fallback.style.display = 'none'
-            video.play().catch(() => {})
-          })
-        })
+    const reveal = () => video.classList.add('ready')
+
+    video.addEventListener('loadeddata', reveal)
+
+    const tryPlay = video.play()
+    if (tryPlay !== undefined) {
+      tryPlay.then(reveal).catch(() => {})
     }
+  })
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let alreadyTriggered = false
+    const target = document.querySelector('#service-grid')
+
+    if (!target) return
+
+    const scrollToTarget = () => {
+      alreadyTriggered = true
+      target.scrollIntoView({ behavior: 'smooth' })
+
+      window.removeEventListener('wheel', onFirstScroll, { passive: false })
+    }
+
+    const onFirstScroll = (event) => {
+      if (alreadyTriggered) return
+
+      if (event.deltaY > 0) {
+        event.preventDefault()
+        scrollToTarget()
+      }
+    }
+    window.addEventListener('wheel', onFirstScroll, { passive: false })
   })
 </script>
 </main>
@@ -644,7 +681,7 @@
       AOS.init({
         duration: 800,
         once: true,
-        offset: 10
+        offset: 100
       })
     </script>
   </body>

@@ -1,11 +1,11 @@
 // main.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Счётчики
+  // Counters
   document.querySelectorAll('[data-count]').forEach((el) => {
     const end = +el.dataset.count
     const fps = 30
-    const dur = 1500
+    const dur = 3000
     let n = 0
     const step = end / (dur / (1000 / fps))
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tick()
   })
 
-  // Бургер-меню
+  //Burger
   const burger = document.getElementById('burger')
   const mobileNav = document.getElementById('mobileNav')
   const backdrop = document.getElementById('backdrop')
@@ -42,15 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     burger.addEventListener('click', toggleMenu)
 
-    // Закрытие при клике на ссылку
     mobileNav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeMenu)
     })
 
-    // Закрытие при клике вне
     backdrop.addEventListener('click', closeMenu)
 
-    // Закрытие при нажатии Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
         closeMenu()

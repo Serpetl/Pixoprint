@@ -117,7 +117,7 @@
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -167,6 +167,9 @@
 
 /* === FOOTER MEDIA QUERIES === */
 @media (min-width: 375px) {
+  .social-icons {
+    gap: 2rem;
+  }
   .social-icons a,
   .social-icons i {
     font-size: 1.5rem;
