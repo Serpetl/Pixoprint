@@ -88,9 +88,22 @@ main {
   padding: 0 1rem;
 }
 
+@media (min-width: 400px) {
+  .scroll-down {
+    bottom: 7rem;
+  }
+}
+@media (min-width: 900px) {
+  .scroll-down {
+    bottom: 11rem;
+  }
+}
 @media (min-width: 1200px) {
   .container {
     padding: 0 2rem;
+  }
+  .scroll-down {
+    bottom: 7rem;
   }
 }
 
@@ -174,6 +187,7 @@ main {
   min-height: 0;
   padding-block-start: clamp(4rem, 8vh, 8rem);
   padding-block-end: 0;
+  flex: 1 1 auto;
 }
 .hero-ribbon {
   position: absolute;
@@ -215,6 +229,12 @@ main {
   margin-bottom: calc(100px + 1rem);
 }
 
+@media (min-width: 400px) {
+  .btn {
+    margin-bottom: calc(150px + 1rem);
+  }
+}
+
 @media (min-width: 900px) {
   .hero-ribbon {
     height: 150px;
@@ -223,16 +243,18 @@ main {
     font-size: 27px;
   }
   .btn {
-    margin-bottom: calc(150px + 1rem);
+    margin-bottom: calc(150px + 5rem);
   }
 }
 @media (min-width: 1200px) {
   .hero {
     padding: 4rem 1rem;
   }
-
   .hero-ribbon p {
     font-size: 34px;
+  }
+  .btn {
+    margin-bottom: calc(150px + 1rem);
   }
 }
 
