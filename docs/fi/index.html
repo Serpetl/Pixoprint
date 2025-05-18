@@ -592,27 +592,44 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    let alreadyTriggered = false
     const target = document.querySelector('#service-grid')
 
-    if (!target) return
-
-    const scrollToTarget = () => {
-      alreadyTriggered = true
+    let triggered = false
+    let startY = 0
+    const THRESHOLD = 40
+    const scrollToBlock = () => {
+      if (triggered) return
+      triggered = true
       target.scrollIntoView({ behavior: 'smooth' })
 
-      window.removeEventListener('wheel', onFirstScroll, { passive: false })
+      window.removeEventListener('wheel', onWheel, { passive: false })
+      window.removeEventListener('touchstart', onTouchStart, { passive: true })
+      window.removeEventListener('touchmove', onTouchMove, { passive: false })
     }
 
-    const onFirstScroll = (event) => {
-      if (alreadyTriggered) return
-
-      if (event.deltaY > 0) {
-        event.preventDefault()
-        scrollToTarget()
+    const onWheel = (e) => {
+      if (e.deltaY > 0) {
+        e.preventDefault()
+        scrollToBlock()
       }
     }
-    window.addEventListener('wheel', onFirstScroll, { passive: false })
+
+    const onTouchStart = (e) => {
+      startY = e.touches[0].clientY
+    }
+
+    const onTouchMove = (e) => {
+      const currentY = e.touches[0].clientY
+      const delta = startY - currentY
+      if (delta > THRESHOLD) {
+        e.preventDefault()
+        scrollToBlock()
+      }
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: false })
+    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchmove', onTouchMove, { passive: false })
   })
 </script>
 </main>
