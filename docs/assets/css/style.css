@@ -33,7 +33,7 @@ html {
   bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 3rem;
@@ -95,6 +95,7 @@ main {
 }
 @media (min-width: 900px) {
   .scroll-down {
+    display: flex;
     bottom: 11rem;
   }
 }
@@ -273,7 +274,7 @@ main {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0;
 }
 
 .counter span {
