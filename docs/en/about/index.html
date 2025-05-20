@@ -30,6 +30,11 @@
     <link rel="stylesheet" href="/Pixoprint/assets/css/header.css" />
     <link rel="stylesheet" href="/Pixoprint/assets/css/style.css" />
     <link rel="stylesheet" href="/Pixoprint/assets/css/footer.css" />
+    <!-- Page-specific stylesheet -->
+    
+    <link rel="stylesheet" href="/Pixoprint/assets/css/about.css" />
+    
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -50,7 +55,7 @@
     <meta name="twitter:image" content="/Pixoprint/assets/img/og-image.jpg" />
   </head>
 
-  <body>
+  <body class="page-about">
     <header class="site-header">
   <div class="container nav-wrapper">
     <!-- Логотип -->
@@ -99,11 +104,137 @@
 </header>
 
 
-    <main id="main" role="main">
-<section class="page">
+    <main id="main" role="main" class="page-about">
+<!-- Intro -->
+<section class="about-hero">
   <div class="container">
     <h1>About Us</h1>
-    <p>Experts in visual marketing and signage with over 20 years of experience.</p>
+    <p class="subtitle">Your partner in visual marketing and modern printing solutions.</p>
+    <p class="lead">Pixoprint is a modern advertising and production company offering comprehensive solutions from design to installation and service. We specialize in illuminated signage, branding, textile printing, laser cutting, CNC routing, and engraving. Our goal is to create high-quality and affordable solutions that exceed client expectations.</p>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="about-story" aria-labelledby="our-story-heading">
+  <div class="container">
+    <h2 id="our-story-heading" class="section-heading" data-aos="fade-up">
+      Our Story
+    </h2>
+    <div class="two-col">
+      <div class="image" data-aos="fade-right">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/Pixoprint/assets/img/about/story-320.webp 320w,
+                    /Pixoprint/assets/img/about/story-480.webp 480w,
+                    /Pixoprint/assets/img/about/story-640.webp 640w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 600px"
+          />
+          <img
+            src="/Pixoprint/assets/img/about/story-640.jpg"
+            srcset="/Pixoprint/assets/img/about/story-320.jpg 320w,
+                    /Pixoprint/assets/img/about/story-480.jpg 480w,
+                    /Pixoprint/assets/img/about/story-640.jpg 640w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 600px"
+            alt="Pixoprint team at work"
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="auto"
+          />
+        </picture>
+      </div>
+      <div class="text" data-aos="fade-left">
+        <p>Since our founding, Pixoprint has grown from a small print studio to a full-scale visual marketing partner. Our journey is built on a passion for creativity, attention to detail, and a drive to help clients stand out with strong, effective visual communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values -->
+<section class="about-values" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-heading">Our Values</h2>
+    <ul class="icon-list">
+       
+      <li data-aos="zoom-in-up" data-aos-delay="0">
+        <i
+          class="fas fa-lightbulb"
+        ></i>
+        Creative thinking in every solution we offer
+      </li>
+
+      
+      <li data-aos="zoom-in-up" data-aos-delay="100">
+        <i
+          class="fas fa-users"
+        ></i>
+        Close collaboration with our clients
+      </li>
+
+      
+      <li data-aos="zoom-in-up" data-aos-delay="200">
+        <i
+          class="fas fa-bolt"
+        ></i>
+        Efficient and transparent processes
+      </li>
+
+      
+      <li data-aos="zoom-in-up" data-aos-delay="300">
+        <i
+          class="fas fa-check-circle"
+        ></i>
+        High quality and reliability in everything we do
+      </li>
+
+      
+    </ul>
+  </div>
+</section>
+
+<!-- Meet Our Team -->
+<section class="about-team" aria-labelledby="meet-our-team-heading">
+  <div class="container">
+    <h2 id="meet-our-team-heading" class="section-heading" data-aos="fade-up">
+      Meet Our Team
+    </h2>
+    <div class="two-col reverse-on-desktop">
+      <div class="image team-photo" data-aos="fade-left">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/Pixoprint/assets/img/about/team-320.webp 320w,
+                    /Pixoprint/assets/img/about/team-480.webp 480w,
+                    /Pixoprint/assets/img/about/team-640.webp 640w"
+            sizes="(max-width: 767px) 100vw, 960px"
+          />
+          <img
+            src="/Pixoprint/assets/img/about/team-640.jpg"
+            srcset="/Pixoprint/assets/img/about/team-320.jpg 320w,
+                    /Pixoprint/assets/img/about/team-480.jpg 480w,
+                    /Pixoprint/assets/img/about/team-640.jpg 640w"
+            sizes="(max-width: 767px) 100vw, 960px"
+            alt="Pixoprint team"
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="auto"
+          />
+        </picture>
+      </div>
+      <div class="text" data-aos="fade-right">
+        <p>Behind every Pixoprint project is a team of skilled professionals — designers, fabricators, and installers — who work together to bring ideas to life with precision and passion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="about-cta">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Ready to discuss your project or need advice? Reach out via the contact page or phone — we look forward to working together!</p>
   </div>
 </section>
 </main>

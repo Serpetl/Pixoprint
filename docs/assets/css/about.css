@@ -1,0 +1,212 @@
+/* === Только на странице About === */
+body.page-about {
+  background-color: #fff;
+}
+
+.container {
+  padding: 1rem 2rem;
+}
+
+/* === Заголовки и текст === */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+/* === Изображения и контейнеры === */
+.image,
+.team-photo {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.image img,
+.team-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image img:hover,
+.team-photo img:hover {
+  transform: scale(1.02);
+}
+
+.two-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* Зеркальное расположение в Meet Our Team */
+.two-col.reverse {
+  flex-direction: column-reverse;
+}
+
+/* === Значения компании === */
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  padding: 0;
+  margin: 2rem auto 0;
+  list-style: none;
+  max-width: 900px;
+}
+
+.icon-list li {
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  transition: transform 0.3s ease;
+}
+
+.icon-list li:hover {
+  transform: translateY(-5px);
+}
+
+.icon-list i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #de3a68; /* Розовый цвет как в логотипе */
+  transition: color 0.3s ease;
+}
+
+.icon-list li:hover i {
+  color: #c22f54;
+}
+
+/* === Медиа-запросы === */
+
+@media (min-width: 400px) {
+  .section-heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .two-col {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .two-col.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .icon-list li {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 1rem 3rem;
+  }
+
+  .icon-list li {
+    flex: 1 1 calc(33.33% - 1rem);
+  }
+
+  .section-heading {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .icon-list li {
+    flex: 1 1 calc(25% - 1rem);
+  }
+
+  .two-col {
+    padding: 0 3rem;
+  }
+}
+
+/* === Секции с контентом === */
+section + section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.about-hero {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-values {
+  padding: 2.5rem 0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-team {
+  padding: 2.5rem 0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-cta {
+  background-color: #ecf0f1;
+  padding: 2.5rem 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-cta h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.about-cta p {
+  font-size: 1rem;
+  color: #34495e;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Простые keyframes для плавности === */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
