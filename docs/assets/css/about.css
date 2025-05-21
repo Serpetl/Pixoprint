@@ -192,22 +192,6 @@ section + section {
   }
 }
 
-@media (min-width: 900px) {
-  .about-hero,
-  .about-values,
-  .about-team,
-  .about-cta {
-    padding: 2.5rem 0;
-  }
-  .two-col {
-    gap: 3rem;
-    margin-top: 2rem;
-  }
-  .icon-list {
-    gap: 1.5rem;
-  }
-}
-
 @media (min-width: 600px) {
   .icon-list {
     display: grid;
@@ -219,24 +203,38 @@ section + section {
     margin-bottom: 0;
   }
 }
+
 @media (min-width: 900px) {
+  .about-hero,
+  .about-values,
+  .about-team,
+  .about-cta {
+    padding: 5em 0;
+  }
+  .two-col {
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .icon-list {
+    gap: 1.5rem;
+  }
   .icon-list {
     max-width: 900px;
     grid-template-columns: 1fr 1fr;
     gap: 1.7rem 3rem;
   }
-}
 
-.icon-list i {
-  font-size: 1.5rem;
-  margin-right: 10px;
-  color: #de3a68;
-  transition: color 0.3s;
-  flex-shrink: 0;
-}
-.icon-list li:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-.icon-list li:hover i {
-  color: #c22f54;
+  .icon-list i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #de3a68;
+    transition: color 0.3s;
+    flex-shrink: 0;
+  }
+  .icon-list li:hover {
+    transform: translateY(-3px) scale(1.03);
+  }
+  .icon-list li:hover i {
+    color: #c22f54;
+  }
 }
