@@ -1,13 +1,14 @@
-/* === Только на странице About === */
+/* === About === */
 body.page-about {
   background-color: #fff;
 }
 
 .container {
-  padding: 1rem 2rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* === Заголовки и текст === */
 .section-heading {
   font-size: 1.5rem;
   font-weight: 700;
@@ -22,7 +23,6 @@ body.page-about {
   color: #34495e;
 }
 
-/* === Изображения и контейнеры === */
 .image,
 .team-photo {
   width: 100%;
@@ -53,12 +53,10 @@ body.page-about {
   padding: 0 1rem;
 }
 
-/* Зеркальное расположение в Meet Our Team */
 .two-col.reverse {
   flex-direction: column-reverse;
 }
 
-/* === Значения компании === */
 .icon-list {
   display: flex;
   flex-wrap: wrap;
@@ -87,15 +85,13 @@ body.page-about {
 .icon-list i {
   font-size: 1.5rem;
   margin-right: 10px;
-  color: #de3a68; /* Розовый цвет как в логотипе */
+  color: #de3a68;
   transition: color 0.3s ease;
 }
 
 .icon-list li:hover i {
   color: #c22f54;
 }
-
-/* === Медиа-запросы === */
 
 @media (min-width: 400px) {
   .section-heading {
@@ -143,10 +139,8 @@ body.page-about {
   }
 }
 
-/* === Секции с контентом === */
 section + section {
-  margin-top: 3rem;
-  padding-top: 2rem;
+  margin-top: 1rem;
   position: relative;
 }
 
@@ -158,7 +152,7 @@ section + section {
 }
 
 .about-values {
-  padding: 2.5rem 0;
+  padding: 2.5rem 1rem;
   animation: fadeInUp 1s ease-in-out;
 }
 
@@ -188,7 +182,6 @@ section + section {
   margin: 0 auto;
 }
 
-/* === Простые keyframes для плавности === */
 @keyframes fadeIn {
   0% {
     opacity: 0;
