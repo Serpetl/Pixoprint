@@ -1,7 +1,15 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
 body.page-about {
   background-color: #fff;
 }
-
+img {
+  max-width: 100%;
+  height: auto;
+}
 .section-heading {
   font-size: 1.5rem;
   font-weight: 700;
@@ -238,3 +246,7 @@ section + section {
     color: #c22f54;
   }
 }
+/* * {
+  outline: 1px solid red !important;
+  box-sizing: border-box;
+} */
