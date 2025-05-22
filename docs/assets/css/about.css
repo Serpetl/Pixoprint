@@ -1,15 +1,8 @@
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
+.about-story,
+.about-team {
+  overflow-x: clip;
 }
-body.page-about {
-  background-color: #fff;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
+
 .section-heading {
   font-size: 1.5rem;
   font-weight: 700;
