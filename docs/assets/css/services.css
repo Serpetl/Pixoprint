@@ -25,6 +25,9 @@
 .services-cta {
   padding: 3.5rem 0;
 }
+.services-example {
+  overflow-x: clip;
+}
 
 .services-heading {
   font-size: 1.75rem;
