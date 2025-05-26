@@ -7,7 +7,8 @@
   --light-gray: #eee;
   --white: #fff;
   --black: #000;
-  --text-color: #222;
+  --text-color: #3f3390;
+  /* --text-color: #222; */
   --link-hover-scale: scale(1.03);
   --transition-link: color 0.3s ease, transform 0.3s ease;
   --container-max-width: 1200px;

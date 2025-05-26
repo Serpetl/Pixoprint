@@ -5,7 +5,7 @@
 
 :root {
   --color-pink: #eb1768;
-  --color-dark: #181947;
+  /* --color-dark: #181947; */
   --color-gray: #67697c;
   --color-bg-light: #ffffff;
   --color-border: #e3dfe9;
@@ -13,6 +13,7 @@
   --radius-lg: 16px;
   --radius-sm: 8px;
   --section-gap: 2.5rem;
+  color: var(--text-color);
 }
 
 .contactpage__container {
@@ -37,7 +38,7 @@
 
 .contactpage__subtitle {
   text-align: center;
-  color: var(--color-gray);
+  color: var(--color-pink);
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 650px;
@@ -146,7 +147,7 @@
 
 .contactpage__location-desc {
   margin-top: 1rem;
-  color: var(--color-gray);
+  color: var(--text-color);
   font-size: 0.95rem;
   line-height: 1.6;
 }
