@@ -93,7 +93,7 @@
         "fi": "Autojen ja pakettiautojen teippaukset — tehokas liikkuva mainos."
       }
     },
-    "cnc-works": {
+    "cnc_works": {
       "title": {
         "en": "CNC Works",
         "fi": "CNC-työt"
@@ -113,14 +113,14 @@
         "fi": "Tarkkaa ja siistiä leikkausjälkeä kyltteihin ja koristeisiin."
       }
     },
-    "led-neon": {
+    "led_neon": {
       "title": {
         "en": "LED Neon",
-        "fi": "LED-Neon"
+        "fi": "led_neon"
       },
       "description": {
         "en": "Modern LED neon lighting for indoor and outdoor use.",
-        "fi": "Modernit LED-neonvalot sisä- ja ulkokäyttöön."
+        "fi": "Modernit led_neonvalot sisä- ja ulkokäyttöön."
       }
     },
     "about": {
@@ -271,6 +271,350 @@
       "button": {
         "en": "Send",
         "fi": "Lähetä"
+      }
+    }
+  },
+
+  "about": {
+    "intro": {
+      "title": {
+        "en": "About Us",
+        "fi": "Meistä"
+      },
+      "subtitle": {
+        "en": "Your partner in visual marketing and modern printing solutions.",
+        "fi": "Kumppanisi visuaalisen markkinoinnin ja nykyaikaisen tulostuksen maailmassa."
+      },
+      "text": {
+        "en": "Pixoprint is a modern advertising and production company offering comprehensive solutions from design to installation and service. We specialize in illuminated signage, branding, textile printing, laser cutting, CNC routing, and engraving. Our goal is to create high-quality and affordable solutions that exceed client expectations.",
+        "fi": "Pixoprint on nykyaikainen mainos- ja tuotantoyritys, joka tarjoaa kokonaisvaltaisia ratkaisuja suunnittelusta asennukseen ja ylläpitoon. Olemme erikoistuneet valomainoksiin, brändäykseen, tekstiilipainatukseen, laserleikkaukseen, jyrsintään ja kaiverrukseen. Tavoitteenamme on luoda laadukkaita ja edullisia ratkaisuja, jotka ylittävät asiakkaidemme odotukset."
+      }
+    },
+    "services": {
+      "title": {
+        "en": "Our Services",
+        "fi": "Palvelumme"
+      },
+      "items": {
+        "light": {
+          "title": {
+            "en": "Illuminated Signage",
+            "fi": "Valomainokset"
+          },
+          "text": {
+            "en": "We design and produce custom illuminated signs including LED neon and 3D letters that help your brand stand out.",
+            "fi": "Suunnittelemme ja valmistamme yksilöllisiä valomainoksia, mukaan lukien LED-neonit ja kolmiulotteiset kirjaimet, jotka tuovat brändisi esiin."
+          }
+        },
+        "textile": {
+          "title": {
+            "en": "Textile Printing",
+            "fi": "Tekstiilipainatus"
+          },
+          "text": {
+            "en": "We print on textiles for all kinds of needs — from workwear to promotional items — using high-quality modern technology.",
+            "fi": "Painamme tekstiileihin monenlaisiin tarpeisiin – työvaatteista mainostuotteisiin – käyttäen korkealaatuista ja nykyaikaista teknologiaa."
+          }
+        },
+        "cutting": {
+          "title": {
+            "en": "Laser Cutting & CNC Routing",
+            "fi": "Laserleikkaus ja jyrsintä"
+          },
+          "text": {
+            "en": "We offer precise processing of various materials for signs, decorative elements, and technical parts.",
+            "fi": "Tarjoamme tarkkaa materiaalien työstöä kylttien, koriste-elementtien ja teknisten osien valmistukseen."
+          }
+        },
+        "branding": {
+          "title": {
+            "en": "Branding & Wrapping",
+            "fi": "Brändäys ja teippaus"
+          },
+          "text": {
+            "en": "We provide vehicle, window, and wall wrapping services using durable, fade-resistant materials.",
+            "fi": "Tarjoamme ajoneuvojen, ikkunoiden ja seinien teippauspalveluita kestävillä ja haalistumattomilla materiaaleilla."
+          }
+        }
+      }
+    },
+    "why": {
+      "title": {
+        "en": "Why Choose Us",
+        "fi": "Miksi valita meidät"
+      },
+      "points": {
+        "approach": {
+          "en": "Comprehensive approach: We support your project from idea to realization and maintenance.",
+          "fi": "Kokonaisvaltainen lähestymistapa: Tuemme projektiasi ideasta toteutukseen ja ylläpitoon."
+        },
+        "quality": {
+          "en": "Quality & reliability: We use only trusted materials and modern technologies.",
+          "fi": "Laatu ja luotettavuus: Käytämme vain testattuja materiaaleja ja nykyaikaisia teknologioita."
+        },
+        "team": {
+          "en": "Expertise & professionalism: Our team offers creative and effective solutions.",
+          "fi": "Asiantuntemus ja ammattitaito: Tiimimme tarjoaa luovia ja tehokkaita ratkaisuja."
+        }
+      }
+    },
+    "cta": {
+      "title": {
+        "en": "Contact Us",
+        "fi": "Ota yhteyttä"
+      },
+      "text": {
+        "en": "Ready to discuss your project or need advice? Reach out via the contact page or phone — we look forward to working together!",
+        "fi": "Haluatko keskustella projektistasi tai kysyä lisää? Ota yhteyttä yhteyssivun kautta tai puhelimitse – odotamme innolla yhteistyötä!"
+      }
+    },
+    "story": {
+      "title": {
+        "en": "Our Story",
+        "fi": "Meidän tarinamme"
+      },
+      "text": {
+        "en": "Since our founding, Pixoprint has grown from a small print studio to a full-scale visual marketing partner. Our journey is built on a passion for creativity, attention to detail, and a drive to help clients stand out with strong, effective visual communication.",
+        "fi": "Perustamisestamme lähtien Pixoprint on kasvanut pienestä painostudiosta täyden palvelun visuaalisen markkinoinnin kumppaniksi. Tarinamme perustuu luovuuteen, yksityiskohtien huomioimiseen ja haluun auttaa asiakkaitamme erottumaan vahvalla ja tehokkaalla visuaalisella viestinnällä."
+      }
+    },
+    "values": {
+      "title": {
+        "en": "Our Values",
+        "fi": "Arvomme"
+      },
+      "creativity": {
+        "en": "Creative thinking in every solution we offer",
+        "fi": "Luova ajattelu jokaisessa ratkaisussa"
+      },
+      "collaboration": {
+        "en": "Close collaboration with our clients",
+        "fi": "Tiivis yhteistyö asiakkaidemme kanssa"
+      },
+      "efficiency": {
+        "en": "Efficient and transparent processes",
+        "fi": "Tehokkaat ja läpinäkyvät prosessit"
+      },
+      "quality": {
+        "en": "High quality and reliability in everything we do",
+        "fi": "Korkea laatu ja luotettavuus kaikessa tekemisessä"
+      }
+    },
+    "team": {
+      "title": {
+        "en": "Meet Our Team",
+        "fi": "Tutustu tiimiimme"
+      },
+      "text": {
+        "en": "Behind every Pixoprint project is a team of skilled professionals — designers, fabricators, and installers — who work together to bring ideas to life with precision and passion.",
+        "fi": "Jokaisen Pixoprint-projektin taustalla on osaava tiimi – suunnittelijoita, valmistajia ja asentajia – jotka yhdessä herättävät ideat eloon tarkkuudella ja intohimolla."
+      }
+    }
+  },
+
+  "contact": {
+    "title": {
+      "en": "Contact Us",
+      "fi": "Ota yhteyttä"
+    },
+    "subtitle": {
+      "en": "Ready to discuss your project or need advice? Reach out — we look forward to working together!",
+      "fi": "Haluatko keskustella projektistasi tai kysyä lisää? Ota yhteyttä – odotamme innolla yhteistyötä!"
+    },
+    "info": {
+      "en": "Contact Information",
+      "fi": "Yhteystiedot"
+    },
+    "phone": {
+      "en": "+358 50 346 41 88",
+      "fi": "+358 50 346 41 88"
+    },
+    "email": {
+      "en": "info@pixoprint.fi",
+      "fi": "info@pixoprint.fi"
+    },
+    "address": {
+      "en": "Sahaajankatu 39h, 00880 Helsinki, Finland",
+      "fi": "Sahaajankatu 39h, 00880 Helsinki"
+    },
+    "hours": {
+      "en": "Weekdays 9.00 – 18.00",
+      "fi": "Arkisin 9.00 – 18.00"
+    },
+    "buttons": {
+      "call": {
+        "en": "Call us",
+        "fi": "Soita"
+      },
+      "email": {
+        "en": "Write email",
+        "fi": "Lähetä sähköposti"
+      },
+      "map": {
+        "en": "View on map",
+        "fi": "Katso kartalla"
+      }
+    },
+    "form": {
+      "title": {
+        "en": "Send a Message",
+        "fi": "Lähetä viesti"
+      },
+      "name": {
+        "en": "Your Name",
+        "fi": "Nimesi"
+      },
+      "email": {
+        "en": "Your Email",
+        "fi": "Sähköposti"
+      },
+      "message": {
+        "en": "Your Message",
+        "fi": "Viestisi"
+      },
+      "send": {
+        "en": "Send",
+        "fi": "Lähetä"
+      }
+    },
+    "map": {
+      "title": {
+        "en": "Our Location",
+        "fi": "Sijaintimme"
+      }
+    },
+    "directions": {
+      "title": {
+        "en": "How to Find Us",
+        "fi": "Näin löydät perille"
+      },
+      "text": {
+        "en": "We are located in the Herttoniemi district of Helsinki at Sahaajankatu 39h, just a short walk from the metro station. Free parking in the courtyard.",
+        "fi": "Toimistomme sijaitsee Herttoniemessä, osoitteessa Sahaajankatu 39h, lyhyen kävelymatkan päässä metroasemalta. Pihalla ilmainen pysäköinti."
+      },
+      "button": {
+        "en": "Get Directions",
+        "fi": "Näytä reitti"
+      }
+    }
+  },
+  "services": {
+    "title": {
+      "en": "Our Services — All Under One Roof",
+      "fi": "Palvelumme – Kaikki saman katon alla"
+    },
+    "subtitle": {
+      "en": "From concept to installation, we offer complete visual solutions tailored to your brand.",
+      "fi": "Konseptista asennukseen – tarjoamme kokonaisvaltaisia visuaalisia ratkaisuja brändillesi."
+    },
+    "approach": {
+      "title": {
+        "en": "A Systematic Approach to Visual Branding",
+        "fi": "Järjestelmällinen lähestymistapa visuaaliseen brändäykseen"
+      },
+      "text": {
+        "en": "We don’t just offer individual services — we provide a complete system. Design, production, and installation are all handled by our team, ensuring smooth project flow and consistent quality.",
+        "fi": "Emme tarjoa vain yksittäisiä palveluita – vaan kokonaisen järjestelmän. Suunnittelu, tuotanto ja asennus tapahtuvat saman tiimin kautta, mikä takaa sujuvan projektin kulun ja tasaisen laadun."
+      }
+    },
+    "example": {
+      "title": {
+        "en": "A Real-World Example",
+        "fi": "Käytännön esimerkki"
+      },
+      "text": {
+        "en": "A client opens a new showroom. We design and produce the signage, window graphics, interior walls, and install everything onsite. One team, one visual style, one point of contact.",
+        "fi": "Asiakas avaa uuden myymälän. Suunnittelemme ja toteutamme kyltit, ikkunateippaukset, sisäseinien brändäyksen ja asennamme kaiken paikan päällä. Yksi tiimi, yksi visuaalinen tyyli, yksi kontakti."
+      }
+    },
+    "list": {
+      "title": {
+        "en": "What We Offer",
+        "fi": "Mitä tarjoamme"
+      },
+      "wrapping": {
+        "en": "Window Wrapping",
+        "fi": "Ikkunateippaukset"
+      },
+      "cnc": {
+        "en": "CNC Works",
+        "fi": "CNC-työt"
+      },
+      "design": {
+        "en": "Graphic Design",
+        "fi": "Graafinen suunnittelu"
+      },
+      "led": {
+        "en": "LED Neon",
+        "fi": "LED-neon"
+      },
+      "lightbox": {
+        "en": "Lightbox Signs",
+        "fi": "Valomainokset"
+      },
+      "large": {
+        "en": "Large Format Prints",
+        "fi": "Suurkuvatulosteet"
+      },
+      "textile": {
+        "en": "Textile Printing",
+        "fi": "Tekstiilitulostus"
+      },
+      "vehicle": {
+        "en": "Vehicle Wrapping",
+        "fi": "Ajoneuvoteippaus"
+      }
+    },
+    "benefits": {
+      "title": {
+        "en": "Why Clients Choose Us",
+        "fi": "Miksi asiakkaat valitsevat meidät"
+      },
+      "1": {
+        "en": "Everything in one place — no outsourcing",
+        "fi": "Kaikki saman katon alla – ei alihankintaa"
+      },
+      "2": {
+        "en": "Smooth workflow from design to delivery",
+        "fi": "Sujuva työnkulku suunnittelusta asennukseen"
+      },
+      "3": {
+        "en": "Full control over quality and consistency",
+        "fi": "Täysi kontrolli laadun ja yhtenäisyyden suhteen"
+      },
+      "4": {
+        "en": "One point of contact — one team",
+        "fi": "Yksi yhteyshenkilö – yksi tiimi"
+      }
+    },
+    "cta": {
+      "text": {
+        "en": "Not sure what suits your project best? We’re happy to guide you.",
+        "fi": "Etkö ole varma, mikä sopii projektiisi parhaiten? Autamme mielellämme."
+      },
+      "button": {
+        "en": "Contact Us",
+        "fi": "Ota yhteyttä"
+      }
+    }
+  },
+  "products": {
+    "title": {
+      "en": "Our Products",
+      "fi": "Tuotteemme"
+    },
+    "subtitle": {
+      "en": "Unique items crafted with precision and branding in mind.",
+      "fi": "Ainutlaatuisia tuotteita tarkasti ja brändin mukaisesti."
+    },
+    "cta": {
+      "text": {
+        "en": "Have something custom in mind? We're happy to help.",
+        "fi": "Onko mielessäsi jotain räätälöityä? Autamme mielellämme."
+      },
+      "button": {
+        "en": "Contact Us",
+        "fi": "Ota yhteyttä"
       }
     }
   }

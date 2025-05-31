@@ -1,0 +1,56 @@
+<section class="products-hero">
+  <div class="container">
+    <h1 class="products-title" data-aos="fade-up">{{ product.title[locale] }}</h1>
+    <p class="products-subtitle" data-aos="fade-up" data-aos-delay="100">
+      {{ product.excerpt[locale] }}
+    </p>
+  </div>
+</section>
+
+<section class="products-single" aria-labelledby="product-details">
+  <div class="container">
+    <div class="two-col reverse-on-desktop">
+      <div class="image" data-aos="fade-right">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="{{ baseurl }}/assets/img/products/{{ product.id }}-240.webp 240w,
+                    {{ baseurl }}/assets/img/products/{{ product.id }}-320.webp 320w,
+                    {{ baseurl }}/assets/img/products/{{ product.id }}-480.webp 480w,
+                    {{ baseurl }}/assets/img/products/{{ product.id }}-640.webp 640w"
+            sizes="(max-width: 599px) 100vw,
+                   (max-width: 899px) 50vw,
+                   640px"
+          />
+          <img
+            src="{{ baseurl }}/assets/img/products/{{ product.id }}-640.jpg"
+            srcset="{{ baseurl }}/assets/img/products/{{ product.id }}-240.jpg 240w,
+                    {{ baseurl }}/assets/img/products/{{ product.id }}-320.jpg 320w,
+                    {{ baseurl }}/assets/img/products/{{ product.id }}-480.jpg 480w,
+                    {{ baseurl }}/assets/img/products/{{ product.id }}-640.jpg 640w"
+            sizes="(max-width: 599px) 100vw,
+                   (max-width: 899px) 50vw,
+                   640px"
+            alt="{{ product.title[locale] }}"
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="auto"
+          />
+        </picture>
+      </div>
+
+      <div class="text" data-aos="fade-left">
+        {% if product.description and product.description[locale] %}
+        <p>{{ product.description[locale] }}</p>
+        {% else %}
+        <p>{{ product.excerpt[locale] }}</p>
+        {% endif %}
+
+        <a href="/{{ locale }}/contact/" class="services-cta-btn">
+          {{ 'products.cta.button' | t(locale) }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

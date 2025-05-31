@@ -1,16 +1,37 @@
 ---
 layout: layouts/base.njk
-permalink: "/en/products/"
+permalink: '/en/products/'
 locale: en
-title: "page.products.title"
-description: "page.products.description"
-canonical: "/en/products/"
-alternateLocalePath: "/fi/products/"
+title: products.title
+description: products.subtitle
+canonical: '/en/products/'
+alternateLocalePath: '/fi/products/'
+css: '/assets/css/products.css'
 ---
 
-<section class="page">
+<!-- Hero -->
+<section class="products-hero">
   <div class="container">
-    <h1>{{ "page.products.title" | t(locale) }}</h1>
-    <p>{{ "page.products.description" | t(locale) }}</p>
+    <h1 class="products-title" data-aos="fade-up">{{ 'products.title' | t(locale) }}</h1>
+    <p class="products-subtitle" data-aos="fade-up" data-aos-delay="100">
+      {{ 'products.subtitle' | t(locale) }}
+    </p>
+  </div>
+</section>
+
+<!-- Product Grid -->
+<section class="products-grid-section" aria-labelledby="products-heading">
+  <div class="container">
+    <div class="products-grid" id="products-heading">
+      {% for product in products %} {% include "partials/product-card.njk" %} {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="services-cta">
+  <div class="container" data-aos="fade-up">
+    <p class="services-cta-text">{{ 'products.cta.text' | t(locale) }}</p>
+    <a href="/en/contact/" class="services-cta-btn">{{ 'products.cta.button' | t(locale) }}</a>
   </div>
 </section>

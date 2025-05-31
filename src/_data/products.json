@@ -1,0 +1,54 @@
+[
+  {
+    "id": "wooden-clock",
+    "title": {
+      "en": "Wooden Wall Clock",
+      "fi": "Puiset seinäkellot"
+    },
+    "excerpt": {
+      "en": "Laser-cut clock made of natural wood, customizable engraving.",
+      "fi": "Laserleikattu kello luonnonpuusta, kaiverrus mahdollinen."
+    },
+    "image": "wooden-clock.jpg",
+    "category": ["decor", "gifts"]
+  },
+  {
+    "id": "menu-board",
+    "title": {
+      "en": "Digital Menu Board",
+      "fi": "Digitaalinen ruokalista"
+    },
+    "excerpt": {
+      "en": "Bright digital displays to modernize your restaurant interior.",
+      "fi": "Kirkkaat diginäytöt ravintoloiden sisustukseen."
+    },
+    "image": "menu-board.jpg",
+    "category": ["interior", "signage"]
+  },
+  {
+    "id": "gift-box",
+    "title": {
+      "en": "Branded Gift Box",
+      "fi": "Brändätty lahjarasia"
+    },
+    "excerpt": {
+      "en": "Custom printed packaging for memorable unboxing experiences.",
+      "fi": "Räätälöidyt pakkaukset unohtumattomaan lahjakokemukseen."
+    },
+    "image": "gift-box.jpg",
+    "category": ["packaging", "gifts"]
+  },
+  {
+    "id": "wooden-lamp",
+    "title": {
+      "en": "Geometric Wooden Lamp",
+      "fi": "Geometrinen puulamppu"
+    },
+    "excerpt": {
+      "en": "Modern parametric design lamp with natural finish.",
+      "fi": "Moderni parametrinen valaisin luonnonviimeistelyllä."
+    },
+    "image": "wooden-lamp.jpg",
+    "category": ["decor", "lighting"]
+  }
+]

@@ -1,0 +1,252 @@
+.about-story,
+.about-team {
+  overflow-x: clip;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  /* color: #2c3e50; */
+  color: var(--text-color);
+  text-align: center;
+}
+
+@media (min-width: 400px) {
+  .section-heading {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 900px) {
+  .section-heading {
+    font-size: 1.75rem;
+  }
+}
+
+.two-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.reverse-on-desktop {
+}
+
+@media (min-width: 600px) {
+  .two-col {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+  .reverse-on-desktop {
+    flex-direction: row-reverse;
+  }
+}
+
+.image,
+.team-photo {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.image img,
+.team-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image img:hover,
+.team-photo img:hover {
+  transform: scale(1.02);
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  /* color: #34495e; */
+  color: var(--text-color);
+}
+
+.icon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+  margin: 1.5rem auto 0;
+  list-style: none;
+  max-width: 900px;
+}
+
+.icon-list li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem;
+  line-height: 1.5;
+  /* color: #2c3e50; */
+  color: var(--text-color);
+  transition: transform 0.3s;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.icon-list li:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.icon-list i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #de3a68;
+  transition: color 0.3s;
+}
+.icon-list li:hover i {
+  color: #c22f54;
+}
+
+section + section {
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.about-hero {
+  background-color: #f8f9fa;
+  padding: 2rem 0 1.5rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+.about-hero .subtitle {
+  color: #eb1768;
+  /* color: #777; */
+  font-size: 1.1rem;
+}
+.about-hero .lead {
+  font-size: 1rem;
+  margin-top: 1rem;
+  /* color: #444; */
+  color: var(--text-color);
+}
+
+.about-values,
+.about-team,
+.about-cta {
+  padding: 1.5rem 0;
+  animation: fadeInUp 1s ease-in-out;
+}
+.about-cta {
+  background-color: #ecf0f1;
+  text-align: center;
+}
+.about-cta h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* color: #2c3e50; */
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+.about-cta p {
+  font-size: 1rem;
+  /* color: #34495e; */
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 599px) {
+  section + section {
+    margin-top: 1rem;
+  }
+  .about-hero,
+  .about-values,
+  .about-team,
+  .about-cta {
+    padding: 1rem 0;
+  }
+  .two-col {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .icon-list {
+    gap: 0.7rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .icon-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem 2rem;
+    align-items: flex-start;
+  }
+  .icon-list li {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .about-hero,
+  .about-values,
+  .about-team,
+  .about-cta {
+    padding: 5em 0;
+  }
+  .two-col {
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .icon-list {
+    gap: 1.5rem;
+  }
+  .icon-list {
+    max-width: 900px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.7rem 3rem;
+  }
+
+  .icon-list i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #de3a68;
+    transition: color 0.3s;
+    flex-shrink: 0;
+  }
+  .icon-list li:hover {
+    transform: translateY(-3px) scale(1.03);
+  }
+  .icon-list li:hover i {
+    color: #c22f54;
+  }
+}
+/* * {
+  outline: 1px solid red !important;
+  box-sizing: border-box;
+} */

@@ -7,7 +7,7 @@ const path = require('path')
 
 const paths = {
   src: 'src/images/**/*.{jpg,png}',
-  dest: 'assets/img/'
+  dest: 'assets/img/temp/' // безопасно оставить всё здесь
 }
 
 // Очистка только папки main

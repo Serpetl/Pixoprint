@@ -1,0 +1,24 @@
+---
+pagination:
+  data: collections.productsData
+  size: 1
+  alias: product
+  addAllPagesToCollections: true
+
+permalink: '{{ locale }}/products/{{ product.id }}/index.html'
+layout: layouts/base.njk
+locale: en
+css: '/assets/css/product-item.css'
+
+eleventyComputed:
+  title: '{{ product.title[locale] }}'
+  description: '{{ product.excerpt[locale] }}'
+  alternateLocalePath: |
+    {% if locale == "en" %}
+      /fi/products/{{ product.id }}/
+    {% else %}
+      /en/products/{{ product.id }}/
+    {% endif %}
+---
+
+{% include "products/_products-item.njk" %}

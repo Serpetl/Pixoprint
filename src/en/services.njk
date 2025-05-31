@@ -1,16 +1,118 @@
 ---
 layout: layouts/base.njk
-permalink: "/en/services/"
+permalink: '/en/services/'
 locale: en
-title: "page.services.title"
-description: "page.services.description"
-canonical: "/en/services/"
-alternateLocalePath: "/fi/service/"
+title: services.title
+description: services.subtitle
+canonical: '/en/services/'
+alternateLocalePath: '/fi/services/'
+css: '/assets/css/services.css'
 ---
 
-<section class="page">
+<section class="services-hero">
   <div class="container">
-    <h1>{{ "page.services.title" | t(locale) }}</h1>
-    <p>{{ "page.services.description" | t(locale) }}</p>
+    <h1 class="services-title" data-aos="fade-up">{{ 'services.title' | t(locale) }}</h1>
+    <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
+      {{ 'services.subtitle' | t(locale) }}
+    </p>
   </div>
 </section>
+
+<section class="services-intro" aria-labelledby="services-how">
+  <div class="container">
+    <h2 id="services-how" class="services-heading" data-aos="fade-up">
+      {{ 'services.approach.title' | t(locale) }}
+    </h2>
+    <p class="services-text" data-aos="fade-up" data-aos-delay="100">
+      {{ 'services.approach.text' | t(locale) }}
+    </p>
+  </div>
+</section>
+
+<section class="services-example" aria-labelledby="services-example-heading">
+  <div class="container services-example-grid">
+    <div class="services-example-text" data-aos="fade-right">
+      <h2 id="services-example-heading" class="services-heading">
+        {{ 'services.example.title' | t(locale) }}
+      </h2>
+      <p class="services-text">{{ 'services.example.text' | t(locale) }}</p>
+    </div>
+    <div class="services-example-img" data-aos="fade-left">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="{{ baseurl }}/assets/img/services/showroom-240.webp 240w,
+                  {{ baseurl }}/assets/img/services/showroom-320.webp 320w,
+                  {{ baseurl }}/assets/img/services/showroom-480.webp 480w,
+                  {{ baseurl }}/assets/img/services/showroom-640.webp 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 1023px) 50vw,
+                 600px"
+        />
+        <img
+          src="{{ baseurl }}/assets/img/services/showroom-640.png"
+          srcset="{{ baseurl }}/assets/img/services/showroom-240.png 240w,
+                  {{ baseurl }}/assets/img/services/showroom-320.png 320w,
+                  {{ baseurl }}/assets/img/services/showroom-480.png 480w,
+                  {{ baseurl }}/assets/img/services/showroom-640.png 640w"
+          sizes="(max-width: 599px) 100vw,
+                 (max-width: 1023px) 50vw,
+                 600px"
+          alt="{{ 'services.example.title' | t(locale) }}"
+          loading="lazy"
+          decoding="async"
+          width="640"
+          height="auto"
+        />
+      </picture>
+
+
+      <p class="services-caption">
+        Light and branded pizzeria interior featuring parametric wall, digital signage and neon accents.
+      </p>
+    </div>
+      </div>
+    </section>
+
+    <section class="services-links" aria-labelledby="services-list-heading">
+      <div class="container">
+        <h2 id="services-list-heading" class="services-heading" data-aos="fade-up">{{ 'services.list.title' | t(locale) }}</h2>
+        <ul class="services-list">
+          <li data-aos="fade-up" data-aos-delay="50"><a href="/en/wrapping/">{{ 'services.list.wrapping' | t(locale) }}</a></li>
+          <li data-aos="fade-up" data-aos-delay="100"><a href="/en/cnc-works/">{{ 'services.list.cnc' | t(locale) }}</a></li>
+          <li data-aos="fade-up" data-aos-delay="150"><a href="/en/design/">{{ 'services.list.design' | t(locale) }}</a></li>
+          <li data-aos="fade-up" data-aos-delay="200"><a href="/en/led-neon/">{{ 'services.list.led' | t(locale) }}</a></li>
+          <li data-aos="fade-up" data-aos-delay="250"><a href="/en/lightbox/">{{ 'services.list.lightbox' | t(locale) }}</a></li>
+          <li data-aos="fade-up" data-aos-delay="300"><a href="/en/large-prints/">{{ 'services.list.large' | t(locale) }}</a></li>
+          <li data-aos="fade-up" data-aos-delay="350"><a href="/en/textile-printing/">{{ 'services.list.textile' | t(locale) }}</a></li>
+          <li data-aos="fade-up" data-aos-delay="400"><a href="/en/vehicle-wrap/">{{ 'services.list.vehicle' | t(locale) }}</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="services-benefits" aria-labelledby="services-benefits-heading">
+      <div class="container">
+        <h2 id="services-benefits-heading" class="services-heading" data-aos="fade-up">{{ 'services.benefits.title' | t(locale) }}</h2>
+        <ul class="services-benefits-list">
+          <li data-aos="zoom-in" data-aos-delay="50">{{ 'services.benefits.1' | t(locale) }}</li>
+          <li data-aos="zoom-in" data-aos-delay="100">{{ 'services.benefits.2' | t(locale) }}</li>
+          <li data-aos="zoom-in" data-aos-delay="150">{{ 'services.benefits.3' | t(locale) }}</li>
+          <li data-aos="zoom-in" data-aos-delay="200">{{ 'services.benefits.4' | t(locale) }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="services-cta">
+      <div class="container" data-aos="fade-up">
+        <p class="services-cta-text">{{ 'services.cta.text' | t(locale) }}</p>
+        <a href="/en/contact/" class="services-cta-btn">{{ 'services.cta.button' | t(locale) }}</a>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+
+
+
+

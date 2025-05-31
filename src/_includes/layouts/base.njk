@@ -9,18 +9,34 @@
     <title>{{ title | t(locale) }} | Pixoprint</title>
     <link rel="canonical" href="https://serpetl.github.io/Pixoprint{{ canonical or '/' }}" />
 
-<!-- Favicon -->
-<link rel="icon" href="{{ baseurl }}/assets/img/logo/favicon.ico" type="image/x-icon" />
-<link rel="icon" type="image/png" sizes="32x32" href="{{ baseurl }}/assets/img/logo/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ baseurl }}/assets/img/logo/favicon-16x16.png">
-<link rel="apple-touch-icon" href="{{ baseurl }}/assets/img/logo/apple-touch-icon.png">
-<link rel="manifest" href="{{ baseurl }}/assets/img/logo/site.webmanifest">
-
+    <!-- Favicon -->
+    <link rel="icon" href="{{ baseurl }}/assets/img/logo/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ baseurl }}/assets/img/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ baseurl }}/assets/img/logo/favicon-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="{{ baseurl }}/assets/img/logo/apple-touch-icon.png" />
+    <link rel="manifest" href="{{ baseurl }}/assets/img/logo/site.webmanifest" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ baseurl }}/assets/css/header.css" />
     <link rel="stylesheet" href="{{ baseurl }}/assets/css/style.css" />
     <link rel="stylesheet" href="{{ baseurl }}/assets/css/footer.css" />
+    <!-- Page-specific stylesheet -->
+    {% if css %}
+    <link rel="stylesheet" href="{{ baseurl }}{{ css }}" />
+    {% elseif page.fileSlug %}
+    <link rel="stylesheet" href="{{ baseurl }}/assets/css/{{ page.fileSlug }}.css" />
+    {% endif %}
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -41,12 +57,15 @@
     <meta name="twitter:image" content="{{ baseurl }}/assets/img/og-image.jpg" />
   </head>
 
-  <body>
+  <body class="page-{{ page.fileSlug }}">
     {% include "partials/header.njk" %}
 
-    <main id="main" role="main">{{ content | safe }}</main>
-
-    {% include "partials/footer.njk" %}
+    <main id="main" role="main" class="page-{{ page.fileSlug }}">{{ content | safe }}</main>
+    <!-- {% if alternateLocalePath %}
+    <a href="{{ baseurl }}{{ alternateLocalePath }}" class="lang-switch">
+      {% if locale === 'en' %} Suomeksi {% else %} In English {% endif %}
+    </a> -->
+    {% endif %} {% include "partials/footer.njk" %}
     <div class="backdrop" id="backdrop"></div>
 
     <script src="{{ baseurl }}/assets/js/main.js"></script>
@@ -55,7 +74,7 @@
       AOS.init({
         duration: 800,
         once: true,
-        offset: 10
+        offset: 100
       })
     </script>
   </body>

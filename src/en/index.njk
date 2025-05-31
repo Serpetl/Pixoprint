@@ -8,48 +8,46 @@ title: meta.title
 <!-- HERO + COUNTERS -->
 <section class="hero-counters">
   <section class="hero">
+    <!-- HERO background: static picture + video -->
     <div class="hero-bg">
       <picture>
+        <!-- WEBP -->
         <source
+          type="image/webp"
           media="(max-width: 480px)"
-          srcset="{{ baseurl }}/assets/img/main/hero-mobile.webp"
-          type="image/webp"
+          srcset="{{ baseurl }}/assets/img/main/hero-480.webp"
         />
         <source
+          type="image/webp"
           media="(max-width: 768px)"
-          srcset="{{ baseurl }}/assets/img/main/hero-tablet.webp"
-          type="image/webp"
+          srcset="{{ baseurl }}/assets/img/main/hero-640.webp"
         />
         <source
-          media="(min-width: 769px)"
-          srcset="{{ baseurl }}/assets/img/main/hero-desktop.webp"
           type="image/webp"
+          media="(min-width: 769px)"
+          srcset="{{ baseurl }}/assets/img/main/hero-640.webp"
         />
-        <source media="(max-width: 480px)" srcset="{{ baseurl }}/assets/img/main/hero-mobile.jpg" />
-        <source media="(max-width: 768px)" srcset="{{ baseurl }}/assets/img/main/hero-tablet.jpg" />
+
+        <!-- JPEG fallback -->
+        <source media="(max-width: 480px)" srcset="{{ baseurl }}/assets/img/main/hero-480.jpg" />
+        <source media="(max-width: 768px)" srcset="{{ baseurl }}/assets/img/main/hero-640.jpg" />
+
         <img
-          src="{{ baseurl }}/assets/img/main/hero-desktop.jpg"
+          src="{{ baseurl }}/assets/img/main/hero-640.jpg"
           alt="Pixoprint hero background"
           loading="eager"
           class="hero-fallback"
         />
       </picture>
 
-      <!-- <video muted loop playsinline class="hero-video" aria-hidden="true">
-        <source src="{{ baseurl }}/assets/video/hero.mp4" type="video/mp4" />
-        <img
-          src="{{ baseurl }}/assets/img/main/hero-desktop.jpg"
-          alt="Hero background fallback"
-          class="hero-fallback"
-        />
-      </video> -->
       <video
         muted
         loop
         playsinline
+        preload="auto"
         class="hero-video"
         aria-hidden="true"
-        poster="{{ baseurl }}/assets/img/main/hero-desktop.jpg"
+        poster="{{ baseurl }}/assets/img/main/hero-640.jpg"
       >
         <source src="{{ baseurl }}/assets/video/hero.mp4" type="video/mp4" />
       </video>
@@ -90,9 +88,9 @@ title: meta.title
 <!-- SERVICE GRID -->
 <section id="service-grid" class="grid service-grid">
   <div class="container">
-    {% set services = [ { slug: 'wrapping', name: 'wrap' }, { slug: 'cnc-works', name: 'cnc-works',
+    {% set services = [ { slug: 'wrapping', name: 'wrap' }, { slug: 'cnc_works', name: 'cnc_works',
     delay: 100 }, { slug: 'design', name: 'design', delay: 200 }, { slug: 'laser-cutting', name:
-    'laser-cutting' }, { slug: 'led-neon', name: 'led-neon', delay: 100 }, { slug: 'lightbox', name:
+    'laser-cutting' }, { slug: 'led_neon', name: 'led_neon', delay: 100 }, { slug: 'lightbox', name:
     'lightbox', delay: 200 }, { slug: 'large-prints', name: 'prints' }, { slug: 'textile-printing',
     name: 'textile-print', delay: 100 }, { slug: 'vehicle-wrap', name: 'vehicle-wrap', delay: 200 }
     ] %} {% for service in services %}
@@ -198,24 +196,61 @@ title: meta.title
   </div>
 </section>
 
-<!-- JS: видео -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', () => {
     const video = document.querySelector('.hero-video')
-    const fallback = document.querySelector('.hero-fallback')
+    if (!video) return
 
-    if (video && fallback) {
-      video
-        .play()
-        .then(() => {
-          fallback.style.display = 'none'
-        })
-        .catch(() => {
-          video.addEventListener('canplay', function () {
-            fallback.style.display = 'none'
-            video.play().catch(() => {})
-          })
-        })
+    const reveal = () => video.classList.add('ready')
+
+    video.addEventListener('loadeddata', reveal)
+
+    const tryPlay = video.play()
+    if (tryPlay !== undefined) {
+      tryPlay.then(reveal).catch(() => {})
     }
+  })
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const target = document.querySelector('#service-grid')
+
+    let triggered = false
+    let startY = 0
+    const THRESHOLD = 40
+    const scrollToBlock = () => {
+      if (triggered) return
+      triggered = true
+      target.scrollIntoView({ behavior: 'smooth' })
+
+      window.removeEventListener('wheel', onWheel, { passive: false })
+      window.removeEventListener('touchstart', onTouchStart, { passive: true })
+      window.removeEventListener('touchmove', onTouchMove, { passive: false })
+    }
+
+    const onWheel = (e) => {
+      if (e.deltaY > 0) {
+        e.preventDefault()
+        scrollToBlock()
+      }
+    }
+
+    const onTouchStart = (e) => {
+      startY = e.touches[0].clientY
+    }
+
+    const onTouchMove = (e) => {
+      const currentY = e.touches[0].clientY
+      const delta = startY - currentY
+      if (delta > THRESHOLD) {
+        e.preventDefault()
+        scrollToBlock()
+      }
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: false })
+    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchmove', onTouchMove, { passive: false })
   })
 </script>

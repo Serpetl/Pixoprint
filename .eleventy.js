@@ -5,6 +5,8 @@ import { DateTime } from 'luxon'
 export default function (config) {
   const baseurl = process.env.ELEVENTY_ENV === 'prod' ? '/Pixoprint' : ''
 
+  // const baseurl = process.env.ELEVENTY_ENV === 'prod' ? '/Pixoprint' : ''
+
   const translations = JSON.parse(fs.readFileSync(path.resolve('src/_data/lang.json'), 'utf8'))
 
   const lookup = (obj, key) => {
@@ -31,7 +33,16 @@ export default function (config) {
   config.addFilter('date', (value, format = 'yyyy') => {
     return DateTime.fromJSDate(new Date(value)).toFormat(format)
   })
+  // ✅ Коллекция товаров из JSON
+  config.addCollection('productsData', function () {
+    const products = JSON.parse(fs.readFileSync('./src/_data/products.json', 'utf8'))
+    return products
+  })
 
+  // ✅ Фильтр поиска товара по id
+  config.addFilter('findById', function (array, id) {
+    return array.find((item) => item.id === id)
+  })
   config.addGlobalData('baseurl', baseurl)
   config.addPassthroughCopy('assets')
   config.addPassthroughCopy('.nojekyll')

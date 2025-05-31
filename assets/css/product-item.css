@@ -1,0 +1,67 @@
+/* product-item.css — стили для детальных страниц товаров */
+
+.products-hero {
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.products-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.products-subtitle {
+  font-size: 1.125rem;
+  color: var(--primary-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.products-single {
+  padding: 3rem 1rem;
+}
+
+.products-single .image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.products-single .text {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+.services-cta-btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.services-cta-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (min-width: 768px) {
+  .two-col {
+    display: flex;
+    gap: 2rem;
+  }
+  .reverse-on-desktop {
+    /* flex-direction: row-reverse; */
+  }
+  .two-col .image,
+  .two-col .text {
+    flex: 1;
+  }
+}
