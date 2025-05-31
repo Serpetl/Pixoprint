@@ -1,0 +1,143 @@
+/* products.css — page-specific styles */
+
+.products-hero {
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+}
+
+.products-title {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.products-subtitle {
+  font-size: 1.125rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--primary-color);
+}
+
+.products-grid-section {
+  padding: 3rem 1rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-card picture,
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.product-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination a {
+  padding: 0.5rem 1rem;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.pagination .active {
+  background-color: var(--primary-color);
+  color: #fff;
+  pointer-events: none;
+}
+
+@media (min-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .products-title {
+    font-size: 3rem;
+  }
+}
+.services-cta {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.services-cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.services-cta-btn {
+  padding: 0.75rem 2rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.services-cta-btn:hover {
+  background-color: var(--secondary-color);
+}
