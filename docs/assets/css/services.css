@@ -1,7 +1,7 @@
 /* services.css — page-specific styles */
 
 .services-hero {
-  padding: 4rem 0 2rem;
+  padding: 2rem 0 2rem;
   text-align: center;
 }
 
@@ -23,7 +23,7 @@
 .services-links,
 .services-benefits,
 .services-cta {
-  padding: 3.5rem 0;
+  padding: 1.5rem 0;
 }
 .services-example {
   overflow-x: clip;
@@ -54,15 +54,20 @@
 
 .services-example-text {
   flex: 1;
-  border-left: 4px solid var(--primary-color);
-  padding-left: 1.5rem;
+  padding: 1.5rem;
   background-color: #fafafa;
   border-radius: 0.5rem;
+  max-width: 600px;
+}
+
+.services-example-img {
+  width: 100%;
+  max-width: 500px;
+  flex: 1;
 }
 
 .services-example-img img {
   width: 100%;
-  max-width: 500px;
   border-radius: 0.75rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
@@ -149,16 +154,31 @@
 }
 
 @media (min-width: 768px) {
+  .services-hero {
+    padding: 4rem 0 2rem;
+  }
+  .services-intro,
+  .services-example,
+  .services-links,
+  .services-benefits,
+  .services-cta {
+    padding: 2.5rem 0;
+  }
   .services-example-grid {
     flex-direction: row;
+    align-items: flex-start;
     justify-content: space-between;
   }
   .services-example-text {
     text-align: left;
-    max-width: 50%;
+    max-width: 55%;
+    padding-right: 2rem;
   }
   .services-text {
     text-align: left;
+  }
+  .services-example-img {
+    max-width: 500px;
   }
   .services-benefits-list {
     grid-template-columns: repeat(2, 1fr);
@@ -169,6 +189,13 @@
 }
 
 @media (min-width: 1024px) {
+  .services-intro,
+  .services-example,
+  .services-links,
+  .services-benefits,
+  .services-cta {
+    padding: 3.5rem 0;
+  }
   .services-title {
     font-size: 3rem;
   }
