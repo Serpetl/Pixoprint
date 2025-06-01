@@ -1,5 +1,8 @@
 /* products.css — page-specific styles */
 
+.products-single {
+  overflow-x: clip;
+}
 .products-hero {
   padding: 4rem 1rem 2rem;
   text-align: center;

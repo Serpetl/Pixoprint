@@ -3,9 +3,7 @@ import path from 'path'
 import { DateTime } from 'luxon'
 
 export default function (config) {
-  const baseurl = process.env.ELEVENTY_ENV === 'prod' ? '/Pixoprint' : ''
-
-  // const baseurl = process.env.ELEVENTY_ENV === 'prod' ? '/Pixoprint' : ''
+  const baseurl = (process.env.ELEVENTY_ENV === 'prod' ? '/Pixoprint' : '').trim()
 
   const translations = JSON.parse(fs.readFileSync(path.resolve('src/_data/lang.json'), 'utf8'))
 

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "build": "npm run clean && cross-env ELEVENTY_ENV=prod eleventy",
+    "clean": "rimraf docs",
     "build:images": "gulp --gulpfile gulpfile.cjs",
     "clean:images": "gulp clean --gulpfile gulpfile.cjs",
     "deploy": "npm run build && git add docs && git commit -m \"Deploy\" && git push",

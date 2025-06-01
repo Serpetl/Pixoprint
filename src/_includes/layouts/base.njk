@@ -61,11 +61,8 @@
     {% include "partials/header.njk" %}
 
     <main id="main" role="main" class="page-{{ page.fileSlug }}">{{ content | safe }}</main>
-    <!-- {% if alternateLocalePath %}
-    <a href="{{ baseurl }}{{ alternateLocalePath }}" class="lang-switch">
-      {% if locale === 'en' %} Suomeksi {% else %} In English {% endif %}
-    </a> -->
-    {% endif %} {% include "partials/footer.njk" %}
+
+    {% include "partials/footer.njk" %}
     <div class="backdrop" id="backdrop"></div>
 
     <script src="{{ baseurl }}/assets/js/main.js"></script>
