@@ -21,6 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tick()
   })
+  // main.js
+  document.querySelectorAll('.product-image-carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.carousel-track')
+    const btnLeft = carousel.querySelector('.carousel-arrow.left')
+    const btnRight = carousel.querySelector('.carousel-arrow.right')
+
+    if (track && btnLeft && btnRight) {
+      btnLeft.addEventListener('click', (e) => {
+        e.stopPropagation()
+        track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' })
+      })
+      btnRight.addEventListener('click', (e) => {
+        e.stopPropagation()
+        track.scrollBy({ left: track.clientWidth, behavior: 'smooth' })
+      })
+    }
+  })
 
   //Burger
   const burger = document.getElementById('burger')
