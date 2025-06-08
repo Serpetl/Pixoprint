@@ -117,6 +117,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeTags = new Set()
 
+  function updateCardTagHighlighting() {
+    cards.forEach((card) => {
+      card.querySelectorAll('.meta-tag').forEach((tagEl) => {
+        const tagText = tagEl.textContent.trim().toLowerCase()
+        if (activeTags.has(tagText)) {
+          tagEl.classList.add('active-filter')
+        } else {
+          tagEl.classList.remove('active-filter')
+        }
+      })
+    })
+  }
   function applyFilters() {
     cards.forEach((card) => {
       const tags = [...card.querySelectorAll('.meta-tag')].map((el) =>
@@ -131,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.display =
         (query === '' || matchesSearch) && (activeTags.size === 0 || matchesTags) ? 'flex' : 'none'
     })
+
+    updateCardTagHighlighting() // 👈 добавь сюда
   }
 
   function updateActiveTagsDisplay() {
@@ -147,6 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       filterContainer.appendChild(el)
     })
+
+    updateCardTagHighlighting() // 👈 добавь сюда тоже
   }
 
   if (searchInput) {

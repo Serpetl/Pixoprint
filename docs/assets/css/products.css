@@ -15,25 +15,25 @@
 
 /* === Hero === */
 .products-hero {
-  padding: 4rem 1rem 2rem;
+  padding: 2rem 1rem 1rem;
   text-align: center;
   background-color: var(--light-gray);
 }
 
 .products-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
   color: var(--secondary-color);
 }
 
 .products-subtitle {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--primary-color);
-  max-width: 700px;
+  max-width: 90%;
   margin: 0 auto;
 }
 
-/* === Grid === */
+/* === Grid Layout === */
 .products-grid-section {
   padding: 3rem 1rem;
 }
@@ -59,30 +59,43 @@
   }
 }
 
-/* Фильтры */
-.meta-tag {
-  font-size: 0.85rem;
-  background-color: rgba(235, 0, 50, 0.08);
-  color: var(--primary-color);
-  padding: 0.25rem 0.65rem;
-  border-radius: 4px;
-  font-weight: 500;
-  text-decoration: none;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.active-filter {
-  background-color: var(--primary-color);
-  color: white;
-  cursor: pointer;
-}
-
+/* === Фильтры === */
 .products-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
   margin-bottom: 2rem;
+}
+
+.products-filters > #product-search {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.products-filters > .reset-btn {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+}
+
+.products-filters > .active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .products-filters {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .products-filters > .active-filters {
+    margin-top: 0;
+    width: auto;
+  }
 }
 
 #product-search {
@@ -95,7 +108,6 @@
 }
 
 .reset-btn {
-  padding: 0.5rem 1rem;
   background-color: var(--light-gray);
   color: var(--text-color);
   border: none;
@@ -111,10 +123,10 @@
 }
 
 .active-filters {
-  margin-top: 1rem;
   display: flex;
   gap: 0.5rem;
 }
+
 .active-filters:empty {
   display: none;
 }
@@ -122,196 +134,9 @@
 .active-filters .meta-tag {
   background-color: var(--primary-color);
   color: var(--white);
-  cursor: pointer;
-  user-select: none;
-  font-size: 0.85rem;
   font-weight: 600;
   padding: 0.3rem 0.75rem;
   border-radius: 6px;
-}
-
-/* === Product Card === */
-.product-card {
-  height: 100%;
-  display: flex;
-  flex: 1;
-  opacity: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  background: var(--white);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  cursor: pointer;
-  will-change: transform;
-}
-
-.product-card.hide {
-  opacity: 0;
-  transform: scale(0.96);
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.product-card a {
-  text-decoration: none;
-}
-/* Image carousel */
-.product-image-carousel {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  overflow: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  height: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carousel-item {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  overflow: hidden;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition:
-    transform 0.4s ease,
-    filter 0.3s ease;
-  display: block;
-}
-
-.product-card:hover .carousel-item img {
-  transform: scale(1.05);
-  filter: brightness(0.92);
-}
-
-/* Arrows */
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  border-radius: 50%;
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.carousel-arrow:hover {
-  background: rgba(255, 255, 255, 1);
-}
-
-.carousel-arrow.left {
-  left: 0.5rem;
-}
-
-.carousel-arrow.right {
-  right: 0.5rem;
-}
-
-/* Card Info */
-.product-info {
-  padding: 1rem 1.25rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
-}
-
-.product-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--secondary-color);
-  transition: var(--transition-link);
-}
-
-.product-title a,
-.product-description a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.product-title a:hover {
-  color: var(--primary-color);
-  transform: var(--link-hover-scale);
-  text-decoration: none;
-}
-
-.product-description {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-color);
-  flex-grow: 1;
-  text-decoration: none;
-  margin-bottom: 1rem;
-}
-
-/* Tags */
-.product-tags {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  gap: 0.5rem;
-}
-
-.meta-tag {
-  background-color: rgba(235, 0, 50, 0.08);
-  color: var(--primary-color);
-  padding: 0.3rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  white-space: nowrap;
-  text-decoration: none;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
-  cursor: pointer;
-}
-
-.meta-tag:hover {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
-
-/* Price & Size */
-.product-size-price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1.25rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid #eee;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #444;
-}
-
-.price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.size {
-  font-style: italic;
-  color: #777;
 }
 
 /* === Pagination === */
@@ -370,45 +195,21 @@
 
 .services-cta-btn:hover {
   background-color: var(--secondary-color);
-}
-.meta-tag.active-filter {
-  background-color: var(--primary-color);
-  color: white;
-}
-.products-filters {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 1rem;
-  margin-bottom: 2rem;
+  color: var(--white);
 }
 
-.products-filters > #product-search {
-  flex: 1 1 300px;
-  max-width: 400px;
-}
-
-.products-filters > .reset-btn {
-  flex-shrink: 0;
-  padding: 0.5rem 1rem;
-}
-
-.products-filters > .active-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  width: 100%;
-}
-
-@media (min-width: 900px) {
+/* === Mobile Tweaks (Layout only) === */
+@media (max-width: 480px) {
   .products-filters {
-    flex-wrap: nowrap;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .products-filters > .active-filters {
-    margin-top: 0;
-    width: auto;
+  .products-title {
+    font-size: 1.75rem;
+  }
+
+  .services-cta-text {
+    font-size: 1rem;
   }
 }

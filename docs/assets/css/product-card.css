@@ -1,0 +1,203 @@
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease !important;
+}
+
+.product-card a {
+  text-decoration: none;
+}
+
+.product-card.hide {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* === Image carousel === */
+.product-image-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.4s ease,
+    filter 0.3s ease;
+  will-change: transform;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+.product-card:hover .carousel-item img {
+  transform: scale(1.05);
+  filter: brightness(0.92);
+}
+
+/* === Arrows === */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.carousel-arrow.left {
+  left: 0.5rem;
+}
+
+.carousel-arrow.right {
+  right: 0.5rem;
+}
+
+/* === Card Info === */
+.product-info {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+  transition: var(--transition-link);
+}
+
+.product-title a,
+.product-description a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-title a:hover {
+  color: var(--primary-color);
+  transform: var(--link-hover-scale);
+}
+
+.product-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  min-height: 3em;
+  max-height: 3em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* === Tags & Price === */
+.product-tags-with-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-tags-with-price .tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.product-tags-with-price .price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.meta-tag {
+  font-size: 0.85rem;
+  background-color: rgba(235, 0, 50, 0.08);
+  color: var(--primary-color);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+  cursor: pointer;
+}
+
+.meta-tag:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.meta-tag.active-filter {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* === Mobile Tweaks (Card Only) === */
+@media (max-width: 480px) {
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  .product-tags-with-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .product-tags-with-price .price {
+    align-self: flex-end;
+  }
+}
