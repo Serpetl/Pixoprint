@@ -15,7 +15,7 @@
 
 /* === Hero === */
 .products-hero {
-  padding: 2rem 1rem 1rem;
+  padding: 1rem 1rem 1rem;
   text-align: center;
   background-color: var(--light-gray);
 }
@@ -35,7 +35,7 @@
 
 /* === Grid Layout === */
 .products-grid-section {
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .products-grid {
@@ -57,6 +57,9 @@
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .products-grid-section {
+    padding: 4rem 1rem;
+  }
 }
 
 /* === Фильтры === */
@@ -69,13 +72,32 @@
 }
 
 .products-filters > #product-search {
-  flex: 1 1 300px;
+  width: 100%;
   max-width: 400px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .products-filters > .reset-btn {
   flex-shrink: 0;
   padding: 0.5rem 1rem;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.products-filters > .reset-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .products-filters > .active-filters {
@@ -84,6 +106,18 @@
   gap: 0.5rem;
   margin-top: 0.5rem;
   width: 100%;
+}
+
+.active-filters:empty {
+  display: none;
+}
+
+.active-filters .meta-tag {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
 }
 
 @media (min-width: 900px) {
@@ -95,6 +129,11 @@
   .products-filters > .active-filters {
     margin-top: 0;
     width: auto;
+  }
+  .products-hero {
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    background-color: var(--light-gray);
   }
 }
 
@@ -203,6 +242,46 @@
   .products-filters {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .products-title {
+    font-size: 1.75rem;
+  }
+
+  .services-cta-text {
+    font-size: 1rem;
+  }
+  .products-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .products-filters > #product-search {
+    max-width: 100%;
+  }
+}
+/* === Адаптация под большие экраны === */
+@media (min-width: 900px) {
+  .products-filters {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .products-filters > .active-filters {
+    margin-top: 0;
+    width: auto;
+  }
+}
+
+/* === Адаптация под мобильные (<= 480px) === */
+@media (max-width: 480px) {
+  .products-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .products-filters > #product-search {
+    max-width: 100%;
   }
 
   .products-title {
