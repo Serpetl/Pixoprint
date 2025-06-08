@@ -23,11 +23,65 @@
   padding: 3rem 1rem;
 }
 
-.products-single .image img {
-  width: 100%;
+.products-single .image {
+  position: relative;
   max-width: 600px;
+  margin: 0 auto;
+}
+
+.product-image-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Стрелки навигации */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.carousel-arrow.left {
+  left: 0.5rem;
+}
+
+.carousel-arrow.right {
+  right: 0.5rem;
 }
 
 .products-single .text {
@@ -57,9 +111,11 @@
     display: flex;
     gap: 2rem;
   }
+
   .reverse-on-desktop {
     /* flex-direction: row-reverse; */
   }
+
   .two-col .image,
   .two-col .text {
     flex: 1;

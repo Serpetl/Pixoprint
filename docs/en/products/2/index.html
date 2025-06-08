@@ -118,8 +118,14 @@
 <!-- Product Grid -->
 <section class="products-grid-section" aria-labelledby="products-heading">
   <div class="container">
+    <div class="products-filters">
+      <input type="text" id="product-search" placeholder="Search..." />
+      <div class="active-filters"></div>
+      <button id="reset-filters" class="reset-btn">Reset</button>
+    </div>
     <div class="products-grid" id="products-heading">
-       
+      
+        
 <div class="product-card" data-aos="fade-up" data-aos-delay="0">
   
   <div class="product-image-carousel">
@@ -277,17 +283,22 @@
       <h3 class="product-title">Wave Form Chair</h3>
       <p class="product-description">Artistic chair with wave-like CNC profile.</p>
       <ul class="product-meta">
-        
-        <li><strong>Material:</strong> <span>wood</span></li>
-         
-        <li><strong>Type:</strong> <span>parametric-chair</span></li>
+        <li class="product-tags">
+          
+          <span class="meta-tag">wood</span>
            
+          <span class="meta-tag">parametric-chair</span>
+          
+        </li>
+        
       </ul>
     </div>
   </a>
 </div>
- 
+
+      
     </div>
+  </div>
 
     <!-- Pagination Controls -->
     <div class="pagination">
