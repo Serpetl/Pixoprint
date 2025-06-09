@@ -28,6 +28,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.main-nav a.active {
+  font-weight: bold;
+  color: var(--primary-color);
+}
 
 .scroll-down {
   position: absolute;
