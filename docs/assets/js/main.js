@@ -214,6 +214,132 @@ window.addEventListener('load', () => {
     })
   }
 
+  window.addEventListener('load', () => {
+    const PRODUCTS_PER_PAGE = 9
+    let allProducts = []
+    let currentPage = 1
+    let activeTags = new Set()
+
+    const grid = document.getElementById('products-grid')
+    const pagination = document.querySelector('.pagination')
+    const filterContainer = document.querySelector('.active-filters')
+    const searchInput = document.getElementById('product-search')
+
+    function renderProducts(products) {
+      grid.innerHTML = ''
+      const start = (currentPage - 1) * PRODUCTS_PER_PAGE
+      const pageItems = products.slice(start, start + PRODUCTS_PER_PAGE)
+
+      pageItems.forEach((product) => {
+        const el = document.createElement('div')
+        el.className = 'product-card'
+        el.innerHTML = `
+        <div class="product-info">
+          <h3 class="product-title">${product.title.en}</h3>
+          <p class="product-description">${product.excerpt.en}</p>
+          <ul class="product-meta">
+            <li class="product-tags-with-price">
+              <div class="tags">
+                ${(product.tags?.en || [])
+                  .map(
+                    (tag) => `
+                  <span class="meta-tag">${tag}</span>
+                `
+                  )
+                  .join('')}
+              </div>
+              ${product.price ? `<div class="price">${product.price} €</div>` : ''}
+            </li>
+          </ul>
+        </div>
+      `
+        grid.appendChild(el)
+      })
+
+      if (window.AOS && typeof AOS.refreshHard === 'function') AOS.refreshHard()
+    }
+
+    function updatePagination(totalItems) {
+      pagination.innerHTML = ''
+      const totalPages = Math.ceil(totalItems / PRODUCTS_PER_PAGE)
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('a')
+        btn.textContent = i
+        btn.href = '#'
+        if (i === currentPage) btn.classList.add('active')
+        btn.addEventListener('click', (e) => {
+          e.preventDefault()
+          currentPage = i
+          applyFilters()
+        })
+        pagination.appendChild(btn)
+      }
+    }
+
+    function updateActiveTagsDisplay() {
+      filterContainer.innerHTML = ''
+      activeTags.forEach((tag) => {
+        const el = document.createElement('span')
+        el.className = 'meta-tag active-filter'
+        el.textContent = tag
+        el.title = 'Click to remove filter'
+        el.addEventListener('click', () => {
+          activeTags.delete(tag)
+          updateActiveTagsDisplay()
+          applyFilters()
+        })
+        filterContainer.appendChild(el)
+      })
+    }
+
+    function applyFilters() {
+      const query = searchInput?.value?.toLowerCase() || ''
+      const filtered = allProducts.filter((p) => {
+        const tags = (p.tags?.en || []).map((t) => t.toLowerCase())
+        const text = `${p.title.en} ${p.excerpt.en}`.toLowerCase()
+        const matchesSearch = text.includes(query)
+        const matchesTags = [...activeTags].every((tag) => tags.includes(tag))
+        return matchesSearch && matchesTags
+      })
+
+      renderProducts(filtered)
+      updatePagination(filtered.length)
+    }
+
+    fetch('{{ baseurl }}/assets/data/products.json')
+      .then((res) => res.json())
+      .then((data) => {
+        allProducts = data
+        applyFilters()
+
+        // Initial tag binding
+        document.getElementById('products-grid').addEventListener('click', (e) => {
+          const tagEl = e.target.closest('.meta-tag')
+          if (tagEl && !tagEl.classList.contains('active-filter')) {
+            const tag = tagEl.textContent.trim().toLowerCase()
+            activeTags.add(tag)
+            currentPage = 1
+            updateActiveTagsDisplay()
+            applyFilters()
+          }
+        })
+
+        searchInput?.addEventListener('input', () => {
+          currentPage = 1
+          applyFilters()
+        })
+
+        document.getElementById('reset-filters')?.addEventListener('click', () => {
+          activeTags.clear()
+          searchInput.value = ''
+          currentPage = 1
+          updateActiveTagsDisplay()
+          applyFilters()
+        })
+      })
+  })
+
   // Инициализация
   updateActiveTagsDisplay()
   applyFilters()
