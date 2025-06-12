@@ -144,7 +144,10 @@ window.addEventListener('load', () => {
         (query === '' || matchesSearch) && (activeTags.size === 0 || matchesTags) ? 'flex' : 'none'
     })
 
-    updateCardTagHighlighting() // 👈 добавь сюда
+    updateCardTagHighlighting()
+    if (window.AOS && typeof AOS.refreshHard === 'function') {
+      AOS.refreshHard()
+    }
   }
 
   function updateActiveTagsDisplay() {
