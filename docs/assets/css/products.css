@@ -224,7 +224,20 @@
   }
 }
 
-/* === Product Card height standardization === */
-.product-card {
-  min-height: 450px;
+/* ── folded first card ──────────────────────────────────────────── */
+.product-card.folded {
+  /* только в сложенном состоянии */
+  justify-content: flex-start; /* вместо space-between */
+}
+
+.product-image-carousel {
+  max-height: 1000px;
+  transition: max-height 1s ease-out;
+  overflow: hidden;
+}
+
+/* состояние «сложена» */
+.product-card.folded .product-image-carousel {
+  max-height: 38vw;
+  overflow: hidden;
 }

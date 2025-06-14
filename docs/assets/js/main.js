@@ -56,22 +56,25 @@ window.addEventListener('load', () => {
   const searchInput = document.getElementById('product-search')
   const resetBtn = document.getElementById('reset-filters')
 
-  /* === 5. Rendering ================================================== */
+  /* === 5. Rendering =================================================== */
   function renderProducts(list) {
     grid.innerHTML = ''
+
     const start = (currentPage - 1) * PER_PAGE
     const page = list.slice(start, start + PER_PAGE)
 
     page.forEach((p, idx) => {
       const imgDir = `${baseurl}/assets/img/products/${p.material}/${p.type}/${p.id}`
+
+      /* ── карточка ──────────────────────────────────────────────────── */
       const card = document.createElement('div')
       card.className = 'product-card'
-      card.setAttribute('data-aos', 'fade-up')
-      card.setAttribute('data-aos-delay', `${idx * 50}`)
+      card.dataset.aos = 'fade-up'
+      card.dataset.aosDelay = idx * 50
 
       card.innerHTML = `
       <div class="product-image-carousel">
-        <button class="carousel-arrow left"  type="button" aria-label="Prev">
+        <button class="carousel-arrow left" type="button" aria-label="Prev">
           <svg width="20" height="20" viewBox="0 0 24 24"><path fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" d="M15 18 9 12 15 6"/></svg>
@@ -81,10 +84,11 @@ window.addEventListener('load', () => {
           ${(p.images || [])
             .map(
               (img) => `
-            <picture class="carousel-item">
-              <img src="${imgDir}/${img}-640.jpg"
-                   alt="${p.title[locale]}" loading="lazy" decoding="async">
-            </picture>`
+                <picture class="carousel-item">
+                  <img src="${imgDir}/${img}-640.jpg"
+                       alt="${p.title[locale]}"
+                       loading="lazy" decoding="async">
+                </picture>`
             )
             .join('')}
         </div>
@@ -99,7 +103,7 @@ window.addEventListener('load', () => {
       <a href="${baseurl}/${locale}/products/${p.id}/" class="product-link">
         <div class="product-info">
           <h3 class="product-title">${p.title[locale]}</h3>
-          <p class="product-description">${p.excerpt[locale]}</p>
+          <p  class="product-description">${p.excerpt[locale]}</p>
           <ul class="product-meta">
             <li class="product-tags-with-price">
               <div class="tags">
@@ -113,13 +117,26 @@ window.addEventListener('load', () => {
         </div>
       </a>`
 
+      /* первый элемент сразу «складываем» */
+      if (idx === 0) card.classList.add('folded')
+
       grid.appendChild(card)
     })
 
     initCarousel(grid)
     initCardClicks(grid)
 
-    if (window.AOS?.refresh) window.AOS.refresh() // ⬅️ use standard refresh
+    if (window.AOS?.refresh) window.AOS.refresh()
+
+    /* — разворачиваем первую карточку после первого скролла — */
+    const first = grid.querySelector('.product-card.folded')
+    if (first) {
+      const unfold = () => {
+        first.classList.remove('folded')
+        window.removeEventListener('scroll', unfold)
+      }
+      window.addEventListener('scroll', unfold, { once: true })
+    }
   }
 
   function drawPagination(total) {
