@@ -181,6 +181,7 @@ window.addEventListener('load', () => {
     drawPagination(filtered.length)
     drawActiveTags()
     highlightCardTags()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   /* === 7. Carousel helpers =========================================== */
