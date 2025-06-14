@@ -33,20 +33,15 @@
   margin: 0 auto;
 }
 
-/* === Grid Layout === */
+/* === Grid Layout (mobile-first) === */
 .products-grid-section {
-  padding: 2rem 1rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  padding: 1rem 1rem 2rem; /* меньше верхнего отступа → 1-я карточка влезает */
 }
 
 .products-grid {
   display: grid;
-  align-items: stretch;
+  gap: 1.5rem; /* чуть компактнее, было 2rem */
   grid-template-columns: 1fr;
-  gap: 2rem;
   max-width: var(--container-max-width);
   margin: 0 auto;
 }
@@ -62,7 +57,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .products-grid-section {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem 4rem; /* прежний «воздух» для десктопа */
   }
 }
 
@@ -72,8 +67,8 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 1rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
