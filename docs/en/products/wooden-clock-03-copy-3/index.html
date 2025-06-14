@@ -32,11 +32,9 @@
     <link rel="stylesheet" href="/Pixoprint/assets/css/footer.css" />
 
     <!-- Page-specific stylesheet -->
-     
-    <link rel="stylesheet" href="/Pixoprint/assets/css/products.css" />
     
-    <link rel="stylesheet" href="/Pixoprint/assets/css/product-card.css" />
-     
+    <link rel="stylesheet" href="/Pixoprint/assets/css/product.css" />
+    
 
     <link
       rel="stylesheet"
@@ -58,7 +56,7 @@
     <meta name="twitter:image" content="/Pixoprint/assets/img/og-image.jpg" />
   </head>
 
-  <body class="page-products-list">
+  <body class="page-product">
     <header class="site-header">
   <div class="container nav-wrapper">
     <!-- Логотип -->
@@ -75,7 +73,6 @@
       
       <a
         href="/Pixoprint/en/products-list/"
-        class="active"
         
       >
         Products
@@ -136,43 +133,110 @@
 </header>
 
 
-    <main id="main" role="main" class="page-products-list">
-<!-- ════════════════  HERO  ════════════════ -->
+    <main id="main" role="main" class="page-product">
 <section class="products-hero">
   <div class="container">
-    <h1 class="products-title" data-aos="fade-up">Our Products</h1>
+    <h1 class="products-title" data-aos="fade-up">Geometric Wooden Clock</h1>
     <p class="products-subtitle" data-aos="fade-up" data-aos-delay="100">
-      Unique items crafted with precision and branding in mind.
+      Geometric design clock made of walnut wood.
     </p>
   </div>
 </section>
 
-<!-- Product Grid -->
-<section class="products-grid-section" aria-labelledby="products-heading">
-  
-  <div class="container" data-baseurl="/Pixoprint" data-locale="en">
-    <!-- Поиск + фильтры -->
-    <div class="products-filters">
-      <input type="text" id="product-search" placeholder="Search..." />
-      <button id="reset-filters" class="reset-btn">Reset</button>
-      <div class="active-filters"></div>
+<section class="products-single" aria-labelledby="product-details">
+  <div class="container">
+    <div class="two-col reverse-on-desktop">
+      <div class="image" data-aos="fade-right">
+        
+        <div class="product-image-carousel">
+          <button class="carousel-arrow left" aria-label="Scroll left" type="button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M15 6L9 12L15 18"
+                stroke="#333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <div class="carousel-track">
+            
+            <picture class="carousel-item">
+              <source
+                type="image/webp"
+                srcset="/Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-240.webp 240w,
+                          /Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-320.webp 320w,
+                          /Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-480.webp 480w,
+                          /Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-640.webp 640w"
+                sizes="(max-width: 599px) 100vw,
+                         (max-width: 899px) 50vw,
+                         640px"
+              />
+              <img
+                src="/Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-640.jpg"
+                srcset="/Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-240.jpg 240w,
+                          /Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-320.jpg 320w,
+                          /Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-480.jpg 480w,
+                          /Pixoprint/assets/img/products/wood/clock/wooden-clock-03-copy-3/2-640.jpg 640w"
+                sizes="(max-width: 599px) 100vw,
+                         (max-width: 899px) 50vw,
+                         640px"
+                alt="Geometric Wooden Clock"
+                loading="eager"
+                decoding="async"
+                width="640"
+                height="auto"
+              />
+            </picture>
+            
+          </div>
+
+          <button class="carousel-arrow right" aria-label="Scroll right" type="button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="#333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        
+      </div>
+
+      <div class="text" data-aos="fade-left">
+        
+        <p>Geometric design clock made of walnut wood.</p>
+        
+
+        <ul class="product-meta">
+          
+          <li><strong>Material:</strong> wood</li>
+           
+          <li><strong>Type:</strong> clock</li>
+            
+          <li><strong>Price:</strong> 249 €</li>
+           
+          <li>
+            <strong>Tags:</strong>
+            
+          </li>
+          
+        </ul>
+
+        <a href="/en/contact/" class="services-cta-btn">
+          Contact Us
+        </a>
+      </div>
     </div>
-
-    <!-- Пустая сетка: сюда main.js подставит карточки -->
-    <div id="products-grid" class="products-grid"></div>
-
-    <!-- Пагинация: main.js сам создаст 1,2,3… -->
-    <div class="pagination"></div>
   </div>
 </section>
 
-<!-- ═══════  CTA  ═══════ -->
-<section class="services-cta">
-  <div class="container" data-aos="fade-up">
-    <p class="services-cta-text">Have something custom in mind? We&#39;re happy to help.</p>
-    <a href="/en/contact/" class="services-cta-btn"> Contact Us </a>
-  </div>
-</section>
 </main>
 
     <footer class="site-footer" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">

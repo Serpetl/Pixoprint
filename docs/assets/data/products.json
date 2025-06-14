@@ -1,0 +1,402 @@
+[
+  {
+    "id": "wooden-clock-01",
+    "title": {
+      "en": "Classic Wooden Clock",
+      "fi": "Klassinen puinen kello"
+    },
+    "excerpt": {
+      "en": "Elegant clock made of oak with minimal design.",
+      "fi": "Tyylikäs tammikello, jossa on minimalistinen muotoilu."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor", "gifts"],
+    "images": ["2"],
+    "price": 185,
+    "tags": {
+      "en": ["decor", "gifts"],
+      "fi": ["sisustus", "lahjat"]
+    }
+  },
+  {
+    "id": "wooden-clock-02",
+    "title": {
+      "en": "Modern Wall Clock",
+      "fi": "Moderni seinäkello"
+    },
+    "excerpt": {
+      "en": "Laser-cut clock with custom engraving option.",
+      "fi": "Laserleikattu kello, jossa on kaiverrusmahdollisuus."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor"],
+    "images": ["1", "2", "3"],
+    "price": 312,
+    "tags": {
+      "en": ["decor"],
+      "fi": ["sisustus"]
+    }
+  },
+  {
+    "id": "wooden-clock-03",
+    "title": {
+      "en": "Geometric Wooden Clock",
+      "fi": "Geometrinen puukello"
+    },
+    "excerpt": {
+      "en": "Geometric design clock made of walnut wood.",
+      "fi": "Pähkinäpuinen kello geometrisella muotoilulla."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor", "modern"],
+    "images": ["2"],
+    "price": 249,
+    "tags": {
+      "en": ["decor", "modern"],
+      "fi": ["sisustus", "moderni"]
+    }
+  },
+  {
+    "id": "parametric-chair-01",
+    "title": {
+      "en": "Parametric Lounge Chair",
+      "fi": "Parametrinen lepotuoli"
+    },
+    "excerpt": {
+      "en": "Comfortable CNC-cut chair made from birch plywood.",
+      "fi": "Mukava CNC-leikattu tuoli koivuvanerista."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture", "parametric"],
+    "images": ["1", "2", "3", "4"],
+    "price": 699,
+    "tags": {
+      "en": ["furniture", "parametric"],
+      "fi": ["huonekalut", "parametrinen"]
+    }
+  },
+  {
+    "id": "parametric-chair-02",
+    "title": {
+      "en": "Organic Form Chair",
+      "fi": "Organinen tuoli"
+    },
+    "excerpt": {
+      "en": "Ergonomic parametric design made with natural wood.",
+      "fi": "Ergonominen parametrinen tuoli luonnonpuusta."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture"],
+    "images": ["1", "2", "3", "4"],
+    "price": 622,
+    "tags": {
+      "en": ["furniture"],
+      "fi": ["huonekalut"]
+    }
+  },
+  {
+    "id": "parametric-chair-03",
+    "title": {
+      "en": "Curved Backrest Chair",
+      "fi": "Kaarevaselkäinen tuoli"
+    },
+    "excerpt": {
+      "en": "Parametric seat with curved layers and artistic feel.",
+      "fi": "Kaarevista kerroksista tehty taiteellinen istuin."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture", "art"],
+    "images": ["1", "2", "3", "4"],
+    "price": 573,
+    "tags": {
+      "en": ["furniture", "art"],
+      "fi": ["huonekalut", "taide"]
+    }
+  },
+  {
+    "id": "parametric-table-01",
+    "title": {
+      "en": "Wave Coffee Table",
+      "fi": "Aalto-sohvapöytä"
+    },
+    "excerpt": {
+      "en": "Parametric low table made from layered plywood.",
+      "fi": "Parametrinen matala pöytä, valmistettu vanerikerroksista."
+    },
+    "material": "plywood",
+    "type": "parametric-table",
+    "category": ["furniture", "tables"],
+    "images": ["1", "2", "3", "4", "5"],
+    "price": 415,
+    "tags": {
+      "en": ["furniture", "tables"],
+      "fi": ["huonekalut", "pöydät"]
+    }
+  },
+  {
+    "id": "parametric-table-02",
+    "title": {
+      "en": "Ripple Dining Table",
+      "fi": "Aaltoileva ruokapöytä"
+    },
+    "excerpt": {
+      "en": "Large sculptural dining table with CNC detailing.",
+      "fi": "Suuri veistoksellinen ruokapöytä CNC-yksityiskohdilla."
+    },
+    "material": "plywood",
+    "type": "parametric-table",
+    "category": ["furniture", "dining"],
+    "images": ["1", "2", "3", "4", "5"],
+    "price": 932,
+    "tags": {
+      "en": ["furniture", "dining"],
+      "fi": ["huonekalut", "ruokailu"]
+    }
+  },
+  {
+    "id": "wooden-clock-04",
+    "title": {
+      "en": "Rustic Wooden Clock",
+      "fi": "Rustiikkinen puinen kello"
+    },
+    "excerpt": {
+      "en": "Handcrafted rustic clock made of reclaimed oak.",
+      "fi": "Käsintehty rustiikkinen kello kierrätetystä tammesta."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor", "rustic"],
+    "images": ["1", "2", "3", "4"],
+    "price": 298,
+    "tags": {
+      "en": ["decor", "rustic"],
+      "fi": ["sisustus", "rustiikkinen"]
+    }
+  },
+  {
+    "id": "parametric-chair-04",
+    "title": {
+      "en": "Wave Form Chair",
+      "fi": "Aaltomuotoinen tuoli"
+    },
+    "excerpt": {
+      "en": "Artistic chair with wave-like CNC profile.",
+      "fi": "Taiteellinen tuoli aaltoilevalla CNC-profiililla."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture", "parametric"],
+    "images": ["1", "2", "3", "4"],
+    "price": 759,
+    "tags": {
+      "en": ["furniture", "parametric"],
+      "fi": ["huonekalut", "parametrinen"]
+    }
+  },
+  {
+    "id": "wooden-clock-01-copy-1",
+    "title": {
+      "en": "Classic Wooden Clock",
+      "fi": "Klassinen puinen kello"
+    },
+    "excerpt": {
+      "en": "Elegant clock made of oak with minimal design.",
+      "fi": "Tyylikäs tammikello, jossa on minimalistinen muotoilu."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor", "gifts"],
+    "images": ["2"],
+    "price": 185,
+    "tags": {
+      "en": ["decor", "gifts"],
+      "fi": ["sisustus", "lahjat"]
+    }
+  },
+  {
+    "id": "wooden-clock-02-copy-2",
+    "title": {
+      "en": "Modern Wall Clock",
+      "fi": "Moderni seinäkello"
+    },
+    "excerpt": {
+      "en": "Laser-cut clock with custom engraving option.",
+      "fi": "Laserleikattu kello, jossa on kaiverrusmahdollisuus."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor"],
+    "images": ["1", "2", "3"],
+    "price": 312,
+    "tags": {
+      "en": ["decor"],
+      "fi": ["sisustus"]
+    }
+  },
+  {
+    "id": "wooden-clock-03-copy-3",
+    "title": {
+      "en": "Geometric Wooden Clock",
+      "fi": "Geometrinen puukello"
+    },
+    "excerpt": {
+      "en": "Geometric design clock made of walnut wood.",
+      "fi": "Pähkinäpuinen kello geometrisella muotoilulla."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor", "modern"],
+    "images": ["2"],
+    "price": 249,
+    "tags": {
+      "en": ["decor", "modern"],
+      "fi": ["sisustus", "moderni"]
+    }
+  },
+  {
+    "id": "parametric-chair-01-copy-4",
+    "title": {
+      "en": "Parametric Lounge Chair",
+      "fi": "Parametrinen lepotuoli"
+    },
+    "excerpt": {
+      "en": "Comfortable CNC-cut chair made from birch plywood.",
+      "fi": "Mukava CNC-leikattu tuoli koivuvanerista."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture", "parametric"],
+    "images": ["1", "2", "3", "4"],
+    "price": 699,
+    "tags": {
+      "en": ["furniture", "parametric"],
+      "fi": ["huonekalut", "parametrinen"]
+    }
+  },
+  {
+    "id": "parametric-chair-02-copy-5",
+    "title": {
+      "en": "Organic Form Chair",
+      "fi": "Organinen tuoli"
+    },
+    "excerpt": {
+      "en": "Ergonomic parametric design made with natural wood.",
+      "fi": "Ergonominen parametrinen tuoli luonnonpuusta."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture"],
+    "images": ["1", "2", "3", "4"],
+    "price": 622,
+    "tags": {
+      "en": ["furniture"],
+      "fi": ["huonekalut"]
+    }
+  },
+  {
+    "id": "parametric-chair-03-copy-6",
+    "title": {
+      "en": "Curved Backrest Chair",
+      "fi": "Kaarevaselkäinen tuoli"
+    },
+    "excerpt": {
+      "en": "Parametric seat with curved layers and artistic feel.",
+      "fi": "Kaarevista kerroksista tehty taiteellinen istuin."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture", "art"],
+    "images": ["1", "2", "3", "4"],
+    "price": 573,
+    "tags": {
+      "en": ["furniture", "art"],
+      "fi": ["huonekalut", "taide"]
+    }
+  },
+  {
+    "id": "parametric-table-01-copy-7",
+    "title": {
+      "en": "Wave Coffee Table",
+      "fi": "Aalto-sohvapöytä"
+    },
+    "excerpt": {
+      "en": "Parametric low table made from layered plywood.",
+      "fi": "Parametrinen matala pöytä, valmistettu vanerikerroksista."
+    },
+    "material": "plywood",
+    "type": "parametric-table",
+    "category": ["furniture", "tables"],
+    "images": ["1", "2", "3", "4", "5"],
+    "price": 415,
+    "tags": {
+      "en": ["furniture", "tables"],
+      "fi": ["huonekalut", "pöydät"]
+    }
+  },
+  {
+    "id": "parametric-table-02-copy-8",
+    "title": {
+      "en": "Ripple Dining Table",
+      "fi": "Aaltoileva ruokapöytä"
+    },
+    "excerpt": {
+      "en": "Large sculptural dining table with CNC detailing.",
+      "fi": "Suuri veistoksellinen ruokapöytä CNC-yksityiskohdilla."
+    },
+    "material": "plywood",
+    "type": "parametric-table",
+    "category": ["furniture", "dining"],
+    "images": ["1", "2", "3", "4", "5"],
+    "price": 932,
+    "tags": {
+      "en": ["furniture", "dining"],
+      "fi": ["huonekalut", "ruokailu"]
+    }
+  },
+  {
+    "id": "wooden-clock-04-copy-9",
+    "title": {
+      "en": "Rustic Wooden Clock",
+      "fi": "Rustiikkinen puinen kello"
+    },
+    "excerpt": {
+      "en": "Handcrafted rustic clock made of reclaimed oak.",
+      "fi": "Käsintehty rustiikkinen kello kierrätetystä tammesta."
+    },
+    "material": "wood",
+    "type": "clock",
+    "category": ["decor", "rustic"],
+    "images": ["1", "2", "3", "4"],
+    "price": 298,
+    "tags": {
+      "en": ["decor", "rustic"],
+      "fi": ["sisustus", "rustiikkinen"]
+    }
+  },
+  {
+    "id": "parametric-chair-04-copy-10",
+    "title": {
+      "en": "Wave Form Chair",
+      "fi": "Aaltomuotoinen tuoli"
+    },
+    "excerpt": {
+      "en": "Artistic chair with wave-like CNC profile.",
+      "fi": "Taiteellinen tuoli aaltoilevalla CNC-profiililla."
+    },
+    "material": "wood",
+    "type": "parametric-chair",
+    "category": ["furniture", "parametric"],
+    "images": ["1", "2", "3", "4"],
+    "price": 759,
+    "tags": {
+      "en": ["furniture", "parametric"],
+      "fi": ["huonekalut", "parametrinen"]
+    }
+  }
+]

@@ -137,7 +137,7 @@
 
 
     <main id="main" role="main" class="page-products-list">
-<!-- Hero -->
+<!-- ════════════════  HERO  ════════════════ -->
 <section class="products-hero">
   <div class="container">
     <h1 class="products-title" data-aos="fade-up">Our Products</h1>
@@ -149,7 +149,8 @@
 
 <!-- Product Grid -->
 <section class="products-grid-section" aria-labelledby="products-heading">
-  <div class="container">
+  
+  <div class="container" data-baseurl="/Pixoprint" data-locale="en">
     <!-- Поиск + фильтры -->
     <div class="products-filters">
       <input type="text" id="product-search" placeholder="Search..." />
@@ -157,192 +158,19 @@
       <div class="active-filters"></div>
     </div>
 
-    <div class="products-grid">
-       <div class="product-card" data-aos="fade-up" data-aos-delay="0">
-  <!-- Карусель -->
-  <div class="product-image-carousel">
-    <button class="carousel-arrow left" type="button" aria-label="Scroll left">
-      <svg width="24" height="24">
-        <path
-          d="M15 6L9 12L15 18"
-          stroke="#333"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-    <div class="carousel-track">
-       
-      <picture class="carousel-item">
-        <source
-          type="image/webp"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-240.webp 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-320.webp 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-480.webp 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-640.webp 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-        />
-        <img
-          src="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-640.jpg"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-240.jpg 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-320.jpg 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-480.jpg 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/1-640.jpg 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-          alt="Wave Form Chair"
-          loading="eager"
-          decoding="async"
-          width="640"
-          height="auto"
-        />
-      </picture>
-       
-      <picture class="carousel-item">
-        <source
-          type="image/webp"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-240.webp 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-320.webp 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-480.webp 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-640.webp 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-        />
-        <img
-          src="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-640.jpg"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-240.jpg 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-320.jpg 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-480.jpg 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/2-640.jpg 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-          alt="Wave Form Chair"
-          loading="lazy"
-          decoding="async"
-          width="640"
-          height="auto"
-        />
-      </picture>
-       
-      <picture class="carousel-item">
-        <source
-          type="image/webp"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-240.webp 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-320.webp 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-480.webp 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-640.webp 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-        />
-        <img
-          src="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-640.jpg"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-240.jpg 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-320.jpg 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-480.jpg 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/3-640.jpg 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-          alt="Wave Form Chair"
-          loading="lazy"
-          decoding="async"
-          width="640"
-          height="auto"
-        />
-      </picture>
-       
-      <picture class="carousel-item">
-        <source
-          type="image/webp"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-240.webp 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-320.webp 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-480.webp 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-640.webp 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-        />
-        <img
-          src="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-640.jpg"
-          srcset="/Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-240.jpg 240w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-320.jpg 320w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-480.jpg 480w,
-                    /Pixoprint/assets/img/products/wood/parametric-chair/parametric-chair-04/4-640.jpg 640w"
-          sizes="(max-width:599px) 100vw, (max-width:899px) calc(50vw - 2rem), calc((100vw - 4rem)/3)"
-          alt="Wave Form Chair"
-          loading="lazy"
-          decoding="async"
-          width="640"
-          height="auto"
-        />
-      </picture>
-      
-    </div>
-    <button class="carousel-arrow right" type="button" aria-label="Scroll right">
-      <svg width="24" height="24">
-        <path
-          d="M9 6L15 12L9 18"
-          stroke="#333"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-  </div>
+    <!-- Пустая сетка: сюда main.js подставит карточки -->
+    <div id="products-grid" class="products-grid"></div>
 
-  <!-- Информация -->
-  <a href="/Pixoprint/en/products/parametric-chair-04/" class="product-link">
-    <div class="product-info">
-      <h3 class="product-title">Wave Form Chair</h3>
-      <p class="product-description">Artistic chair with wave-like CNC profile.</p>
-      <ul class="product-meta">
-        <li class="product-tags-with-price">
-          <div class="tags">
-             
-            <span class="meta-tag">furniture</span>
-            
-            <span class="meta-tag">parametric</span>
-             
-          </div>
-
-          
-          <div class="price">759 €</div>
-          
-        </li>
-      </ul>
-    </div>
-  </a>
-</div>
- 
-    </div>
-
-    <!-- Pagination Controls -->
-<div class="pagination">
-  
-    <a href="/Pixoprint/en/products-list/">&laquo; Prev</a>
-  
-
-  
-    <a
-      href="/Pixoprint/en/products-list/"
-      class=""
-    >
-      1
-    </a>
-  
-    <a
-      href="/Pixoprint/en/products-list/2/"
-      class="active"
-    >
-      2
-    </a>
-  
-
-  
-</div>
-
+    <!-- Пагинация: main.js сам создаст 1,2,3… -->
+    <div class="pagination"></div>
   </div>
 </section>
 
-<!-- Call to Action -->
+<!-- ═══════  CTA  ═══════ -->
 <section class="services-cta">
   <div class="container" data-aos="fade-up">
     <p class="services-cta-text">Have something custom in mind? We&#39;re happy to help.</p>
-    <a href="/en/contact/" class="services-cta-btn">Contact Us</a>
+    <a href="/en/contact/" class="services-cta-btn"> Contact Us </a>
   </div>
 </section>
 </main>
