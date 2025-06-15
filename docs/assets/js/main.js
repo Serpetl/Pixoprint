@@ -194,11 +194,11 @@ window.addEventListener('load', () => {
     const maxPage = Math.ceil(filtered.length / PER_PAGE)
     if (currentPage > maxPage) currentPage = 1
 
+    window.scrollTo({ top: 0, behavior: 'auto' })
     renderProducts(filtered)
     drawPagination(filtered.length)
     drawActiveTags()
     highlightCardTags()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   /* === 7. Carousel helpers =========================================== */
