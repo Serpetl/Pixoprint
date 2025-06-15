@@ -117,26 +117,26 @@ window.addEventListener('load', () => {
         </div>
       </a>`
 
-      /* первый элемент сразу «складываем» */
-      if (idx === 0) card.classList.add('folded')
-
       grid.appendChild(card)
+
+      /* первый элемент «складываем», если он ниже области видимости */
+      if (idx === 0) {
+        const bottom = card.getBoundingClientRect().bottom
+        if (bottom > window.innerHeight) {
+          card.classList.add('folded')
+          const unfold = () => {
+            card.classList.remove('folded')
+            window.removeEventListener('scroll', unfold)
+          }
+          window.addEventListener('scroll', unfold, { once: true })
+        }
+      }
     })
 
     initCarousel(grid)
     initCardClicks(grid)
 
     if (window.AOS?.refresh) window.AOS.refresh()
-
-    /* — разворачиваем первую карточку после первого скролла — */
-    const first = grid.querySelector('.product-card.folded')
-    if (first) {
-      const unfold = () => {
-        first.classList.remove('folded')
-        window.removeEventListener('scroll', unfold)
-      }
-      window.addEventListener('scroll', unfold, { once: true })
-    }
   }
 
   function drawPagination(total) {
