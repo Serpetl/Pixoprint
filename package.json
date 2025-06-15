@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "npm run clean && cross-env ELEVENTY_ENV=prod eleventy",
+    "build": "npm run clean && cross-env ELEVENTY_ENV=prod eleventy && cp assets/js/main.js docs/assets/js/main.js",
     "clean": "rimraf docs",
     "build:images": "gulp --gulpfile gulpfile.cjs",
     "clean:images": "gulp clean --gulpfile gulpfile.cjs",
