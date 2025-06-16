@@ -147,18 +147,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
 }
 
 .product-tags-with-price .tags {
   display: flex;
-  gap: 0.5rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .product-tags-with-price .price {
   font-weight: bold;
   font-size: 1.2rem;
   color: var(--primary-color);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .meta-tag {
@@ -199,5 +207,19 @@
 
   .product-tags-with-price .price {
     align-self: flex-end;
+  }
+}
+@media (max-width: 480px) {
+  .product-tags-with-price {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+
+  .product-tags-with-price .price {
+    font-size: 1.1rem;
+    margin-left: 0;
+    margin-top: 0.25rem;
+    align-self: flex-start;
   }
 }

@@ -72,6 +72,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
+  row-gap: 0.75rem; /* для аккуратных переносов */
 }
 
 .products-filters > #product-search {
@@ -107,8 +108,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.5rem;
-  width: 100%;
+  margin-top: 0;
+  width: auto;
+  flex: 1 1 auto;
+  justify-content: flex-start;
 }
 
 .active-filters:empty {
@@ -225,19 +228,14 @@
 }
 
 /* ── folded first card ──────────────────────────────────────────── */
-.product-card.folded {
-  /* только в сложенном состоянии */
-  justify-content: flex-start; /* вместо space-between */
+
+.product-card.is-initializing {
+  visibility: hidden;
 }
 
 .product-image-carousel {
   max-height: 1000px;
-  transition: max-height 1s ease-out;
-  overflow: hidden;
-}
 
-/* состояние «сложена» */
-.product-card.folded .product-image-carousel {
-  max-height: 38vw;
+  transition: max-height 1.2s ease-out;
   overflow: hidden;
 }
