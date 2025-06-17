@@ -239,7 +239,7 @@
 .product-image-carousel {
   max-height: 1000px;
 
-  transition: max-height 1.2s ease-out;
+  transition: max-height 1.6s ease-out;
   overflow: hidden;
 }
 @media (min-width: 600px) {

@@ -1,0 +1,225 @@
+/* === Laser Cutting Page Styles — refined === */
+
+/***** GLOBAL UTILITIES *****/
+:root {
+  --section-py-mobile: 3rem;
+  --section-py-desktop: 5rem;
+}
+
+section {
+  padding-block: var(--section-py-mobile);
+}
+@media (min-width: 992px) {
+  section {
+    padding-block: var(--section-py-desktop);
+  }
+}
+
+/***** HERO *****/
+.laser-hero {
+  text-align: center;
+  background: var(--light-gray);
+  padding-block-start: 4rem; /* a bit extra top space for sticky header */
+}
+.laser-hero picture {
+  display: inline-block;
+  width: 100%;
+  max-width: 800px; /* clamps on large screens */
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.laser-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ✨ показывает станок целиком без обрезки */
+}
+.laser-hero .btn {
+  margin-top: 1.75rem;
+  display: inline-block;
+  padding: 0.75rem 2.25rem;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: #fff;
+  transition: var(--transition-link);
+}
+.laser-hero .btn:hover {
+  background: var(--secondary-color);
+  transform: var(--link-hover-scale);
+}
+
+/***** MACHINE SPECS *****/
+.laser-specs {
+  background: var(--white);
+  text-align: center;
+}
+.spec-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 960px;
+  margin-inline: auto;
+}
+@media (min-width: 576px) {
+  .spec-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+.spec-list li {
+  background: var(--light-gray);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+.spec-list i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/***** GALLERY *****/
+.laser-gallery {
+  background: var(--light-gray);
+  text-align: center;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-block: 2rem 1.5rem;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  aspect-ratio: 1/1; /* квадратные карточки */
+  transition: transform 0.3s ease;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* одинаковая высота и заполнение */
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.laser-gallery .btn {
+  padding: 0.65rem 1.75rem;
+  border-radius: 6px;
+  background: var(--primary-color);
+  color: #fff;
+  transition: var(--transition-link);
+}
+.laser-gallery .btn:hover {
+  background: var(--secondary-color);
+  transform: var(--link-hover-scale);
+}
+
+/***** PROCESS (steps) *****/
+.laser-process {
+  background: var(--white);
+  text-align: center;
+}
+.process-steps {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  counter-reset: step;
+  padding-left: 0;
+}
+.process-steps li {
+  list-style: none;
+  position: relative;
+  padding-left: 2.5rem;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+.process-steps li::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/***** BENEFITS *****/
+.laser-benefits {
+  background: var(--light-gray);
+  text-align: center;
+}
+.icon-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 960px;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+@media (min-width: 576px) {
+  .icon-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+.icon-list li {
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-link);
+}
+.icon-list li:hover {
+  transform: var(--link-hover-scale);
+}
+.icon-list i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/***** QUOTE FORM *****/
+.laser-quote {
+  background: var(--white);
+  text-align: center;
+}
+.quote-form {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.quote-form input,
+.quote-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.quote-form button {
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  transition: var(--transition-link);
+}
+.quote-form button:hover {
+  background: var(--secondary-color);
+  transform: var(--link-hover-scale);
+}
