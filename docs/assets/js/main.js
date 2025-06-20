@@ -49,21 +49,34 @@ window.addEventListener('load', () => {
 
   /* ── 3. Abort if no catalogue on page ================================ */
   const container = document.querySelector('.products-grid-section .container')
-  if (!container) return
+  // No return here, as we need to run FAQ/file input logic even without products grid
+  // if (!container) return; // Keep this line if this main.js is ONLY for products page, otherwise remove.
 
   /* ── 4. State & DOM references ======================================= */
-  const baseurl = container.dataset.baseurl || ''
-  const locale = container.dataset.locale || 'en'
-  const grid = document.getElementById('products-grid')
-  const pagination = document.querySelector('.pagination')
-  const filtersBox = document.querySelector('.active-filters')
-  const searchInput = document.getElementById('product-search')
-  const resetBtn = document.getElementById('reset-filters')
+  // Moved these declarations inside the block where they are used to prevent errors if .products-grid-section .container is not found
+  let baseurl = ''
+  let locale = 'en'
+  let grid = null
+  let pagination = null
+  let filtersBox = null
+  let searchInput = null
+  let resetBtn = null
   const PER_PAGE = 9
 
   let allProducts = []
   let currentPage = 1
   const activeTags = new Set()
+
+  // Initialize products related elements only if container exists
+  if (container) {
+    baseurl = container.dataset.baseurl || ''
+    locale = container.dataset.locale || 'en'
+    grid = document.getElementById('products-grid')
+    pagination = document.querySelector('.pagination')
+    filtersBox = document.querySelector('.active-filters')
+    searchInput = document.getElementById('product-search')
+    resetBtn = document.getElementById('reset-filters')
+  }
 
   /* ── Folding Helpers ================================================ */
   function applyFoldStyle(card) {
@@ -139,6 +152,7 @@ window.addEventListener('load', () => {
   }
 
   function renderProducts(list) {
+    if (!grid) return // Ensure grid exists
     grid.innerHTML = ''
     const start = (currentPage - 1) * PER_PAGE
     const page = list.slice(start, start + PER_PAGE)
@@ -227,6 +241,7 @@ window.addEventListener('load', () => {
 
   /* ── 6. Filters & Pagination (unchanged) ============================= */
   function drawPagination(total) {
+    if (!pagination) return // Ensure pagination exists
     pagination.innerHTML = ''
     const pages = Math.ceil(total / PER_PAGE)
     for (let i = 1; i <= pages; i++) {
@@ -244,6 +259,7 @@ window.addEventListener('load', () => {
   }
 
   function drawActiveTags() {
+    if (!filtersBox) return // Ensure filtersBox exists
     filtersBox.innerHTML = ''
     activeTags.forEach((t) => {
       const b = document.createElement('span')
@@ -260,6 +276,7 @@ window.addEventListener('load', () => {
   }
 
   function highlightCardTags() {
+    if (!grid) return // Ensure grid exists
     grid.querySelectorAll('.product-card').forEach((card) => {
       card.querySelectorAll('.meta-tag').forEach((tagEl) => {
         const txt = tagEl.textContent.trim().toLowerCase()
@@ -269,6 +286,7 @@ window.addEventListener('load', () => {
   }
 
   function applyFilters() {
+    if (!searchInput) return // Ensure searchInput exists
     const q = searchInput.value.trim().toLowerCase()
     const filtered = allProducts.filter((p) => {
       const txt = [p.title?.[locale], p.excerpt?.[locale], p.type, p.material]
@@ -289,38 +307,103 @@ window.addEventListener('load', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  grid.addEventListener('click', (e) => {
-    const tagEl = e.target.closest('.meta-tag')
-    if (!tagEl) return
-    e.preventDefault()
-    e.stopPropagation()
-    const t = tagEl.textContent.trim().toLowerCase()
-    activeTags.has(t) ? activeTags.delete(t) : activeTags.add(t)
-    currentPage = 1
-    applyFilters()
-  })
-
-  let debounce
-  searchInput.oninput = () => {
-    clearTimeout(debounce)
-    debounce = setTimeout(() => {
+  if (grid) {
+    // Only add event listener if grid exists
+    grid.addEventListener('click', (e) => {
+      const tagEl = e.target.closest('.meta-tag')
+      if (!tagEl) return
+      e.preventDefault()
+      e.stopPropagation()
+      const t = tagEl.textContent.trim().toLowerCase()
+      activeTags.has(t) ? activeTags.delete(t) : activeTags.add(t)
       currentPage = 1
       applyFilters()
-    }, 250)
+    })
   }
-  resetBtn.onclick = () => {
-    searchInput.value = ''
-    activeTags.clear()
-    currentPage = 1
-    applyFilters()
+
+  let debounce
+  if (searchInput) {
+    // Only add event listener if searchInput exists
+    searchInput.oninput = () => {
+      clearTimeout(debounce)
+      debounce = setTimeout(() => {
+        currentPage = 1
+        applyFilters()
+      }, 250)
+    }
+  }
+
+  if (resetBtn) {
+    // Only add event listener if resetBtn exists
+    resetBtn.onclick = () => {
+      searchInput.value = ''
+      activeTags.clear()
+      currentPage = 1
+      applyFilters()
+    }
   }
 
   /* ── 7. Data fetch & initial render ================================= */
-  fetch(`${baseurl}/assets/data/products.json`)
-    .then((r) => r.json())
-    .then((data) => {
-      allProducts = data
-      applyFilters()
+  if (container) {
+    // Only fetch data if products container exists
+    fetch(`${baseurl}/assets/data/products.json`)
+      .then((r) => r.json())
+      .then((data) => {
+        allProducts = data
+        applyFilters()
+      })
+      .catch(console.error)
+  }
+
+  /* === Laser Cutting Page Specific JS === */
+  // Simple JavaScript for FAQ accordion
+  const faqQuestions = document.querySelectorAll('.faq-question')
+  if (faqQuestions.length > 0) {
+    // Check if elements exist on page
+    faqQuestions.forEach((question) => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling
+        const icon = question.querySelector('i')
+
+        // Toggle 'active' class on the question
+        question.classList.toggle('active')
+
+        // Toggle visibility of the answer
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null
+          icon.classList.replace('fa-chevron-up', 'fa-chevron-down')
+        } else {
+          // Collapse other open answers
+          document.querySelectorAll('.faq-question.active').forEach((openQuestion) => {
+            if (openQuestion !== question) {
+              openQuestion.classList.remove('active')
+              openQuestion.nextElementSibling.style.maxHeight = null
+              openQuestion.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down')
+            }
+          })
+          answer.style.maxHeight = answer.scrollHeight + 'px'
+          icon.classList.replace('fa-chevron-down', 'fa-chevron-up')
+        }
+      })
     })
-    .catch(console.error)
+  }
+
+  // Custom file input logic
+  const fileInput = document.getElementById('file-upload')
+  const fileChosen = document.getElementById('file-chosen')
+
+  if (fileInput && fileChosen) {
+    // Check if elements exist on page
+    fileInput.addEventListener('change', function () {
+      if (this.files.length > 0) {
+        if (this.files.length === 1) {
+          fileChosen.textContent = this.files[0].name
+        } else {
+          fileChosen.textContent = `${this.files.length} files chosen`
+        }
+      } else {
+        fileChosen.textContent = 'No file chosen'
+      }
+    })
+  }
 })

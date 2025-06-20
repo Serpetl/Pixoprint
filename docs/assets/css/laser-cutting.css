@@ -1,225 +1,492 @@
-/* === Laser Cutting Page Styles — refined === */
-
-/***** GLOBAL UTILITIES *****/
+/* --- Global Utilities (Using provided variables) --- */
 :root {
-  --section-py-mobile: 3rem;
-  --section-py-desktop: 5rem;
+  --primary-color: #de3a68;
+  --secondary-color: #3b388b;
+  --accent-color: #1863dc;
+  --dark-bg: #1e1e1e;
+  --light-gray: #eee;
+  --white: #fff;
+  --black: #000;
+  --text-color: #3f3390; /* Used for most text and headings */
+
+  --transition-speed: 0.4s ease-in-out; /* Увеличена скорость для более плавных анимаций */
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  --section-padding-desktop: 5rem; /* Increased for better separation */
+  --section-padding-mobile: 2.5rem;
 }
 
 section {
-  padding-block: var(--section-py-mobile);
+  padding-block: var(--section-padding-desktop);
 }
-@media (min-width: 992px) {
+@media (max-width: 768px) {
   section {
-    padding-block: var(--section-py-desktop);
+    padding-block: var(--section-padding-mobile);
   }
 }
 
-/***** HERO *****/
-.laser-hero {
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+section > .container > .section-heading {
+  font-size: 2.8rem;
   text-align: center;
-  background: var(--light-gray);
-  padding-block-start: 4rem; /* a bit extra top space for sticky header */
+  margin-bottom: 3rem;
 }
-.laser-hero picture {
-  display: inline-block;
+@media (max-width: 768px) {
+  section > .container > .section-heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-speed);
+  margin-bottom: 0;
+}
+.btn.primary {
+  background: var(--primary-color);
+  color: var(--white);
+}
+.btn.primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Common Card Style */
+.card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* --- HERO SECTION --- */
+.laser-hero {
+  background: var(--white);
+  padding-block-start: 4rem;
+  padding-block-end: 2.5rem;
+  text-align: center;
+}
+.laser-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+.laser-hero .subtitle {
+  font-size: 1.35rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.hero-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 992px) {
+  .hero-content-grid {
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+  }
+}
+
+.hero-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+}
+
+.hero-image-wrapper picture {
+  display: block;
   width: 100%;
-  max-width: 800px; /* clamps on large screens */
-  aspect-ratio: 4/3;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius-md);
+  flex-grow: 1;
 }
-.laser-hero img {
+.hero-image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* ✨ показывает станок целиком без обрезки */
+  object-fit: cover;
+  object-position: center;
 }
-.laser-hero .btn {
-  margin-top: 1.75rem;
-  display: inline-block;
-  padding: 0.75rem 2.25rem;
-  border-radius: 8px;
-  background: var(--primary-color);
-  color: #fff;
-  transition: var(--transition-link);
-}
-.laser-hero .btn:hover {
-  background: var(--secondary-color);
-  transform: var(--link-hover-scale);
+.laser-hero .hero-cta-btn {
+  margin-top: 1.5rem;
+  margin-inline: auto;
+  font-size: 1.1rem;
+  padding: 0.9rem 2.8rem;
 }
 
-/***** MACHINE SPECS *****/
+.hero-image-wrapper .btn {
+  margin-bottom: 0;
+}
+
+/* --- MACHINE SPECS (within Hero Section) --- */
 .laser-specs {
   background: var(--white);
-  text-align: center;
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.laser-specs .section-heading {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  color: var(--text-color);
 }
 .spec-list {
-  display: grid;
-  gap: 1rem;
-  max-width: 960px;
-  margin-inline: auto;
-}
-@media (min-width: 576px) {
-  .spec-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-.spec-list li {
-  background: var(--light-gray);
-  padding: 1rem 1.25rem;
-  border-radius: 10px;
-  font-weight: 500;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-}
-.spec-list i {
-  font-size: 1.2rem;
-  color: var(--primary-color);
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+  flex-grow: 1;
+
+  justify-content: flex-start;
 }
 
-/***** GALLERY *****/
-.laser-gallery {
+@media (min-width: 992px) {
+  .spec-list {
+    justify-content: center;
+  }
+}
+
+.spec-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.spec-list li strong {
+  display: block;
+  font-size: 1.25rem;
+  margin-top: 0.2rem;
+  color: var(--text-color);
+}
+.spec-list li span {
+  font-size: 0.95rem;
+  color: #666;
+}
+.spec-list i {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+}
+
+/* --- MAIN CONTENT GRID (for How it Works & FAQ) --- */
+.laser-main-content {
   background: var(--light-gray);
-  text-align: center;
 }
-.gallery-grid {
+.laser-main-content .main-content-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin-block: 2rem 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
+@media (min-width: 992px) {
+  .laser-main-content .main-content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --- HOW IT WORKS --- */
+.laser-process {
+  margin-top: 0;
+}
+.laser-process .section-heading {
+  text-align: left;
+}
+.process-steps {
+  counter-reset: step-counter;
+  padding-left: 0;
+  list-style: none;
+}
+.process-steps li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+.process-steps li::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--white);
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* --- FREQUENTLY ASKED QUESTIONS --- */
+.laser-faq .section-heading {
+  text-align: left;
+}
+.faq-list {
+  list-style: none;
+  padding-left: 0;
+}
+.faq-list li {
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+}
+.faq-list li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding-right: 0.5rem;
+  transition: color var(--transition-speed);
+}
+.faq-question:hover {
+  color: var(--primary-color);
+}
+.faq-question i {
+  transition: transform var(--transition-speed);
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+.faq-question.active i {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+
+  transition:
+    max-height var(--transition-speed),
+    padding var(--transition-speed);
+  padding-right: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.faq-answer p {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+.faq-question.active + .faq-answer {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* --- SAMPLE GALLERY --- */
+.laser-gallery {
+  background: var(--white);
+  padding-block: 4rem;
+}
+.laser-gallery .section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-inline: 0;
+}
+
 .gallery-item {
+  display: block;
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  aspect-ratio: 1/1; /* квадратные карточки */
-  transition: transform 0.3s ease;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  aspect-ratio: 1 / 1;
+  transition:
+    transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+@media (min-width: 576px) {
+  .gallery-grid {
+    gap: 2rem;
+    max-width: 680px;
+    margin-inline: auto;
+  }
+  .gallery-item {
+    flex-basis: calc(50% - 1rem);
+    flex-grow: 0;
+    max-width: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
+  }
+}
+
+.gallery-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* одинаковая высота и заполнение */
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 .gallery-item:hover img {
   transform: scale(1.08);
 }
-.laser-gallery .btn {
-  padding: 0.65rem 1.75rem;
-  border-radius: 6px;
-  background: var(--primary-color);
-  color: #fff;
-  transition: var(--transition-link);
-}
-.laser-gallery .btn:hover {
-  background: var(--secondary-color);
-  transform: var(--link-hover-scale);
-}
 
-/***** PROCESS (steps) *****/
-.laser-process {
-  background: var(--white);
-  text-align: center;
-}
-.process-steps {
-  max-width: 640px;
-  margin: 2rem auto 0;
-  counter-reset: step;
-  padding-left: 0;
-}
-.process-steps li {
-  list-style: none;
-  position: relative;
-  padding-left: 2.5rem;
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
-}
-.process-steps li::before {
-  content: counter(step);
-  counter-increment: step;
-  position: absolute;
-  left: 0;
-  top: 0.15rem;
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 50%;
-  background: var(--primary-color);
-  color: #fff;
-  display: grid;
-  place-content: center;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-/***** BENEFITS *****/
-.laser-benefits {
-  background: var(--light-gray);
-  text-align: center;
-}
-.icon-list {
-  display: grid;
-  gap: 1rem;
-  max-width: 960px;
-  margin-inline: auto;
-  margin-top: 2rem;
-}
-@media (min-width: 576px) {
-  .icon-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-.icon-list li {
-  background: var(--white);
-  padding: 1.25rem;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  justify-content: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  transition: var(--transition-link);
-}
-.icon-list li:hover {
-  transform: var(--link-hover-scale);
-}
-.icon-list i {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-}
-
-/***** QUOTE FORM *****/
+/* --- QUOTE FORM --- */
 .laser-quote {
-  background: var(--white);
+  background: var(--light-gray);
+  padding-block-end: 3rem;
+}
+.laser-quote .section-heading {
   text-align: center;
+  margin-bottom: 2.5rem;
 }
 .quote-form {
-  max-width: 600px;
+  max-width: 700px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  gap: 1.2rem;
 }
 .quote-form input,
 .quote-form textarea {
-  padding: 0.75rem 1rem;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+  color: #999;
+}
+.quote-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.file-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-md);
+  background-color: var(--white);
+  cursor: pointer;
+  overflow: hidden;
+}
+.file-input-wrapper input[type='file'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.custom-file-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+.custom-file-upload i {
   font-size: 1rem;
 }
-.quote-form button {
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  transition: var(--transition-link);
+#file-chosen {
+  font-size: 0.9rem;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
 }
-.quote-form button:hover {
-  background: var(--secondary-color);
-  transform: var(--link-hover-scale);
+
+.quote-form button {
+  align-self: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
 }

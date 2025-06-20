@@ -134,198 +134,273 @@
 
 
     <main id="main" role="main" class="page-laser-cutting">
-<!-- Hero Section -->
 <section class="laser-hero">
   <div class="container">
     <h1 data-aos="fade-down">Laser Cutting</h1>
     <p class="subtitle" data-aos="fade-down" data-aos-delay="100">
-      Precision cutting for wood, acrylic, leather, and more
+      Precision cutting for various materials
     </p>
-    <picture data-aos="zoom-in">
-      <source
-        type="image/webp"
-        srcset="/Pixoprint/assets/img/laser/machine-320.webp 320w,
-                /Pixoprint/assets/img/laser/machine-480.webp 480w,
-                /Pixoprint/assets/img/laser/machine-640.webp 640w"
-        sizes="(max-width: 599px) 100vw,
-               (max-width: 899px) 80vw,
-               960px"
-      />
-      <img
-        src="/Pixoprint/assets/img/laser/machine-640.jpg"
-        srcset="/Pixoprint/assets/img/laser/machine-320.jpg 320w,
-                /Pixoprint/assets/img/laser/machine-480.jpg 480w,
-                /Pixoprint/assets/img/laser/machine-640.jpg 640w"
-        sizes="(max-width: 599px) 100vw,
-               (max-width: 899px) 80vw,
-               960px"
-        alt="Laser Cutting Machine"
-        width="960"
-        height="auto"
-        loading="lazy"
-        decoding="async"
-      />
-    </picture>
-    <a href="#quote" class="btn primary" data-aos="fade-up" data-aos-delay="200">Request a quote</a>
-  </div>
-</section>
 
-<!-- Machine Specs -->
-<section class="laser-specs">
-  <div class="container">
-    <h2 class="section-heading" data-aos="fade-up">Machine Capabilities</h2>
-    <ul class="spec-list">
-      <li data-aos="zoom-in-up" data-aos-delay="100">
-        <i class="fas fa-ruler-combined"></i>
-        Working Area: <strong>2500 × 1300 mm</strong>
-      </li>
-      <li data-aos="zoom-in-up" data-aos-delay="200">
-        <i class="fas fa-layer-group"></i>
-        Max Thickness: <strong>20 mm</strong>
-      </li>
-      <li data-aos="zoom-in-up" data-aos-delay="300">
-        <i class="fas fa-cubes"></i>
-        Materials: Plywood, wood, acrylic, fabrics, leather
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Sample Gallery -->
-<section class="laser-gallery">
-  <div class="container">
-    <h2 class="section-heading" data-aos="fade-up">See Our Work</h2>
-    <div class="gallery-grid">
-      
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
+    <div class="hero-content-grid">
+      <div class="hero-image-wrapper" data-aos="zoom-in" data-aos-delay="200">
         <picture>
           <source
             type="image/webp"
-            srcset="/Pixoprint/assets/img/laser/clock-320.webp 320w,
+            srcset="/Pixoprint/assets/img/laser/machine-320.webp 320w,
+                    /Pixoprint/assets/img/laser/machine-480.webp 480w,
+                    /Pixoprint/assets/img/laser/machine-640.webp 640w,
+                    /Pixoprint/assets/img/laser/machine-960.webp 960w"
+            sizes="(max-width: 599px) 100vw,
+                   (max-width: 899px) 80vw,
+                   600px"
+          />
+          <img
+            src="/Pixoprint/assets/img/laser/machine-640.jpg"
+            srcset="/Pixoprint/assets/img/laser/machine-320.jpg 320w,
+                    /Pixoprint/assets/img/laser/machine-480.jpg 480w,
+                    /Pixoprint/assets/img/laser/machine-640.jpg 640w,
+                    /Pixoprint/assets/img/laser/machine-960.jpg 960w"
+            sizes="(max-width: 599px) 100vw,
+                   (max-width: 899px) 80vw,
+                   600px"
+            alt="Laser Cutting Machine"
+            width="960"
+            height="auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <a href="#quote" class="btn primary hero-cta-btn" data-aos="fade-up" data-aos-delay="300"
+          >Request a quote</a
+        >
+      </div>
+
+      <div class="laser-specs" data-aos="fade-left" data-aos-delay="400">
+        <h2 class="section-heading">Machine Specs</h2>
+        <ul class="spec-list">
+          <li data-aos="zoom-in-up" data-aos-delay="500">
+            <i class="fas fa-ruler-combined"></i>
+            <span>Working area</span>
+            <strong>2500 × 1300 mm</strong>
+          </li>
+          <li data-aos="zoom-in-up" data-aos-delay="600">
+            <i class="fas fa-layer-group"></i>
+            <span>Materials We Cut</span>
+            <strong>Plywood, wood, acrylic, fabrics, leather, etc.</strong>
+          </li>
+          <li data-aos="zoom-in-up" data-aos-delay="700">
+            <i class="fas fa-maximize"></i>
+            <span>Maximum Thickness</span>
+            <strong>20 mm</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="laser-main-content">
+  <div class="container">
+    <div class="main-content-grid">
+      <div class="laser-process card" data-aos="fade-up">
+        <h2 class="section-heading">How It works</h2>
+        <ol class="process-steps">
+          <li data-aos="fade-up" data-aos-delay="100">
+            Prepare your design file and submit using the contact form
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            We cut your materials using our modern laser cutter
+          </li>
+          <li data-aos="fade-up" data-aos-delay="300">
+            Pick up your parts or let us arrange a delivery
+          </li>
+        </ol>
+      </div>
+
+      <div class="laser-faq card" data-aos="fade-up">
+        <h2 class="section-heading">Frequently asked questions</h2>
+        <ul class="faq-list">
+          <li data-aos="fade-up" data-aos-delay="100">
+            <h3 class="faq-question">
+              What file formats do you accept? <i class="fas fa-chevron-down"></i>
+            </h3>
+            <p class="faq-answer">
+              We typically accept vector files such as DXF, AI, PDF, and SVG. For images, JPG and
+              PNG are suitable. If you have another format, please contact us.
+            </p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <h3 class="faq-question">
+              What is the typical lead time? <i class="fas fa-chevron-down"></i>
+            </h3>
+            <p class="faq-answer">
+              Lead times vary depending on the project complexity and current workload. For standard
+              orders, we aim for 3-5 business days. We will provide an estimated completion time
+              with your quote.
+            </p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="300">
+            <h3 class="faq-question">
+              Do you offer design assistance? <i class="fas fa-chevron-down"></i>
+            </h3>
+            <p class="faq-answer">
+              Yes, we offer basic design assistance and can help optimize your files for laser
+              cutting. For more complex design needs, we can refer you to our graphic design
+              partners.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="laser-gallery">
+  <div class="container">
+    <h2 class="section-heading" data-aos="fade-up">See some examples below</h2>
+    <div class="gallery-grid">
+      
+      
+      <a
+        href="/Pixoprint/en/products/"
+        class="gallery-item"
+        data-aos="fade-up"
+        data-aos-delay="0"
+      >
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/Pixoprint/assets/img/laser/clock-240.webp 240w,
+                    /Pixoprint/assets/img/laser/clock-320.webp 320w,
                     /Pixoprint/assets/img/laser/clock-480.webp 480w,
                     /Pixoprint/assets/img/laser/clock-640.webp 640w"
-            sizes="(max-width: 599px) 100vw, (max-width: 899px) 48vw, 320px"
+            sizes="(max-width: 575px) 90vw,
+                   (max-width: 991px) calc(50vw - 2rem),
+                   33vw"
           />
           <img
             src="/Pixoprint/assets/img/laser/clock-640.jpg"
-            srcset="/Pixoprint/assets/img/laser/clock-320.jpg 320w,
+            srcset="/Pixoprint/assets/img/laser/clock-240.jpg 240w,
+                    /Pixoprint/assets/img/laser/clock-320.jpg 320w,
                     /Pixoprint/assets/img/laser/clock-480.jpg 480w,
                     /Pixoprint/assets/img/laser/clock-640.jpg 640w"
-            sizes="(max-width: 599px) 100vw, (max-width: 899px) 48vw, 320px"
-            alt="Laser cut sample 1"
-            width="320"
+            sizes="(max-width: 575px) 90vw,
+                   (max-width: 991px) calc(50vw - 2rem),
+                   33vw"
+            alt="Laser cut wooden clock"
+            width="640"
             height="auto"
             loading="lazy"
+            decoding="async"
           />
         </picture>
-      </div>
+      </a>
       
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+      <a
+        href="/Pixoprint/en/products/"
+        class="gallery-item"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <picture>
           <source
             type="image/webp"
-            srcset="/Pixoprint/assets/img/laser/design-320.webp 320w,
+            srcset="/Pixoprint/assets/img/laser/design-240.webp 240w,
+                    /Pixoprint/assets/img/laser/design-320.webp 320w,
                     /Pixoprint/assets/img/laser/design-480.webp 480w,
                     /Pixoprint/assets/img/laser/design-640.webp 640w"
-            sizes="(max-width: 599px) 100vw, (max-width: 899px) 48vw, 320px"
+            sizes="(max-width: 575px) 90vw,
+                   (max-width: 991px) calc(50vw - 2rem),
+                   33vw"
           />
           <img
             src="/Pixoprint/assets/img/laser/design-640.jpg"
-            srcset="/Pixoprint/assets/img/laser/design-320.jpg 320w,
+            srcset="/Pixoprint/assets/img/laser/design-240.jpg 240w,
+                    /Pixoprint/assets/img/laser/design-320.jpg 320w,
                     /Pixoprint/assets/img/laser/design-480.jpg 480w,
                     /Pixoprint/assets/img/laser/design-640.jpg 640w"
-            sizes="(max-width: 599px) 100vw, (max-width: 899px) 48vw, 320px"
-            alt="Laser cut sample 2"
-            width="320"
+            sizes="(max-width: 575px) 90vw,
+                   (max-width: 991px) calc(50vw - 2rem),
+                   33vw"
+            alt="Laser cut intricate design"
+            width="640"
             height="auto"
             loading="lazy"
+            decoding="async"
           />
         </picture>
-      </div>
+      </a>
       
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+      <a
+        href="/Pixoprint/en/products/"
+        class="gallery-item"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         <picture>
           <source
             type="image/webp"
-            srcset="/Pixoprint/assets/img/laser/neon-320.webp 320w,
+            srcset="/Pixoprint/assets/img/laser/neon-240.webp 240w,
+                    /Pixoprint/assets/img/laser/neon-320.webp 320w,
                     /Pixoprint/assets/img/laser/neon-480.webp 480w,
                     /Pixoprint/assets/img/laser/neon-640.webp 640w"
-            sizes="(max-width: 599px) 100vw, (max-width: 899px) 48vw, 320px"
+            sizes="(max-width: 575px) 90vw,
+                   (max-width: 991px) calc(50vw - 2rem),
+                   33vw"
           />
           <img
             src="/Pixoprint/assets/img/laser/neon-640.jpg"
-            srcset="/Pixoprint/assets/img/laser/neon-320.jpg 320w,
+            srcset="/Pixoprint/assets/img/laser/neon-240.jpg 240w,
+                    /Pixoprint/assets/img/laser/neon-320.jpg 320w,
                     /Pixoprint/assets/img/laser/neon-480.jpg 480w,
                     /Pixoprint/assets/img/laser/neon-640.jpg 640w"
-            sizes="(max-width: 599px) 100vw, (max-width: 899px) 48vw, 320px"
-            alt="Laser cut sample 3"
-            width="320"
+            sizes="(max-width: 575px) 90vw,
+                   (max-width: 991px) calc(50vw - 2rem),
+                   33vw"
+            alt="Neon sign saying Let&#39;s Go"
+            width="640"
             height="auto"
             loading="lazy"
+            decoding="async"
           />
         </picture>
-      </div>
+      </a>
       
     </div>
-    <a href="/Pixoprint/en/products/" class="btn icon-right">
-      View More Products <i class="fas fa-arrow-right"></i>
-    </a>
+    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+      <a href="/Pixoprint/en/products/" class="btn primary">View More Products</a>
+    </div>
   </div>
 </section>
 
-<!-- How it Works -->
-<section class="laser-process">
-  <div class="container">
-    <h2 class="section-heading" data-aos="fade-up">How It Works</h2>
-    <ol class="process-steps">
-      <li data-aos="fade-up" data-aos-delay="100">
-        Send us your drawing or sketch (DXF, AI, PDF, SVG)
-      </li>
-      <li data-aos="fade-up" data-aos-delay="200">
-        We process and cut using high precision machinery
-      </li>
-      <li data-aos="fade-up" data-aos-delay="300">
-        You pick up or we deliver your finished product
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- Why Choose Us -->
-<section class="laser-benefits" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section-heading">Why Choose Pixoprint?</h2>
-    <ul class="icon-list">
-      <li data-aos="zoom-in-up" data-aos-delay="0">
-        <i class="fas fa-stopwatch"></i> Fast turnaround times
-      </li>
-      <li data-aos="zoom-in-up" data-aos-delay="100">
-        <i class="fas fa-industry"></i> From prototyping to production
-      </li>
-      <li data-aos="zoom-in-up" data-aos-delay="200">
-        <i class="fas fa-crosshairs"></i> Excellent accuracy & clean edges
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Quote Form -->
 <section id="quote" class="laser-quote">
   <div class="container">
-    <h2 class="section-heading" data-aos="fade-up">Send Your Design</h2>
+    <h2 class="section-heading" data-aos="fade-up">Contact us, send sketch and get a quote</h2>
     <form
       name="laser-quote-form"
       method="POST"
       data-netlify="true"
       enctype="multipart/form-data"
-      class="quote-form"
+      class="quote-form card"
       data-aos="fade-up"
       data-aos-delay="100"
     >
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" placeholder="Tell us what you need" rows="5"></textarea>
-      <input type="file" name="file" accept=".pdf,.svg,.ai,.dxf,.jpg,.png" multiple />
+      <input type="text" name="name" placeholder="Full name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Message" rows="5"></textarea>
+      <div class="file-input-wrapper">
+        <input
+          type="file"
+          name="file"
+          id="file-upload"
+          accept=".pdf,.svg,.ai,.dxf,.jpg,.png"
+          multiple
+        />
+        <label for="file-upload" class="custom-file-upload">
+          <i class="fas fa-paperclip"></i> Attach files
+        </label>
+        <span id="file-chosen">No file chosen</span>
+      </div>
       <button type="submit" class="btn primary">Send Request</button>
     </form>
   </div>
