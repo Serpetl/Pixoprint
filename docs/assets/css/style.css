@@ -8,11 +8,18 @@
   --white: #fff;
   --black: #000;
   --text-color: #3f3390;
-  /* --text-color: #222; */
   --link-hover-scale: scale(1.03);
   --transition-link: color 0.3s ease, transform 0.3s ease;
   --container-max-width: 1200px;
   --header-h: 72px;
+  --transition-speed: 0.4s ease-in-out;
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --section-padding-desktop: 5rem;
+  --section-padding-mobile: 2.5rem;
 }
 
 /* === BASE STYLES === */
@@ -83,6 +90,7 @@ body {
   color: var(--text-color);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 main {
   flex-grow: 1;
