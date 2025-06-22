@@ -4,13 +4,11 @@
 .section {
   padding-block: 1.5rem;
 }
-.page-subtitle {
-  font-size: 1.2rem;
-}
 
 .page-header .page-subtitle {
   color: var(--primary-color);
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 1rem;
 }
 .container .section {
   padding-block: 1rem;
@@ -162,7 +160,7 @@
 }
 
 @media (min-width: 768px) {
-  .page-subtitle {
+  .page-header .page-subtitle {
     font-size: 1.5rem;
   }
 

@@ -1,11 +1,17 @@
 /* =================================
    Contact Page Final Styles
    ================================= */
-
+.section {
+  padding-block: 1rem;
+}
 .contact-page-section {
   padding-block: 2rem;
 }
-
+.page-header .page-subtitle {
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 400;
+}
 /* --- Info Cards --- */
 .contact-info-grid {
   display: flex;
@@ -102,7 +108,11 @@
 }
 
 /* --- TABLET & DESKTOP --- */
+
 @media (min-width: 768px) {
+  .page-header .page-subtitle {
+    font-size: 1.5rem;
+  }
   .contact-page-section {
     padding-block: 3rem;
   }
