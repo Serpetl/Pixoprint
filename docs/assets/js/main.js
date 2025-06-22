@@ -12,6 +12,24 @@ window.addEventListener('load', () => {
     DIAGNOSTIC: false
   }
   const clog = (...args) => FOLD_CFG.DIAGNOSTIC && console.log('[CardLogic]', ...args)
+  // 1. Sticky Header
+  let lastScrollTop = 0
+  const header = document.querySelector('.site-header')
+  if (header) {
+    window.addEventListener(
+      'scroll',
+      function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop
+        if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+          header.classList.add('is-hidden')
+        } else {
+          header.classList.remove('is-hidden')
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop
+      },
+      false
+    )
+  }
 
   /* ── 1. Counters ====================================================== */
   document.querySelectorAll('[data-count]').forEach((el) => {
@@ -31,20 +49,32 @@ window.addEventListener('load', () => {
     const nav = document.getElementById('mobileNav')
     const back = document.getElementById('backdrop')
     if (!burger || !nav || !back) return
-    const open = () => {
+
+    const openMenu = () => {
       burger.classList.add('active')
       nav.classList.add('active')
       back.classList.add('active')
+      document.body.style.overflow = 'hidden'
     }
-    const close = () => {
+
+    const closeMenu = () => {
       burger.classList.remove('active')
       nav.classList.remove('active')
       back.classList.remove('active')
+      document.body.style.overflow = ''
     }
-    burger.addEventListener('click', open)
-    back.addEventListener('click', close)
-    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', close))
-    document.addEventListener('keydown', (e) => e.key === 'Escape' && close())
+
+    burger.addEventListener('click', () => {
+      if (nav.classList.contains('active')) {
+        closeMenu()
+      } else {
+        openMenu()
+      }
+    })
+
+    back.addEventListener('click', closeMenu)
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu))
+    document.addEventListener('keydown', (e) => e.key === 'Escape' && closeMenu())
   })()
 
   /* ── 3. Abort if no catalogue on page ================================ */

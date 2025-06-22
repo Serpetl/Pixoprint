@@ -1,0 +1,346 @@
+/* index.css — Уникальные стили для главной страницы (ФИНАЛЬНАЯ ВЕРСИЯ) */
+
+/* === HERO SECTION & WRAPPER === */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  min-height: calc(85vh - var(--header-h));
+  flex-grow: 1;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.hero-bg picture,
+.hero-bg img,
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-video {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.hero-video.ready {
+  opacity: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  padding-block: clamp(2rem, 6vh, 8rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 700px;
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* === HERO BUTTON & WRAPPER === */
+.hero-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 400px) {
+  .hero-btn-wrapper {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-btn-wrapper {
+    margin-bottom: 7rem;
+  }
+}
+
+/* === HERO RIBBON === */
+.hero-ribbon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: var(--primary-color);
+  clip-path: polygon(0 0, calc(100% - 10%) 0, calc(100% - 10%) 50%, 100% 50%, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+  z-index: 2;
+  text-align: center;
+}
+.hero-ribbon p {
+  color: var(--white);
+  font-weight: 700;
+  font-family: monospace;
+  font-size: 16px;
+  text-align: center;
+  max-width: 80%;
+  margin: 0;
+  line-height: 1.2;
+}
+@media (min-width: 900px) {
+  .hero-ribbon {
+    height: 150px;
+  }
+  .hero-ribbon p {
+    font-size: 27px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-ribbon p {
+    font-size: 34px;
+  }
+}
+
+/* === SCROLL DOWN ARROW === */
+.scroll-down {
+  position: absolute;
+  bottom: calc(100px + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 10;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.scroll-down:hover,
+.scroll-down:focus-visible {
+  background: var(--secondary-color);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+@media (min-width: 900px) {
+  .scroll-down {
+    display: flex;
+    bottom: calc(150px + 2rem);
+  }
+}
+
+/* === COUNTERS SECTION === */
+#counters {
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-color);
+  padding: 0.75rem 1rem; /* Слегка увеличим вертикальный отступ для баланса */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Предотвратит любые случайные выступы */
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: baseline; /* Выравнивание по базовой линии для аккуратности */
+  gap: 1.25rem; /* Можно немного увеличить gap, так как место появится */
+  flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+  padding: 0;
+}
+
+.counter div {
+  min-width: 0; /* Сбрасываем минимальную ширину, чтобы элементы могли сжиматься */
+  padding: 0;
+}
+
+.counter span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.counter p {
+  font-size: 0.7rem; /* Уменьшили шрифт подписей */
+  margin: 0.1rem 0 0;
+  line-height: 1.2;
+  font-weight: 500;
+}
+@media (min-width: 480px) {
+  .counter span {
+    font-size: 1.25rem;
+  }
+  .counter p {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 600px) {
+  .counter {
+    gap: 2rem;
+  }
+  .counter span {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  #counters {
+    padding: 1rem 0;
+  }
+  .counter {
+    gap: 4rem;
+  }
+}
+
+/* === SERVICE GRID on Homepage === */
+.service-grid {
+  padding: 1rem 1rem;
+}
+.service-grid .container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px) {
+  .service-grid .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .service-grid .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.service-grid .grid-item {
+  display: block;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-light);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.service-grid .grid-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+.service-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.service-grid .grid-item:hover img {
+  transform: scale(1.03);
+}
+
+.service-grid h3 {
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  margin-top: 0.5rem;
+  color: var(--secondary-color);
+  transition:
+    font-size 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-grid .grid-item:hover h3 {
+  font-size: clamp(1.05rem, 4.2vw, 1.25rem);
+  color: var(--primary-color);
+}
+
+/* === SOLUTION BLOCK === */
+.solution {
+  background: var(--dark-bg);
+  color: var(--white);
+  padding: 4rem 1rem;
+}
+.solution-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.solution-left {
+  flex: 1 1 300px;
+}
+.solution-left h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.solution-left p {
+  color: #ddd;
+}
+.solution-right {
+  flex: 1 1 300px;
+}
+.solution-right ul {
+  list-style: none;
+  padding: 0;
+}
+.solution-right li {
+  position: relative;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  overflow: hidden;
+}
+.solution-right li .progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.5s ease-out;
+  transition-delay: var(--delay, 0s);
+}
+.solution-right li.aos-animate .progress-bar {
+  transform: scaleX(1);
+}

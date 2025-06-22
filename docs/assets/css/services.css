@@ -1,208 +1,211 @@
-/* services.css — page-specific styles */
+/* ==================================
+   Services Page Specific Styles
+   ================================== */
+.section {
+  padding-block: 1.5rem;
+}
+.page-subtitle {
+  font-size: 1.2rem;
+}
 
-.services-hero {
-  padding: 2rem 0 2rem;
+.page-header .page-subtitle {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+.container .section {
+  padding-block: 1rem;
+}
+/* Intro Text */
+.services-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  max-width: 800px;
+  margin-inline: auto;
   text-align: center;
 }
 
-.services-title {
-  font-size: 2.5rem;
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
-}
-
-.services-subtitle {
-  font-size: 1.125rem;
-  max-width: 720px;
-  margin: 0 auto;
-  color: var(--primary-color);
-}
-
-.services-intro,
-.services-example,
-.services-links,
-.services-benefits,
-.services-cta {
-  padding: 1.5rem 0;
-}
+/* Example Section */
 .services-example {
   overflow-x: clip;
 }
-
-.services-heading {
-  font-size: 1.75rem;
-  color: var(--secondary-color);
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.services-text {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: var(--text-color);
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .services-example-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
 }
-
 .services-example-text {
   flex: 1;
-  padding: 1.5rem;
-  background-color: #fafafa;
-  border-radius: 0.5rem;
+  text-align: center;
+}
+.services-example-text .section-heading {
+  margin-bottom: 1rem;
+}
+.services-example-text p {
+  line-height: 1.7;
+}
+.services-example-img {
+  flex: 1;
+  width: 100%;
   max-width: 600px;
 }
-
-.services-example-img {
-  width: 100%;
-  max-width: 500px;
-  flex: 1;
-}
-
 .services-example-img img {
   width: 100%;
-  border-radius: 0.75rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
 }
-
 .services-caption {
   font-size: 0.875rem;
-  color: #666;
-  margin-top: 0.5rem;
+  color: #444;
+  margin-top: 0.75rem;
   text-align: center;
 }
 
+/* Services List - Redesigned as "pills" */
 .services-list {
   list-style: none;
   padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  text-align: center;
 }
-
 .services-list a {
-  color: var(--primary-color);
+  display: block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  background-color: #f0f2f5;
+  color: var(--secondary-color);
   font-weight: 600;
-  font-size: 1.1rem;
   text-decoration: none;
-  transition: var(--transition-link);
+  transition:
+    background-color var(--transition-speed),
+    color var(--transition-speed),
+    transform var(--transition-speed);
 }
-
 .services-list a:hover {
-  color: var(--accent-color);
-  transform: var(--link-hover-scale);
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: var(--transform-link-hover);
 }
 
+/* Benefits List - Redesigned with icons */
+.services-benefits {
+  background-color: #f8f9fa;
+}
 .services-benefits-list {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 2rem auto 0;
   padding: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.services-benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.services-benefits-list i {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  width: 25px;
   text-align: center;
-  font-size: 1.05rem;
-  color: var(--text-color);
+}
+.services-benefits-list .cta-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.services-benefits-list .cta-link:hover {
+  text-decoration: underline;
 }
 
 .services-cta {
-  background-color: var(--light-gray);
-  padding: 4rem 1rem;
+  background-color: #f5f6fa;
   text-align: center;
-  border-radius: 0.75rem;
+  padding: 4rem 1rem;
+  border-top: 1px solid #ddd;
 }
 
 .services-cta-text {
-  font-size: 1.2rem;
-  margin-bottom: 1.25rem;
-  color: var(--text-color);
-}
-
-.services-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--primary-color);
-  color: white;
+  color: var(--primary-color);
+  font-size: 1.15rem;
   font-weight: 600;
-  padding: 0.75rem 2rem;
+  margin-bottom: 1.25rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.services-cta .btn {
+  background: var(--primary-color);
+  color: var(--white);
   font-size: 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
 }
 
-.services-cta-btn:hover {
-  background-color: var(--accent-color);
-}
-
-.services-cta-btn::after {
-  content: '→';
-  font-size: 1.2rem;
-  line-height: 1;
+.services-cta .btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
 }
 
 @media (min-width: 768px) {
-  .services-hero {
-    padding: 4rem 0 2rem;
+  .page-subtitle {
+    font-size: 1.5rem;
   }
-  .services-intro,
-  .services-example,
-  .services-links,
-  .services-benefits,
+
+  .section {
+    padding-block: 3.5rem;
+  }
+
   .services-cta {
-    padding: 2.5rem 0;
+    padding: 4rem 1rem;
   }
+
+  .services-cta-text {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
   .services-example-grid {
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
   }
+
   .services-example-text {
     text-align: left;
-    max-width: 55%;
-    padding-right: 2rem;
   }
-  .services-text {
-    text-align: left;
-  }
-  .services-example-img {
-    max-width: 500px;
-  }
+
   .services-benefits-list {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .services-list {
-    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    gap: 1.5rem 2.5rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .services-intro,
-  .services-example,
-  .services-links,
-  .services-benefits,
+@media (min-width: 768px) {
+  .section {
+    padding-block: 3.5rem;
+  }
   .services-cta {
-    padding: 3.5rem 0;
+    padding: 4rem 1rem;
   }
-  .services-title {
-    font-size: 3rem;
-  }
-  .services-heading {
-    font-size: 2rem;
-  }
-  .services-list {
-    grid-template-columns: repeat(3, 1fr);
+
+  .services-cta-text {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
   }
 }

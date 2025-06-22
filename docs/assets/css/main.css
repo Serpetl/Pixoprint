@@ -1,0 +1,645 @@
+/* ==================================================
+   main.css — Глобальные стили для всего сайта PIXOPRINT (обновлено)
+   ================================================== */
+
+/* 1. CSS VARIABLES */
+:root {
+  --primary-color: #de3a68;
+  --secondary-color: #3b388b;
+  --accent-color: #1863dc;
+  --dark-bg: #1e1e1e;
+  --light-gray: #eee;
+  --white: #fff;
+  --black: #000;
+  --text-color: #3f3390;
+  --container-max-width: 1200px;
+  --header-h: 72px;
+  --transition-speed: 0.3s ease;
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --transition-link: color var(--transition-speed), transform var(--transition-speed);
+  --transform-link-hover: translateY(-2px);
+}
+
+/* 2. BASE & RESET STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+}
+[data-aos] {
+  will-change: transform, opacity;
+}
+.page-header {
+  text-align: center;
+}
+
+.page-header .page-title {
+}
+
+.page-header .page-subtitle {
+  max-width: 650px;
+  margin-inline: auto;
+  margin-top: 1rem;
+}
+/* 3. LAYOUT HELPERS */
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+.section {
+  padding-block: 2.5rem;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-block: 5rem;
+  }
+}
+
+/* 4. HEADER & NAVIGATION */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--light-gray);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 9990;
+}
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+  max-height: 20px;
+  margin: 6px 0;
+  display: block;
+  transition: all 0.3s ease;
+}
+@media (min-width: 900px) {
+  .logo img {
+    max-height: 35px;
+    margin: 15px 0;
+  }
+}
+.main-nav {
+  display: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+.main-nav a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+.main-nav a.active {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.main-nav a:last-of-type {
+  font-weight: 600;
+  color: var(--white);
+  /* border: 1px solid var(--secondary-color); */
+  background-color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+.main-nav a:last-of-type:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10001;
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--black);
+  transition: 0.3s ease;
+}
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+/* Улучшенный дизайн мобильного меню */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  width: clamp(240px, 65vw, 300px);
+  position: absolute;
+  top: calc(100% + 5px); /* Небольшой отступ от шапки */
+  right: 5px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 10000;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eaecef;
+  transform-origin: top right;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    max-height 0.4s ease;
+  transform: scale(0.95);
+}
+
+.mobile-nav.active {
+  max-height: 500px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center; /* Выравнивает иконку и текст */
+  gap: 1rem; /* Расстояние между иконкой и текстом */
+  padding: 0.9rem 1.5rem;
+  text-decoration: none;
+  color: #343a40;
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f2f5;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.mobile-nav a i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.mobile-nav a:last-of-type {
+  border-bottom: none;
+  margin-top: 0.5rem;
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.mobile-nav a:hover {
+  background-color: #f1f3f5;
+  color: var(--secondary-color);
+}
+
+.mobile-nav a:last-of-type:hover {
+  color: var(--accent-color);
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+  z-index: 999;
+}
+.backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+  }
+  .burger,
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* 5. FOOTER (Refactored with CSS Variables) */
+.site-footer {
+  font-family: sans-serif;
+  color: var(--white);
+}
+
+.footer-cta {
+  background-color: var(--dark-bg);
+  padding: 2rem 1rem;
+}
+
+.footer-main {
+  background-color: var(--light-gray);
+  color: var(--black);
+  padding: 2rem 1rem;
+}
+
+.footer-bottom {
+  background-color: var(--light-gray);
+  color: var(--black);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-cta .container,
+.footer-main-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-main-flex {
+  align-items: center;
+}
+
+.footer-cta-left .logo,
+.footer-contact .logo {
+  max-width: 180px;
+  margin-bottom: 1rem;
+}
+
+.footer-cta-left .phone {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-cta-left .hours,
+.footer-contact .hours,
+.footer-contact .address {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.footer-cta-right {
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.footer-contact {
+  max-width: 400px;
+  text-align: left;
+}
+
+.footer-contact .label {
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact p {
+  margin: 0.25rem 0;
+}
+
+/* Links now use variables for transitions */
+.footer-contact a,
+.footer-cta .phone a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--black);
+  transition: var(--transition-link); /* <-- Используем новую переменную */
+}
+
+.footer-contact a[href^='tel'] {
+  font-weight: bold;
+}
+
+.footer-cta .phone a {
+  color: var(--white);
+  margin-top: 0.25rem;
+}
+
+.footer-contact a:hover,
+.footer-cta .phone a:hover {
+  color: var(--primary-color);
+  transform: var(--transform-link-hover); /* <-- Используем новую переменную */
+}
+
+.footer-contact i.fa-map-marker-alt {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* Social Icons use existing variables for transitions */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-icons a,
+.social-icons i {
+  /* Using existing --transition-speed variable for consistency */
+  transition:
+    transform var(--transition-speed),
+    color var(--transition-speed),
+    filter 0.4s ease;
+}
+
+.social-icons a {
+  font-size: 1.4rem;
+  color: inherit;
+}
+
+.social-icons i {
+  font-size: 1.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  text-align: center;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2);
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* Brand color hover effects */
+.social-icons a:hover i.fa-facebook-f {
+  color: #3b5998;
+}
+.social-icons a:hover i.fa-instagram {
+  color: #e1306c;
+}
+.social-icons a:hover i.fa-whatsapp {
+  color: #25d366;
+}
+.social-icons a:hover i.fa-youtube {
+  color: #ff0000;
+}
+.social-icons a:hover i.fa-tiktok {
+  color: #dc1a8f;
+}
+.social-icons a:hover i.fa-linkedin-in {
+  color: #0077b5;
+}
+
+/* Media Queries */
+@media (min-width: 375px) {
+  .social-icons {
+    gap: 2rem;
+  }
+  .social-icons a,
+  .social-icons i {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .social-icons a,
+  .social-icons i {
+    font-size: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-main-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-main-flex > * {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .footer-cta-left,
+  .footer-contact {
+    text-align: center;
+  }
+  .footer-contact .social-icons {
+    justify-content: center;
+  }
+  .footer-contact a {
+    margin-bottom: 0.5rem;
+  }
+  .footer-contact .hours,
+  .footer-contact .address {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .social-icons a,
+  .social-icons i {
+    font-size: 1.7rem;
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}
+
+/* 6. REUSABLE UI COMPONENTS */
+.section-heading {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.btn.primary {
+  background: var(--primary-color);
+  color: var(--white);
+}
+.btn.primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+.btn.secondary {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+.btn.secondary:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+/* === QUOTE FORM SECTION === */
+.quote-section {
+  background: var(--light-gray); /* Светло-серый фон для секции */
+  padding-block: 4rem; /* Вертикальные отступы для воздуха */
+}
+
+.quote-form {
+  max-width: 700px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem; /* Отступы внутри формы */
+  background: var(--white); /* Белый фон для самой формы */
+  border-radius: var(--border-radius-lg); /* Скругленные углы */
+  box-shadow: var(--shadow-medium); /* Тень для объема */
+}
+
+.quote-form input,
+.quote-form textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  color: var(--text-color);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quote-form input:focus,
+.quote-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(222, 58, 104, 0.2);
+}
+
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+  color: #999;
+}
+
+.quote-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Финальные стили для кастомного поля загрузки файлов */
+
+/* Главный контейнер-метка, которому мы задаем курсор */
+label.file-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-md);
+  background-color: #fafafa;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer; /* <--- Теперь это будет работать на всем блоке */
+}
+
+label.file-input-wrapper:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(222, 58, 104, 0.1);
+}
+
+/* Просто скрываем стандартное поле input */
+.file-input-hidden {
+  display: none;
+}
+
+/* Стили для видимого контента внутри кнопки */
+.file-input-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Текст для имени выбранного файла */
+.file-chosen-text {
+  font-size: 0.9rem;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.custom-file-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  white-space: nowrap;
+  user-select: none;
+}
+
+#file-chosen-main {
+  font-size: 0.9rem;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quote-form button {
+  align-self: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  width: auto;
+}
