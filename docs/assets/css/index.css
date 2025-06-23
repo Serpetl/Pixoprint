@@ -67,7 +67,7 @@
 }
 @media (max-width: 767px) {
   .hero {
-    min-height: calc(80vh - var(--header-h));
+    min-height: calc(78vh - var(--header-h));
   }
 
   .hero-content {

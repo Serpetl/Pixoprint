@@ -72,18 +72,18 @@ section > .container > .section-heading {
 }
 
 /* --- HERO SECTION --- */
-.laser-hero {
+.print-hero {
   background: var(--white);
   padding-block-start: 1rem;
   padding-block-end: 2.5rem;
   text-align: center;
 }
-.laser-hero h1 {
+.print-hero h1 {
   font-size: clamp(2.5rem, 8vw, 3.5rem);
   margin-bottom: 0.8rem;
   color: var(--text-color);
 }
-.laser-hero .subtitle {
+.print-hero .subtitle {
   font-size: 1.35rem;
   color: #555;
   margin-bottom: 3rem;
@@ -97,7 +97,7 @@ section > .container > .section-heading {
 }
 
 @media (min-width: 600px) {
-  .laser-hero {
+  .print-hero {
     background: var(--white);
     padding-block-start: 3rem;
   }
@@ -132,7 +132,7 @@ section > .container > .section-heading {
   object-fit: cover;
   object-position: center;
 }
-.laser-hero .hero-cta-btn {
+.print-hero .hero-cta-btn {
   margin-top: 1.5rem;
   margin-inline: auto;
   font-size: 1.1rem;
@@ -143,8 +143,8 @@ section > .container > .section-heading {
   margin-bottom: 1rem;
 }
 
-/* --- MACHINE SPECS (within Hero Section) --- */
-.laser-specs {
+/* --- PRINTER SPECS (within Hero Section) --- */
+.print-specs {
   background: var(--white);
   padding: 2.5rem;
   border-radius: var(--border-radius-lg);
@@ -153,7 +153,7 @@ section > .container > .section-heading {
   flex-direction: column;
   justify-content: space-between;
 }
-.laser-specs .section-heading {
+.print-specs .section-heading {
   text-align: left;
   margin-bottom: 1.5rem;
   font-size: 2.2rem;
@@ -201,26 +201,26 @@ section > .container > .section-heading {
 }
 
 /* --- MAIN CONTENT GRID (for How it Works & FAQ) --- */
-.laser-main-content {
+.print-main-content {
   background: var(--light-gray);
 }
-.laser-main-content .main-content-grid {
+.print-main-content .main-content-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
 @media (min-width: 992px) {
-  .laser-main-content .main-content-grid {
+  .print-main-content .main-content-grid {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
 }
 
 /* --- HOW IT WORKS --- */
-.laser-process {
+.print-process {
   margin-top: 0;
 }
-.laser-process .section-heading {
+.print-process .section-heading {
   text-align: left;
 }
 .process-steps {
@@ -254,7 +254,7 @@ section > .container > .section-heading {
 }
 
 /* --- FREQUENTLY ASKED QUESTIONS --- */
-.laser-faq .section-heading {
+.print-faq .section-heading {
   text-align: left;
 }
 .faq-list {
@@ -318,12 +318,12 @@ section > .container > .section-heading {
 }
 
 /* --- SAMPLE GALLERY --- */
-.laser-gallery {
+.print-gallery {
   background: var(--white);
   padding-block-start: 2rem;
   padding-block-end: 3rem;
 }
-.laser-gallery .section-heading {
+.print-gallery .section-heading {
   text-align: center;
   margin-bottom: 2.5rem;
 }
