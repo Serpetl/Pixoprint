@@ -1,0 +1,335 @@
+/* --- HERO --- */
+.hero-neon .hero-image-wrapper {
+  padding: 0;
+  box-shadow: none;
+  background: none;
+}
+.hero-neon picture,
+.hero-neon img {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+}
+
+/* --- TECHNOLOGY INTRO --- */
+.tech-intro {
+  background: var(--white);
+}
+.tech-intro .small-container {
+  max-width: 800px;
+  text-align: center;
+}
+.tech-intro p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* --- ADVANTAGES --- */
+.advantages-section {
+  background: var(--light-gray);
+}
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+.advantage-card {
+  background: var(--white);
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
+  transition:
+    transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+.advantage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+.advantage-card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.advantage-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- CUSTOMIZATION & COLORS --- */
+.customization-section {
+  background: var(--white);
+}
+.customization-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 992px) {
+  .customization-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.color-palette {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+}
+.color-palette h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.palette-desc {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.swatch-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* --- Интерактивность для палитры --- */
+.swatch-list li {
+  background: #e0e0e0;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  border: 3px solid transparent; /* Используем прозрачную рамку для стабильности при появлении цветной */
+  box-shadow: var(--shadow-light);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.swatch-list li:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-medium);
+}
+
+.swatch-list li.active {
+  border-color: var(--primary-color);
+  transform: scale(1.08);
+}
+
+/* === УЛУЧШЕНИЕ: 1. Единый и логичный стиль для галочки === */
+.swatch-list li.active::after {
+  content: '✓';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 22px;
+  height: 22px;
+  background: var(--white); /* Белый фон */
+  color: var(--primary-color); /* Цвет галочки совпадает с цветом рамки */
+  border: 2px solid var(--primary-color); /* Обводка в том же цвете */
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Стили для светящихся плашек (LED Colors) --- */
+.led-colors .swatch-list li {
+  color: var(--white); /* По умолчанию текст белый */
+  border-color: transparent;
+}
+.led-colors .swatch-list li.active {
+  border-color: #00c49a; /* Используем единый контрастный цвет для активной рамки */
+}
+.led-colors .swatch-list li.active::after {
+  color: #00c49a; /* Цвет галочки совпадает с цветом рамки */
+  border-color: #00c49a;
+}
+
+/* Фоны и свечение для каждой плашки */
+.led-warm-white {
+  background: #ffd6a9;
+  box-shadow: 0 0 10px #ffd6a9;
+}
+.led-neutral-white {
+  background: #fefff2;
+  box-shadow: 0 0 10px #fefff2;
+}
+.led-cool-white {
+  background: #e6f4ff;
+  box-shadow: 0 0 10px #e6f4ff;
+}
+.led-lemon-yellow {
+  background: #f8ff48;
+  box-shadow: 0 0 10px #f8ff48;
+}
+.led-gold-yellow {
+  background: #ffb600;
+  box-shadow: 0 0 10px #ffb600;
+}
+.led-red {
+  background: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+.led-blue {
+  background: #004eff;
+  box-shadow: 0 0 10px #004eff;
+}
+.led-ice-blue {
+  background: #80deea;
+  box-shadow: 0 0 10px #80deea;
+}
+.led-green {
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+.led-pink {
+  background: #ff00e4;
+  box-shadow: 0 0 10px #ff00e4;
+}
+.led-purple {
+  background: #9d00ff;
+  box-shadow: 0 0 10px #9d00ff;
+}
+.led-rgb {
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+}
+
+/* === УЛУЧШЕНИЕ: 2. Контрастный цвет текста для КАЖДОГО светлого элемента === */
+.led-warm-white,
+.led-neutral-white,
+.led-cool-white,
+.led-ice-blue,
+.led-lemon-yellow,
+.led-gold-yellow {
+  color: #333 !important; /* Переназначаем цвет текста на темный для светлых фонов */
+}
+
+/* --- HOW IT'S MADE --- */
+.how-its-made {
+  background: var(--light-gray);
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.process-step {
+  text-align: center;
+}
+.process-step i {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: block;
+  line-height: 1;
+}
+.process-step h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+/* === НОВЫЕ СТИЛИ ДЛЯ ТРЁХ ПАЛИТР === */
+
+.customization-grid-new {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  /* На больших экранах можно уместить в 2 колонки */
+  .customization-grid-new {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Растягиваем первую палитру на всю ширину */
+  .customization-grid-new > .color-palette:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Стили для палитры силикона */
+#silicone-palette .silicone-pink {
+  background-color: #f554d4;
+  color: white;
+}
+#silicone-palette .silicone-red {
+  background-color: #ff0000;
+  color: white;
+}
+#silicone-palette .silicone-orange {
+  background-color: #ff7800;
+  color: white;
+}
+#silicone-palette .silicone-yellow {
+  background-color: #ffff00;
+  color: #333;
+}
+#silicone-palette .silicone-green {
+  background-color: #00ff00;
+  color: #333;
+}
+#silicone-palette .silicone-blue {
+  background-color: #004eff;
+  color: white;
+}
+#silicone-palette .silicone-sky-blue {
+  background-color: #57d3dd;
+  color: #333;
+}
+#silicone-palette .silicone-purple {
+  background-color: #a600ff;
+  color: white;
+}
+#silicone-palette .silicone-pale-green {
+  background-color: #98fb98;
+  color: #333;
+}
+#silicone-palette .silicone-light-pink {
+  background-color: #ffb6c1;
+  color: #333;
+}
+#silicone-palette .silicone-cool-white {
+  background-color: #f2f8ff;
+  color: #333;
+}
+#silicone-palette .silicone-warm-white {
+  background-color: #fff4d8;
+  color: #333;
+}
+
+/* Стили для контейнера с оттенками */
+#led-shades-palette {
+  display: none; /* По умолчанию оттенки скрыты */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#led-shades-palette.visible {
+  display: flex; /* Показываем, когда готовы */
+  opacity: 1;
+}
+
+#led-shades-container .placeholder {
+  transition: opacity 0.4s ease;
+}
+#led-shades-container .placeholder.hidden {
+  display: none;
+}
