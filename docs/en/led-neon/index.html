@@ -212,44 +212,135 @@
 
 <section class="customization-section">
   <div class="container">
-    <h2 class="section-heading" data-aos="fade-up">Unlimited Customization Options</h2>
-    <div class="customization-grid-new">
-      <div class="color-palette" data-aos="fade-up">
-        <h3>1. Choose Silicone Tube Color (Jacket Color)</h3>
-        <p class="palette-desc">This is the color of the sign when it's turned off.</p>
-        <ul id="silicone-palette" class="swatch-list">
-          <li class="silicone-pink"><span>Pink</span></li>
-          <li class="silicone-red"><span>Red</span></li>
-          <li class="silicone-orange"><span>Orange</span></li>
-          <li class="silicone-yellow"><span>Yellow</span></li>
-          <li class="silicone-green"><span>Green</span></li>
-          <li class="silicone-blue"><span>Blue</span></li>
-          <li class="silicone-sky-blue"><span>Sky Blue</span></li>
-          <li class="silicone-purple"><span>Purple</span></li>
-          <li class="silicone-pale-green"><span>Pale Green</span></li>
-          <li class="silicone-light-pink"><span>Light Pink</span></li>
-          <li class="silicone-cool-white"><span>Cool White</span></li>
-          <li class="silicone-warm-white"><span>Warm White</span></li>
-        </ul>
-      </div>
-
-      <div class="color-palette" data-aos="fade-up" data-aos-delay="100">
-        <h3>2. Choose Main LED Color</h3>
-        <p class="palette-desc">This will reveal available shades below.</p>
-        <ul id="led-category-palette" class="swatch-list">
-          <li data-filter="white"><span>White</span></li>
-          <li data-filter="blue"><span>Blue</span></li>
-          <li data-filter="red"><span>Red</span></li>
-          <li data-filter="green"><span>Green</span></li>
-        </ul>
-      </div>
-
-      <div class="color-palette" data-aos="fade-up" data-aos-delay="200">
-        <h3>3. Choose Specific LED Shade</h3>
-        <div id="led-shades-container">
-          <p class="palette-desc placeholder">Select a main color above to see available shades.</p>
-          <ul id="led-shades-palette" class="swatch-list"></ul>
+    <h2 class="section-heading" data-aos="fade-up">Design Your Sign</h2>
+    <div id="compact-customizer-grid" data-aos="fade-up">
+      <div class="ccg-preview">
+        <div id="preview-box" class="preview-box bg-black">
+          <svg
+            id="preview-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+          ></svg>
         </div>
+      </div>
+
+      <div class="ccg-visual-controls mobile-accordion">
+        <label class="accordion-toggle">Adjust Spacing & Glow</label>
+        <div class="accordion-content">
+          <div class="sliders-row">
+            <div class="control-group">
+              <label for="letter-spacing-slider">Letter Spacing</label>
+              <input
+                type="range"
+                id="letter-spacing-slider"
+                min="-0.05"
+                max="0.2"
+                value="0"
+                step="0.005"
+              />
+            </div>
+            <div class="control-group">
+              <label for="clarity-glow-slider">Clarity / Glow</label>
+              <input type="range" id="clarity-glow-slider" min="0" max="100" value="25" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group ccg-text-input">
+        <label for="neon-text-input">Enter Your Text</label>
+        <input
+          type="text"
+          id="neon-text-input"
+          value="Stefaniia"
+          maxlength="15"
+          placeholder="Your Text..."
+        />
+      </div>
+
+      <div class="control-group mobile-accordion ccg-color-selector">
+        <label class="accordion-toggle">Choose Your Color</label>
+        <div class="accordion-content">
+          <ul id="color-palette-main" class="swatch-list"></ul>
+        </div>
+      </div>
+
+      <div class="control-group mobile-accordion ccg-font-selector">
+        <label class="accordion-toggle">Select Font</label>
+        <div class="accordion-content">
+          <ul id="font-selector" class="swatch-list font-swatches">
+            <li data-font="Arial" data-weight="700" class="font-arial active">Classic</li>
+            <li data-font="Bebas Neue" data-weight="400" class="font-bebas-neue">Tall</li>
+            <li data-font="Righteous" data-weight="400" class="font-righteous">Art Deco</li>
+            <li data-font="Pacifico" data-weight="400" class="font-pacifico">Script</li>
+            <li data-font="Orbitron" data-weight="700" class="font-orbitron">Orbitron</li>
+            <li data-font="Courier Prime" data-weight="700" class="font-courier">Courier</li>
+            <li data-font="Monoton" data-weight="400" class="font-monoton">Monoton</li>
+            <li data-font="Neon Tubes 2" data-weight="400" class="font-neon-tubes">Neon Tubes</li>
+            <li data-font="Kaushan Script" data-weight="400" class="font-kaushan-script">
+              Kaushan
+            </li>
+            <li data-font="Satisfy" data-weight="400" class="font-satisfy">Satisfy</li>
+            <li data-font="Yellowtail" data-weight="400" class="font-yellowtail">Yellowtail</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ccg-specs-and-price mobile-accordion">
+        <label class="accordion-toggle">Sign Specifications</label>
+        <div class="accordion-content">
+          <div class="specs-grid">
+            <div class="control-group">
+              <label for="sign-size">Approx. Width (cm)</label>
+              <input type="number" id="sign-size" value="50" min="25" max="300" step="5" />
+            </div>
+            <div class="control-group">
+              <label for="mounting-type">Mounting</label>
+              <select id="mounting-type">
+                <option value="wall">On a wall</option>
+                <option value="window">On a window</option>
+                <option value="hanging" selected>Hanging</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="silicone-width">Silicone Width</label>
+              <select id="silicone-width">
+                <option value="6" selected>6mm</option>
+                <option value="8">8mm</option>
+                <option value="12">12mm</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>Background</label>
+              <ul id="background-selector" class="swatch-list bg-swatches">
+                <li data-bg="bg-black" class="active" title="Black Background">
+                  <svg viewBox="0 0 24 24"><path fill="currentColor" d="M0,0h24v24H0z" /></svg>
+                </li>
+                <li data-bg="bg-white" title="White Background">
+                  <svg viewBox="0 0 24 24"><path fill="currentColor" d="M0,0h24v24H0z" /></svg>
+                </li>
+                <li data-bg="bg-transparent" title="Transparent Background">
+                  <svg viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M0,0h12v12H0z M12,12h12v12H12z" />
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-calculator">
+        <span class="price-label">
+          Estimated Price:
+          <div class="tooltip-wrapper">
+            <i class="fas fa-info-circle"></i>
+            <span class="tooltip-text"
+              >This price is an estimate and needs to be confirmed by a manager.</span
+            >
+          </div>
+        </span>
+        <span id="price-display" class="price-value">€0.00</span>
       </div>
     </div>
   </div>
@@ -461,70 +552,193 @@
 </section>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const siliconePalette = document.getElementById('silicone-palette')
-    const categoryPalette = document.getElementById('led-category-palette')
-    const shadesContainer = document.getElementById('led-shades-container')
-    const shadesPalette = document.getElementById('led-shades-palette')
-    const placeholder = shadesContainer.querySelector('.placeholder')
+    const elements = {
+      textInput: document.getElementById('neon-text-input'),
+      letterSpacingSlider: document.getElementById('letter-spacing-slider'),
+      colorPalette: document.getElementById('color-palette-main'),
+      fontSelector: document.getElementById('font-selector'),
+      clarityGlowSlider: document.getElementById('clarity-glow-slider'),
+      backgroundSelector: document.getElementById('background-selector'),
+      previewSvg: document.getElementById('preview-svg'),
+      signSize: document.getElementById('sign-size'),
+      mountingType: document.getElementById('mounting-type'),
+      siliconeWidth: document.getElementById('silicone-width'),
+      priceDisplay: document.getElementById('price-display'),
+      previewBox: document.getElementById('preview-box')
+    }
     const baseurl = document.body.dataset.baseurl || ''
+    let neonTextElement, blurEffectElement
 
-    let ledColorData = []
-
-    const renderShades = (shades) => {
-      shadesPalette.innerHTML = ''
-      shades.forEach((shade) => {
-        const li = document.createElement('li')
-        li.textContent = shade.name
-        li.style.backgroundColor = shade.colorHex
-        li.style.color = shade.textColor
-        shadesPalette.appendChild(li)
-      })
-      placeholder.classList.add('hidden')
-      shadesPalette.classList.add('visible')
+    function calculatePrice(settings) {
+      const BASE_CHAR_PRICE = 4.5
+      const SIZE_MULTIPLIER = 0.25
+      const MOUNTING_MULTIPLIER = { wall: 1.0, window: 1.1, hanging: 1.2 }
+      const SILICONE_MULTIPLIER = { 6: 0.9, 8: 1.0, 12: 1.25 }
+      if (settings.text.trim() === '') return 0
+      let price = settings.text.length * BASE_CHAR_PRICE
+      if (settings.size > 30) {
+        price *= 1 + ((settings.size - 30) / 10) * SIZE_MULTIPLIER
+      }
+      price *= MOUNTING_MULTIPLIER[settings.mounting]
+      price *= SILICONE_MULTIPLIER[settings.silicone]
+      return price
     }
 
-    siliconePalette.addEventListener('click', (e) => {
-      const swatch = e.target.closest('li')
-      if (!swatch) return
-      ;[...siliconePalette.children].forEach((child) => child.classList.remove('active'))
-      swatch.classList.add('active')
-    })
+    function updatePreview() {
+      if (!neonTextElement) return
 
-    categoryPalette.addEventListener('click', (e) => {
-      const swatch = e.target.closest('li')
-      if (!swatch) return
-      ;[...categoryPalette.children].forEach((child) => child.classList.remove('active'))
-      swatch.classList.add('active')
-      const filterId = swatch.dataset.filter
-      const selectedCategory = ledColorData.find((cat) => cat.categoryId === filterId)
-      if (selectedCategory && selectedCategory.shades) {
-        renderShades(selectedCategory.shades)
+      const settings = {
+        text: elements.textInput.value,
+        letterSpacing: elements.letterSpacingSlider.value,
+        color: elements.colorPalette.querySelector('.active')?.dataset.colorHex || '#FF00DE',
+        font: elements.fontSelector.querySelector('.active')?.dataset.font || 'Arial',
+        fontWeight: elements.fontSelector.querySelector('.active')?.dataset.weight || '700',
+        clarityGlow: elements.clarityGlowSlider.value,
+        background: elements.backgroundSelector.querySelector('.active')?.dataset.bg || 'bg-black',
+        size: parseFloat(elements.signSize.value),
+        mounting: elements.mountingType.value,
+        silicone: elements.siliconeWidth.value
       }
-    })
 
-    shadesPalette.addEventListener('click', (e) => {
-      const swatch = e.target.closest('li')
-      if (!swatch) return
-      ;[...shadesPalette.children].forEach((child) => child.classList.remove('active'))
+      const sliderValue = settings.clarityGlow / 100
+      const currentStrokeWidth = 0.5 + sliderValue * 1.3
+      const currentStdDeviation = sliderValue * 4
+
+      neonTextElement.setAttribute('stroke-width', currentStrokeWidth)
+      blurEffectElement.setAttribute('stdDeviation', currentStdDeviation)
+
+      neonTextElement.textContent = settings.text.trim() === '' ? ' ' : settings.text
+      Object.assign(neonTextElement.style, {
+        stroke: settings.color,
+        fontFamily: `'${settings.font}', sans-serif`,
+        fontWeight: settings.fontWeight,
+        letterSpacing: `${settings.letterSpacing}em`
+      })
+
+      elements.previewBox.className = 'preview-box'
+      elements.previewBox.classList.add(settings.background)
+
+      const textBbox = neonTextElement.getBBox()
+      const containerRect = elements.previewBox.getBoundingClientRect()
+      if (textBbox.height === 0 || containerRect.height === 0) return
+      const textAspectRatio = textBbox.width / textBbox.height
+      const containerAspectRatio = containerRect.width / containerRect.height
+      let viewBoxWidth, viewBoxHeight
+      const PADDING_X = 1.05
+      const PADDING_Y = 1.05
+      if (textAspectRatio > containerAspectRatio) {
+        viewBoxWidth = textBbox.width * PADDING_X
+        viewBoxHeight = viewBoxWidth / containerAspectRatio
+      } else {
+        viewBoxHeight = textBbox.height * PADDING_Y
+        viewBoxWidth = viewBoxHeight * containerAspectRatio
+      }
+      const viewBox = `${textBbox.x - (viewBoxWidth - textBbox.width) / 2} ${textBbox.y - (viewBoxHeight - textBbox.height) / 2} ${viewBoxWidth} ${viewBoxHeight}`
+      elements.previewSvg.setAttribute('viewBox', viewBox)
+
+      const finalPrice = calculatePrice(settings)
+      elements.priceDisplay.textContent = `€${finalPrice.toFixed(2)}`
+    }
+
+    function setActiveSwatch(list, swatch) {
+      if (!list || !swatch) return
+      ;[...list.children].forEach((child) => child.classList.remove('active'))
       swatch.classList.add('active')
-    })
+    }
 
-    // ФИНАЛЬНЫЙ, ПРАВИЛЬНЫЙ ПУТЬ FETCH
-    fetch(`${baseurl}/assets/data/led-colors.json`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP 404: File not found at ${response.url}`)
-        return response.json()
-      })
-      .then((data) => {
-        ledColorData = data
-      })
-      .catch((error) => {
-        console.error('Critical Error:', error)
-        if (placeholder) {
-          placeholder.textContent = 'Error: Data file could not be loaded. Check console.'
-          placeholder.style.color = 'red'
+    let resizeObserver = new ResizeObserver(updatePreview)
+
+    async function initialize() {
+      try {
+        await document.fonts.ready
+        elements.previewSvg.innerHTML = `
+        <defs>
+          <filter id="neon-glow-filter" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur id="blur-effect" stdDeviation="1.5" result="coloredBlur"></feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="coloredBlur"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+          </filter>
+        </defs>
+        <text id="neon-text-preview" x="0" y="0" dominant-baseline="central" text-anchor="middle" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#neon-glow-filter)"></text>
+      `
+        neonTextElement = document.getElementById('neon-text-preview')
+        blurEffectElement = document.getElementById('blur-effect')
+
+        const response = await fetch(`${baseurl}/assets/data/led-colors.json`)
+        if (!response.ok) throw new Error('Failed to load colors')
+        const colors = await response.json()
+
+        elements.colorPalette.innerHTML = ''
+        colors.forEach((color) => {
+          const li = document.createElement('li')
+          li.textContent = color.name
+          li.dataset.colorHex = color.colorHex
+          if (color.name === 'Red') li.classList.add('active')
+          elements.colorPalette.appendChild(li)
+        })
+
+        // Set initial active color for swatch border
+        const initialActiveSwatch = elements.colorPalette.querySelector('.active')
+        if (initialActiveSwatch) {
+          const initialColor = initialActiveSwatch.dataset.colorHex
+          elements.colorPalette.style.setProperty('--active-swatch-color', initialColor)
         }
-      })
+
+        const allInputs = [
+          elements.textInput,
+          elements.letterSpacingSlider,
+          elements.clarityGlowSlider,
+          elements.signSize,
+          elements.mountingType,
+          elements.siliconeWidth
+        ]
+        allInputs.forEach((el) => el.addEventListener('input', updatePreview))
+        ;[elements.colorPalette, elements.fontSelector, elements.backgroundSelector].forEach(
+          (list) => {
+            list.addEventListener('click', (e) => {
+              const swatch = e.target.closest('li')
+              if (swatch) {
+                setActiveSwatch(list, swatch)
+                if (list.id === 'color-palette-main') {
+                  const newColor = swatch.dataset.colorHex
+                  if (newColor) {
+                    list.style.setProperty('--active-swatch-color', newColor)
+                  }
+                }
+                updatePreview()
+              }
+            })
+          }
+        )
+
+        // Accordion functionality for mobile
+        const accordions = document.querySelectorAll('.mobile-accordion')
+        accordions.forEach((accordion) => {
+          const button = accordion.querySelector('.accordion-toggle')
+          button.addEventListener('click', () => {
+            const clickedAccordion = button.closest('.mobile-accordion')
+
+            // Close all other accordions
+            accordions.forEach((otherAccordion) => {
+              if (otherAccordion !== clickedAccordion) {
+                otherAccordion.classList.remove('active')
+              }
+            })
+
+            // Toggle the clicked one
+            clickedAccordion.classList.toggle('active')
+          })
+        })
+
+        resizeObserver.observe(elements.previewBox)
+        updatePreview()
+      } catch (error) {
+        console.error('Initialization failed:', error)
+      }
+    }
+    initialize()
   })
 </script>
 </main>

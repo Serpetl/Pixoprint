@@ -1,80 +1,14 @@
 [
-  {
-    "categoryName": "White",
-    "categoryId": "white",
-    "shades": [
-      {
-        "name": "Warm White",
-        "id": "warm-white",
-        "colorHex": "#FFF4D8",
-        "textColor": "#333"
-      },
-      {
-        "name": "Neutral White",
-        "id": "neutral-white",
-        "colorHex": "#FDFFE5",
-        "textColor": "#333"
-      },
-      {
-        "name": "Cool White",
-        "id": "cool-white",
-        "colorHex": "#E6F4FF",
-        "textColor": "#333"
-      }
-    ]
-  },
-  {
-    "categoryName": "Blue",
-    "categoryId": "blue",
-    "shades": [
-      {
-        "name": "Blue",
-        "id": "blue",
-        "colorHex": "#004EFF",
-        "textColor": "#FFF"
-      },
-      {
-        "name": "Sky Blue",
-        "id": "sky-blue",
-        "colorHex": "#57D3DD",
-        "textColor": "#333"
-      },
-      {
-        "name": "Ice Blue",
-        "id": "ice-blue",
-        "colorHex": "#80DEEA",
-        "textColor": "#333"
-      }
-    ]
-  },
-  {
-    "categoryName": "Red",
-    "categoryId": "red",
-    "shades": [
-      {
-        "name": "Red",
-        "id": "red",
-        "colorHex": "#FF0000",
-        "textColor": "#FFF"
-      }
-    ]
-  },
-  {
-    "categoryName": "Green",
-    "categoryId": "green",
-    "shades": [
-      {
-        "name": "Green",
-        "id": "green",
-        "colorHex": "#00FF00",
-        "textColor": "#333"
-      },
-      {
-        "name": "Pale Green",
-        "id": "pale-green",
-        "colorHex": "#98FB98",
-        "textColor": "#333"
-      }
-    ]
-  }
+  { "name": "Pink", "colorHex": "#F554D4", "textColor": "#FFF" },
+  { "name": "Red", "colorHex": "#FF0000", "textColor": "#FFF" },
+  { "name": "Orange", "colorHex": "#FF7800", "textColor": "#FFF" },
+  { "name": "Yellow", "colorHex": "#FFFF00", "textColor": "#333" },
+  { "name": "Green", "colorHex": "#00FF00", "textColor": "#333" },
+  { "name": "Blue", "colorHex": "#004EFF", "textColor": "#FFF" },
+  { "name": "Sky Blue", "colorHex": "#57D3DD", "textColor": "#333" },
+  { "name": "Purple", "colorHex": "#A600FF", "textColor": "#FFF" },
+  { "name": "Pale Green", "colorHex": "#98FB98", "textColor": "#333" },
+  { "name": "Light Pink", "colorHex": "#FFB6C1", "textColor": "#333" },
+  { "name": "Cool White", "colorHex": "#E6F4FF", "textColor": "#333" },
+  { "name": "Warm White", "colorHex": "#FFF4D8", "textColor": "#333" }
 ]

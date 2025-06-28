@@ -1,4 +1,38 @@
-/* --- HERO --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gochi+Hand&family=Kaushan+Script&family=Monoton&family=Neon+Tubes+2&family=Orbitron:wght@700&family=Pacifico&family=Righteous&family=Satisfy&family=Yellowtail&display=swap');
+
+section {
+  padding-block: var(--section-padding-desktop);
+}
+@media (max-width: 768px) {
+  section {
+    padding-block: var(--section-padding-mobile);
+  }
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+section > .container > .section-heading {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+  section > .container > .section-heading {
+    margin-bottom: 2rem;
+  }
+}
+
 .hero-neon .hero-image-wrapper {
   padding: 0;
   box-shadow: none;
@@ -10,7 +44,6 @@
   box-shadow: var(--shadow-medium);
 }
 
-/* --- TECHNOLOGY INTRO --- */
 .tech-intro {
   background: var(--white);
 }
@@ -24,7 +57,6 @@
   color: #555;
 }
 
-/* --- ADVANTAGES --- */
 .advantages-section {
   background: var(--light-gray);
 }
@@ -57,173 +89,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* --- CUSTOMIZATION & COLORS --- */
-.customization-section {
-  background: var(--white);
-}
-.customization-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
-@media (min-width: 992px) {
-  .customization-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-.color-palette {
-  background: var(--light-gray);
-  padding: 2rem;
-  border-radius: var(--border-radius-lg);
-}
-.color-palette h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-.palette-desc {
-  color: #666;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-}
-.swatch-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-/* --- Интерактивность для палитры --- */
-.swatch-list li {
-  background: #e0e0e0;
-  color: #333;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius-md);
-  font-weight: 500;
-  border: 3px solid transparent; /* Используем прозрачную рамку для стабильности при появлении цветной */
-  box-shadow: var(--shadow-light);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-.swatch-list li:hover {
-  transform: scale(1.08);
-  box-shadow: var(--shadow-medium);
-}
-
-.swatch-list li.active {
-  border-color: var(--primary-color);
-  transform: scale(1.08);
-}
-
-/* === УЛУЧШЕНИЕ: 1. Единый и логичный стиль для галочки === */
-.swatch-list li.active::after {
-  content: '✓';
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 22px;
-  height: 22px;
-  background: var(--white); /* Белый фон */
-  color: var(--primary-color); /* Цвет галочки совпадает с цветом рамки */
-  border: 2px solid var(--primary-color); /* Обводка в том же цвете */
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* --- Стили для светящихся плашек (LED Colors) --- */
-.led-colors .swatch-list li {
-  color: var(--white); /* По умолчанию текст белый */
-  border-color: transparent;
-}
-.led-colors .swatch-list li.active {
-  border-color: #00c49a; /* Используем единый контрастный цвет для активной рамки */
-}
-.led-colors .swatch-list li.active::after {
-  color: #00c49a; /* Цвет галочки совпадает с цветом рамки */
-  border-color: #00c49a;
-}
-
-/* Фоны и свечение для каждой плашки */
-.led-warm-white {
-  background: #ffd6a9;
-  box-shadow: 0 0 10px #ffd6a9;
-}
-.led-neutral-white {
-  background: #fefff2;
-  box-shadow: 0 0 10px #fefff2;
-}
-.led-cool-white {
-  background: #e6f4ff;
-  box-shadow: 0 0 10px #e6f4ff;
-}
-.led-lemon-yellow {
-  background: #f8ff48;
-  box-shadow: 0 0 10px #f8ff48;
-}
-.led-gold-yellow {
-  background: #ffb600;
-  box-shadow: 0 0 10px #ffb600;
-}
-.led-red {
-  background: #ff0000;
-  box-shadow: 0 0 10px #ff0000;
-}
-.led-blue {
-  background: #004eff;
-  box-shadow: 0 0 10px #004eff;
-}
-.led-ice-blue {
-  background: #80deea;
-  box-shadow: 0 0 10px #80deea;
-}
-.led-green {
-  background: #00ff00;
-  box-shadow: 0 0 10px #00ff00;
-}
-.led-pink {
-  background: #ff00e4;
-  box-shadow: 0 0 10px #ff00e4;
-}
-.led-purple {
-  background: #9d00ff;
-  box-shadow: 0 0 10px #9d00ff;
-}
-.led-rgb {
-  background: linear-gradient(
-    90deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-}
-
-/* === УЛУЧШЕНИЕ: 2. Контрастный цвет текста для КАЖДОГО светлого элемента === */
-.led-warm-white,
-.led-neutral-white,
-.led-cool-white,
-.led-ice-blue,
-.led-lemon-yellow,
-.led-gold-yellow {
-  color: #333 !important; /* Переназначаем цвет текста на темный для светлых фонов */
-}
-
-/* --- HOW IT'S MADE --- */
 .how-its-made {
   background: var(--light-gray);
 }
@@ -246,90 +111,422 @@
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
-/* === НОВЫЕ СТИЛИ ДЛЯ ТРЁХ ПАЛИТР === */
 
-.customization-grid-new {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+/* ==========================================================================
+  CUSTOMIZER STYLES
+========================================================================== */
+.customization-section {
+  background: var(--white);
 }
 
+/* Mobile-first column layout */
+#compact-customizer-grid {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid #e9ecef;
+  gap: 1.5rem;
+}
+
+/* Desktop grid layout */
 @media (min-width: 992px) {
-  /* На больших экранах можно уместить в 2 колонки */
-  .customization-grid-new {
-    grid-template-columns: 1fr 1fr;
+  #compact-customizer-grid {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: auto auto 1fr auto auto; /* Adjusted rows */
+    gap: 1.5rem 2.5rem;
   }
-  /* Растягиваем первую палитру на всю ширину */
-  .customization-grid-new > .color-palette:first-child {
-    grid-column: 1 / -1;
+  /* Assigning elements to the grid columns and rows for desktop */
+  .ccg-text-input {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .ccg-color-selector {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .ccg-font-selector {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  .ccg-specs-and-price {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    align-self: start;
+  }
+
+  .ccg-preview {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .ccg-visual-controls {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .price-calculator {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    align-self: end;
   }
 }
 
-/* Стили для палитры силикона */
-#silicone-palette .silicone-pink {
-  background-color: #f554d4;
-  color: white;
-}
-#silicone-palette .silicone-red {
-  background-color: #ff0000;
-  color: white;
-}
-#silicone-palette .silicone-orange {
-  background-color: #ff7800;
-  color: white;
-}
-#silicone-palette .silicone-yellow {
-  background-color: #ffff00;
-  color: #333;
-}
-#silicone-palette .silicone-green {
-  background-color: #00ff00;
-  color: #333;
-}
-#silicone-palette .silicone-blue {
-  background-color: #004eff;
-  color: white;
-}
-#silicone-palette .silicone-sky-blue {
-  background-color: #57d3dd;
-  color: #333;
-}
-#silicone-palette .silicone-purple {
-  background-color: #a600ff;
-  color: white;
-}
-#silicone-palette .silicone-pale-green {
-  background-color: #98fb98;
-  color: #333;
-}
-#silicone-palette .silicone-light-pink {
-  background-color: #ffb6c1;
-  color: #333;
-}
-#silicone-palette .silicone-cool-white {
-  background-color: #f2f8ff;
-  color: #333;
-}
-#silicone-palette .silicone-warm-white {
-  background-color: #fff4d8;
-  color: #333;
+.control-group {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Стили для контейнера с оттенками */
-#led-shades-palette {
-  display: none; /* По умолчанию оттенки скрыты */
+.control-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+input[type='text'],
+input[type='number'],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius-md);
+  border: 2px solid #ccc;
+  transition: all 0.2s ease;
+}
+input[type='range'] {
+  width: 100%;
+  padding: 0;
+  accent-color: var(--primary-color);
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+.swatch-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 0.65rem;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.swatch-list li {
+  position: relative;
+  background: #fff;
+  color: #333;
+  padding: 0.5rem 0.5rem;
+  border-radius: var(--border-radius-md);
+  border: 2px solid #ddd;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0 !important;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.swatch-list li:hover {
+  transform: translateY(-2px);
+  border-color: #bbb;
+}
+
+#color-palette-main {
+  --active-swatch-color: var(--primary-color);
+}
+.swatch-list li.active {
+  border-color: var(--active-swatch-color, var(--primary-color));
+  color: var(--active-swatch-color, var(--primary-color));
+  font-weight: 700;
+}
+.swatch-list li.active::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--active-swatch-color, var(--primary-color));
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z'/%3E%3C/svg%3E");
+}
+.font-swatches li.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.font-swatches li.active::before {
+  background-color: var(--primary-color);
+}
+
+.bg-swatches {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+.bg-swatches li {
+  width: 38px;
+  height: 38px;
+  padding: 4px;
+  display: grid;
+  place-items: center;
+}
+.bg-swatches li.active::before {
+  background-color: white;
+}
+.bg-swatches li[data-bg='bg-black'].active::before {
+  background-color: white;
+}
+.bg-swatches li[data-bg='bg-white'].active::before {
+  background-color: #333;
+}
+.bg-swatches li[data-bg='bg-transparent'].active::before {
+  background-color: #333;
+}
+.bg-swatches svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.bg-swatches li[data-bg='bg-black'] svg {
+  color: #2d2d2d;
+}
+.bg-swatches li[data-bg='bg-white'] svg {
+  color: #fff;
+  border: 1px solid #ddd;
+}
+.bg-swatches li[data-bg='bg-transparent'] svg {
+  color: #d4d4d4;
+}
+
+.preview-box {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  width: 100%;
+  aspect-ratio: 2.5 / 1;
+  max-height: 250px;
+  background-color: #1a1a1a;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.4s ease;
+  overflow: hidden;
+}
+#preview-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.preview-box.bg-white {
+  background-color: #f0f0f0;
+}
+.preview-box.bg-transparent {
+  background-color: #e0e0e0;
+  background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 12px 12px;
+}
+
+.sliders-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+.ccg-specs-and-price {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem 1.5rem;
+  align-items: end;
+}
+
+.price-calculator {
+  border-top: 1px solid #eee;
+  margin-top: 1rem;
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.price-label {
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.price-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+/* Custom Tooltip Styles */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.tooltip-wrapper .fa-info-circle {
+  color: #999;
+  cursor: pointer;
+}
+.tooltip-text {
+  visibility: hidden;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  width: 180px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.4;
+  box-shadow: var(--shadow-light);
 }
-
-#led-shades-palette.visible {
-  display: flex; /* Показываем, когда готовы */
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
   opacity: 1;
 }
 
-#led-shades-container .placeholder {
-  transition: opacity 0.4s ease;
+/* Accordion and Mobile Styles */
+@media (max-width: 991px) {
+  /* Sticky preview on mobile */
+  .ccg-preview {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
+    z-index: 10;
+  }
+
+  .mobile-accordion .accordion-toggle {
+    cursor: pointer;
+    position: relative;
+    padding: 0.75rem 1rem;
+    padding-right: 35px; /* space for icon */
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius-md);
+    transition: border-radius 0.3s;
+  }
+  .mobile-accordion.active .accordion-toggle {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .mobile-accordion .accordion-toggle::after {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+  }
+  .mobile-accordion.active .accordion-toggle::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .mobile-accordion .accordion-content {
+    display: none;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+    margin-top: -1px;
+    background-color: #fff;
+  }
+  .mobile-accordion.active .accordion-content {
+    display: block;
+  }
+
+  .ccg-visual-controls .accordion-content {
+    background: none;
+    border: none;
+    padding: 1rem 0 0 0;
+  }
+  .ccg-specs-and-price .accordion-content {
+    padding: 1rem 0 0 0;
+    border: none;
+    background: none;
+  }
 }
-#led-shades-container .placeholder.hidden {
-  display: none;
+
+@media (min-width: 992px) {
+  /* Hide accordion functionality on desktop */
+  .mobile-accordion .accordion-toggle {
+    display: none;
+  }
+  .mobile-accordion .accordion-content {
+    display: block;
+  }
+}
+
+/* Новые классы для шрифтов */
+.font-arial {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+.font-bebas-neue {
+  font-family: 'Bebas Neue', cursive;
+}
+.font-righteous {
+  font-family: 'Righteous', cursive;
+}
+.font-kaushan-script {
+  font-family: 'Kaushan Script', cursive;
+}
+.font-yellowtail {
+  font-family: 'Yellowtail', cursive;
+}
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+}
+.font-courier {
+  font-family: 'Courier Prime', monospace;
+  font-weight: bold;
+}
+.font-monoton {
+  font-family: 'Monoton', cursive;
+}
+.font-neon-tubes {
+  font-family: 'Neon Tubes 2', cursive;
+}
+.font-satisfy {
+  font-family: 'Satisfy', cursive;
 }
