@@ -49,7 +49,7 @@
     <meta name="twitter:image" content="/Pixoprint/assets/img/og-image.jpg" />
   </head>
 
-  <body class="page-led-neon">
+  <body class="page-led-neon" data-baseurl="">
     <header class="site-header">
   <div class="container nav-wrapper">
     <a href="/Pixoprint/en/" class="logo">
@@ -699,6 +699,7 @@
         blurEffectElement = document.getElementById('blur-effect')
 
         const response = await fetch(`${baseurl}/assets/data/led-colors.json`)
+
         if (!response.ok) throw new Error('Failed to load colors')
         const colors = await response.json()
 
