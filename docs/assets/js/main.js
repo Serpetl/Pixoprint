@@ -2,7 +2,6 @@
    assets/js/main.js – Client-side catalogue logic with mobile folding
 ---------------------------------------------------------------------- */
 window.addEventListener('load', () => {
-  
   /* ── Folding configuration & logger ───────────────────────────────── */
   const FOLD_CFG = {
     MOBILE_BREAKPOINT: 768,
@@ -438,4 +437,3 @@ window.addEventListener('load', () => {
     })
   }
 })
-
