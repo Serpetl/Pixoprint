@@ -1,0 +1,310 @@
+/* common-layouts.css - Стили для общих макетов страниц, например, для страниц услуг */
+
+/* --- HERO SECTION FOR SERVICES --- */
+.service-hero {
+  background: var(--white);
+  padding-block-start: 1rem;
+  padding-block-end: 2.5rem;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .service-hero {
+    padding-block-start: 3rem;
+  }
+}
+.service-hero h1 {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+.service-hero .subtitle {
+  font-size: 1.35rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+.service-hero .hero-cta-btn {
+  margin-top: 1.5rem;
+  margin-inline: auto;
+  font-size: 1.1rem;
+  padding: 0.9rem 2.8rem;
+}
+
+.hero-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+@media (min-width: 992px) {
+  .hero-content-grid {
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+  }
+}
+
+.hero-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+}
+.hero-image-wrapper picture {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  flex-grow: 1;
+}
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-image-wrapper .btn {
+  margin-bottom: 1rem;
+}
+
+/* --- SPECS SECTION --- */
+.service-specs {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.service-specs .section-heading {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+}
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+@media (min-width: 992px) {
+  .spec-list {
+    justify-content: center;
+  }
+}
+.spec-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+.spec-list li strong {
+  display: block;
+  font-size: 1.25rem;
+  margin-top: 0.2rem;
+}
+.spec-list li span {
+  font-size: 0.95rem;
+  color: #666;
+}
+.spec-list i {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+}
+
+/* --- MAIN CONTENT & FAQ/PROCESS --- */
+.service-main-content {
+  background: var(--light-gray);
+}
+.service-main-content .main-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .service-main-content .main-content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+.service-process,
+.service-faq {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
+  margin-top: 0;
+}
+@media (max-width: 768px) {
+  .service-process,
+  .service-faq {
+    padding: 1.5rem;
+  }
+}
+.service-process .section-heading,
+.service-faq .section-heading {
+  text-align: left;
+}
+
+/* Process Steps */
+.process-steps {
+  counter-reset: step-counter;
+  padding-left: 0;
+  list-style: none;
+}
+.process-steps li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.process-steps li::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--white);
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* FAQ List */
+.faq-list {
+  list-style: none;
+  padding-left: 0;
+}
+.faq-list li {
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+}
+.faq-list li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding-right: 0.5rem;
+  transition: color var(--transition-speed);
+}
+.faq-question:hover {
+  color: var(--primary-color);
+}
+.faq-question i {
+  transition: transform var(--transition-speed);
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+.faq-question.active i {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height var(--transition-speed),
+    padding var(--transition-speed);
+  padding-right: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.faq-answer p {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+.faq-question.active + .faq-answer {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+/* --- GALLERY --- */
+.service-gallery {
+  background: var(--white);
+  padding-block-start: 2rem;
+  padding-block-end: 3rem;
+}
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-inline: 0;
+}
+.gallery-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  transition:
+    transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+  cursor: pointer;
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  aspect-ratio: 16 / 9;
+  max-width: 400px;
+}
+@media (min-width: 576px) {
+  .gallery-grid {
+    gap: 2rem;
+    max-width: 680px;
+    margin-inline: auto;
+  }
+  .gallery-item {
+    aspect-ratio: 1 / 1;
+    flex-basis: calc(50% - 1rem);
+    max-width: none;
+  }
+  .gallery-item img {
+    height: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
+  }
+}
+.gallery-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.gallery-item img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
