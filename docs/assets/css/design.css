@@ -1,0 +1,17 @@
+.design-main-content {
+  background: var(--light-gray);
+  padding: 3rem 0;
+}
+
+.design-main-content .main-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .design-main-content .main-content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}

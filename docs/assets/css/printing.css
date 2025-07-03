@@ -41,13 +41,23 @@ section > .container > .section-heading {
   text-decoration: none;
   cursor: pointer;
   border: none;
-  transition: all var(--transition-speed);
   margin-bottom: 0;
 }
+
+.design-hero .btn,
+.design-gallery .btn,
+.quote-section .btn {
+  transition:
+    background-color var(--transition-speed),
+    transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+
 .btn.primary {
   background: var(--primary-color);
   color: var(--white);
 }
+
 .btn.primary:hover {
   background: var(--secondary-color);
   transform: translateY(-2px);

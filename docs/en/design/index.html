@@ -24,17 +24,19 @@
     <link rel="apple-touch-icon" href="/Pixoprint/assets/img/logo/apple-touch-icon.png" />
     <link rel="manifest" href="/Pixoprint/assets/img/logo/site.webmanifest" />
 
-    <link rel="stylesheet" href="/Pixoprint/assets/css/main.css" />
-
-    
-    <link rel="stylesheet" href="/Pixoprint/assets/css/design.css" />
-    
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <link rel="stylesheet" href="/Pixoprint/assets/css/main.css" />
+
+     
+    <link rel="stylesheet" href="/Pixoprint/assets/css/printing.css" />
+    
+    <link rel="stylesheet" href="/Pixoprint/assets/css/design.css" />
+     
 
     <meta property="og:title" content="Graphic Design | Pixoprint" />
     <meta property="og:description" content="Professional graphic design that helps you stand out." />
@@ -127,10 +129,288 @@
 
 
     <main id="main" role="main">
-<section class="page">
+<section class="design-hero">
   <div class="container">
-    <h1>Graphic Design</h1>
-    <p>Professional graphic design that helps you stand out.</p>
+    <h1 data-aos="fade-down">Graphic Design</h1>
+    <p class="subtitle" data-aos="fade-down" data-aos-delay="100">
+      Creative and tailored graphic design solutions for signage, apparel, marketing materials, and
+      more.
+    </p>
+
+    <div class="hero-content-grid">
+      <div class="hero-image-wrapper" data-aos="zoom-in" data-aos-delay="200">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/Pixoprint/assets/img/design/hero-320.webp 320w,
+                                /Pixoprint/assets/img/design/hero-480.webp 480w,
+                                /Pixoprint/assets/img/design/hero-640.webp 640w,
+                                /Pixoprint/assets/img/design/hero-960.webp 960w"
+            sizes="(max-width: 599px) 100vw,
+                               (max-width: 899px) 80vw,
+                               600px"
+          />
+          <img
+            src="/Pixoprint/assets/img/design/hero-640.jpg"
+            srcset="/Pixoprint/assets/img/design/hero-320.jpg 320w,
+                                /Pixoprint/assets/img/design/hero-480.jpg 480w,
+                                /Pixoprint/assets/img/design/hero-640.jpg 640w,
+                                /Pixoprint/assets/img/design/hero-960.jpg 960w"
+            sizes="(max-width: 599px) 100vw,
+                               (max-width: 899px) 80vw,
+                               600px"
+            alt="Graphic design workspace with branding elements"
+            width="960"
+            height="auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <a href="#contact" class="btn primary hero-cta-btn" data-aos="fade-up">Request a quote</a>
+      </div>
+
+      <div class="design-specs" data-aos="fade-left" data-aos-delay="400">
+        <h2 class="section-heading">Service Details</h2>
+        <ul class="spec-list">
+          <li data-aos="zoom-in-up" data-aos-delay="500">
+            <i class="fas fa-palette"></i>
+            <span>Design Types</span>
+            <strong>Logos, signs, apparel, print, packaging</strong>
+          </li>
+          <li data-aos="zoom-in-up" data-aos-delay="600">
+            <i class="fas fa-pencil-ruler"></i>
+            <span>File Formats Delivered</span>
+            <strong>PDF, AI, SVG, PNG, JPG</strong>
+          </li>
+          <li data-aos="zoom-in-up" data-aos-delay="700">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Brand Consistency</span>
+            <strong>Tailored to your visual identity</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="design-main-content">
+  <div class="container">
+    <div class="main-content-grid">
+      <div class="design-process card" data-aos="fade-up">
+        <h2 class="section-heading">How It Works</h2>
+        <ol class="process-steps">
+          <li data-aos="fade-up" data-aos-delay="100">
+            Share your design brief or goals using the form below.
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            Our designers will propose visual concepts aligned with your brand.
+          </li>
+          <li data-aos="fade-up" data-aos-delay="300">
+            We revise the design based on your feedback until final approval.
+          </li>
+          <li data-aos="fade-up" data-aos-delay="400">
+            Final files are delivered in formats suitable for print and digital use.
+          </li>
+        </ol>
+      </div>
+
+      <div class="design-faq card" data-aos="fade-up">
+        <h2 class="section-heading">Frequently asked questions</h2>
+        <ul class="faq-list">
+          <li data-aos="fade-up" data-aos-delay="100">
+            <h3 class="faq-question">
+              Can you create a design from scratch? <i class="fas fa-chevron-down"></i>
+            </h3>
+            <p class="faq-answer">
+              Yes. Whether you need a logo, signage mockup, or print materials, we can develop it
+              from the ground up.
+            </p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <h3 class="faq-question">
+              What if I already have a draft or sketch? <i class="fas fa-chevron-down"></i>
+            </h3>
+            <p class="faq-answer">
+              Perfect! Send us your sketches or drafts and we'll refine and digitize them into
+              production-ready artwork.
+            </p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="300">
+            <h3 class="faq-question">
+              How many revisions are included? <i class="fas fa-chevron-down"></i>
+            </h3>
+            <p class="faq-answer">
+              Typically 2–3 revision rounds are included. We aim for your full satisfaction and
+              clarity before final delivery.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="design-gallery">
+  <div class="container">
+    <h2 class="section-heading" data-aos="fade-up">See some examples below</h2>
+    <div class="gallery-grid">
+       
+      <a
+        href="/Pixoprint/en/products-list/"
+        class="gallery-item"
+        data-aos="fade-up"
+        data-aos-delay="0"
+      >
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/Pixoprint/assets/img/design/branding-set-240.webp 240w,
+                                /Pixoprint/assets/img/design/branding-set-320.webp 320w,
+                                /Pixoprint/assets/img/design/branding-set-480.webp 480w,
+                                /Pixoprint/assets/img/design/branding-set-640.webp 640w"
+            sizes="(max-width: 575px) 90vw,
+                               (max-width: 991px) calc(50vw - 2rem),
+                               33vw"
+          />
+          <img
+            src="/Pixoprint/assets/img/design/branding-set-640.jpg"
+            srcset="/Pixoprint/assets/img/design/branding-set-240.jpg 240w,
+                                /Pixoprint/assets/img/design/branding-set-320.jpg 320w,
+                                /Pixoprint/assets/img/design/branding-set-480.jpg 480w,
+                                /Pixoprint/assets/img/design/branding-set-640.jpg 640w"
+            sizes="(max-width: 575px) 90vw,
+                               (max-width: 991px) calc(50vw - 2rem),
+                               33vw"
+            alt="Custom brand identity set: business
+      cards, flyer, envelope"
+            width="640"
+            height="auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </a>
+      
+      <a
+        href="/Pixoprint/en/products-list/"
+        class="gallery-item"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/Pixoprint/assets/img/design/logo-wall-240.webp 240w,
+                                /Pixoprint/assets/img/design/logo-wall-320.webp 320w,
+                                /Pixoprint/assets/img/design/logo-wall-480.webp 480w,
+                                /Pixoprint/assets/img/design/logo-wall-640.webp 640w"
+            sizes="(max-width: 575px) 90vw,
+                               (max-width: 991px) calc(50vw - 2rem),
+                               33vw"
+          />
+          <img
+            src="/Pixoprint/assets/img/design/logo-wall-640.jpg"
+            srcset="/Pixoprint/assets/img/design/logo-wall-240.jpg 240w,
+                                /Pixoprint/assets/img/design/logo-wall-320.jpg 320w,
+                                /Pixoprint/assets/img/design/logo-wall-480.jpg 480w,
+                                /Pixoprint/assets/img/design/logo-wall-640.jpg 640w"
+            sizes="(max-width: 575px) 90vw,
+                               (max-width: 991px) calc(50vw - 2rem),
+                               33vw"
+            alt="Modern logo design on signage mockup"
+            width="640"
+            height="auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </a>
+      
+      <a
+        href="/Pixoprint/en/products-list/"
+        class="gallery-item"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/Pixoprint/assets/img/design/tshirt-mockup-240.webp 240w,
+                                /Pixoprint/assets/img/design/tshirt-mockup-320.webp 320w,
+                                /Pixoprint/assets/img/design/tshirt-mockup-480.webp 480w,
+                                /Pixoprint/assets/img/design/tshirt-mockup-640.webp 640w"
+            sizes="(max-width: 575px) 90vw,
+                               (max-width: 991px) calc(50vw - 2rem),
+                               33vw"
+          />
+          <img
+            src="/Pixoprint/assets/img/design/tshirt-mockup-640.jpg"
+            srcset="/Pixoprint/assets/img/design/tshirt-mockup-240.jpg 240w,
+                                /Pixoprint/assets/img/design/tshirt-mockup-320.jpg 320w,
+                                /Pixoprint/assets/img/design/tshirt-mockup-480.jpg 480w,
+                                /Pixoprint/assets/img/design/tshirt-mockup-640.jpg 640w"
+            sizes="(max-width: 575px) 90vw,
+                               (max-width: 991px) calc(50vw - 2rem),
+                               33vw"
+            alt="Illustrative t-shirt design created for textile printing"
+            width="640"
+            height="auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </a>
+      
+    </div>
+
+    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+      <a href="/Pixoprint/en/products-list/" class="btn primary">View More Products</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="quote-section" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-heading" data-aos="fade-up">Contact us, send your idea and get a quote</h2>
+    <form
+      name="design-contact-form"
+      method="POST"
+      data-netlify="true"
+      enctype="multipart/form-data"
+      class="quote-form"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <input type="hidden" name="form-name" value="design-contact-form" />
+
+      <input type="text" name="name" placeholder="Full name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea
+        name="message"
+        placeholder="Your message, brand goals, visual ideas, etc."
+        rows="5"
+      ></textarea>
+
+      <label for="file-upload-main" class="file-input-wrapper">
+        <input
+          type="file"
+          name="file"
+          id="file-upload-main"
+          class="file-input-hidden"
+          accept=".pdf,.eps,.tiff,.jpg,.jpeg,.png,.svg,.ai"
+          multiple
+        />
+
+        <span class="file-input-content">
+          <i class="fas fa-paperclip"></i>
+          <span class="file-input-text">Attach sketches or references</span>
+        </span>
+
+        <span id="file-chosen-main" class="file-chosen-text">No file chosen</span>
+      </label>
+
+      <button type="submit" class="btn primary">Send Request</button>
+    </form>
   </div>
 </section>
 </main>
