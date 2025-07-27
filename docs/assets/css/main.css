@@ -41,6 +41,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   padding-top: var(--header-h);
+  overflow-x: clip;
 }
 main {
   flex-grow: 1;
@@ -64,7 +65,7 @@ main {
 .container {
   max-width: var(--container-max-width);
   margin-inline: auto;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 @media (min-width: 1200px) {
   .container {
@@ -286,7 +287,7 @@ main {
 .footer-main {
   background-color: var(--light-gray);
   color: var(--black);
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 .footer-bottom {
@@ -451,6 +452,9 @@ main {
 }
 
 @media (min-width: 768px) {
+  .footer-main {
+    padding: 2rem 1rem;
+  }
   .footer-main-flex {
     flex-direction: row;
     justify-content: space-between;
@@ -464,7 +468,7 @@ main {
 @media (max-width: 768px) {
   .footer-main-flex {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3.5rem;
   }
   .footer-cta-left,
   .footer-contact {
@@ -646,4 +650,8 @@ label.file-input-wrapper:hover {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   width: auto;
+}
+.page-header {
+  text-align: center;
+  padding-top: 0;
 }
