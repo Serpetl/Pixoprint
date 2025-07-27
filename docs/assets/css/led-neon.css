@@ -3,9 +3,13 @@
 .container {
   padding: 1rem;
 }
+
 @media (min-width: 768px) {
   .container {
     padding: 2.5rem 1rem;
+  }
+  .site-header .container {
+    padding: 0 1rem;
   }
 }
 .text-center {

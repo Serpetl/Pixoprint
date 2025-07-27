@@ -161,15 +161,16 @@
       </picture>
     </div>
   </div>
+  <!-- <div id="header-unstick-trigger" style="height: 1px"></div> -->
 </section>
 
+              <div class="control-group">
 <section class="tech-intro" data-aos="fade-up">
   <div class="container small-container">
     <h2 class="section-heading">What is LED Neon?</h2>
     <p>LED neon is a modern, flexible, and safe alternative to traditional glass neon. It uses energy-efficient LEDs encased in a durable silicone shell, allowing for intricate designs and vibrant colors while being safer and more durable.</p>
   </div>
 </section>
-
 <section class="advantages-section" data-aos="fade-up">
   <div class="container">
     <h2 class="section-heading">Why Choose LED Neon?</h2>
@@ -192,8 +193,14 @@
     </div>
   </div>
 </section>
+<!-- Рестик‑маяк (ставим прямо перед customization‑section) -->
+<div id="header-restick-trigger" style="height:1px;"></div>
 
-<section class="customization-section">
+<section id="design-your-sign" class="customization-section">
+  …
+</section>
+
+<section id="design-your-sign" class="customization-section">
   <div class="container">
     <h2 class="section-heading" data-aos="fade-up">
       Design Your Sign
@@ -316,10 +323,12 @@
             <label>4. Finalize Specs</label>
             <div class="specs-grid">
               <div class="control-group">
-                <label for="sign-size">Sign Width (cm)</label>
+                <label for="sign-size"
+                  >Sign Width (cm)</label
+                >
                 <input type="number" id="sign-size" value="50" min="25" max="300" step="5" />
               </div>
-              <div class="control-group">
+
                 <label for="mounting-type"
                   >Mounting Type</label
                 >
@@ -335,6 +344,7 @@
                   </option>
                 </select>
               </div>
+
               <div class="control-group">
                 <label for="silicone-width"
                   >Silicone Width</label
@@ -370,7 +380,7 @@
   </div>
 </section>
 
-<section class="how-its-made">
+<section id="how-its-made" class="how-its-made">
   <div class="container">
     <h2 class="section-heading" data-aos="fade-up">
       How It&#39;s Made
@@ -391,6 +401,7 @@
         <h4>LED Installation</h4>
         <p>High-density LED strips are inserted into the silicone tubing, ensuring bright and even illumination.</p>
       </div>
+
       <div class="process-step" data-aos="fade-up" data-aos-delay="400">
         <i class="fas fa-power-off"></i>
         <h4>Wiring &amp; Testing</h4>
@@ -399,7 +410,7 @@
     </div>
   </div>
 </section>
-
+<!-- <div id="header-restick-trigger" style="height: 1px"></div> -->
 <section class="print-gallery">
   <div class="container">
     <h2 class="section-heading" data-aos="fade-up">
@@ -508,7 +519,7 @@
     </div>
   </div>
 </section>
-
+<!-- <div id="header-restick-trigger" style="height: 1px"></div> -->
 <section id="contact" class="quote-section" data-aos="fade-up">
   <div class="container quote-neon">
     <h2 class="section-heading" data-aos="fade-up">
@@ -737,7 +748,6 @@
         allInputs.forEach((el) => {
           el.addEventListener('input', () => requestAnimationFrame(updatePreview))
         })
-
         ;[elements.colorPalette, elements.fontSelector, elements.backgroundSelector].forEach(
           (list) => {
             list.addEventListener('click', (e) => {
@@ -779,6 +789,55 @@
     }
 
     initialize()
+
+ // === HEADER STICKINESS CONTROL (fixed header, tuned for sticky top) ===
+const header      = document.querySelector('.site-header');
+const preview     = document.querySelector('.ccg-preview-area');
+const restickMark = document.getElementById('header-restick-trigger');
+
+let isUnstuck = false;
+
+
+const headerH = () => header ? header.getBoundingClientRect().height : 0;
+
+const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+
+
+function setPreviewTop () {
+  if (!preview) return;
+  preview.style.top = isUnstuck ? '1rem'
+                                : `calc(${headerH()}px + 1rem)`;
+}
+setPreviewTop();
+window.addEventListener('resize', setPreviewTop);
+
+
+function watchOverlap () {
+  if (!isUnstuck && header && preview) {
+    const top = preview.getBoundingClientRect().top;
+    if (top <= headerH() + rem) {
+      header.classList.add('unstuck');
+      isUnstuck = true;
+      setPreviewTop();
+    }
+  }
+  requestAnimationFrame(watchOverlap);
+}
+requestAnimationFrame(watchOverlap);
+
+
+if (restickMark) {
+  new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && isUnstuck) {
+      header.classList.remove('unstuck');
+      isUnstuck = false;
+      setPreviewTop();
+    }
+  }, { threshold: 0 }).observe(restickMark);
+}
+
+
+
   })
 </script>
 </main>

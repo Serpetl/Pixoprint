@@ -40,6 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: var(--header-h);
 }
 main {
   flex-grow: 1;
@@ -81,13 +82,24 @@ main {
 
 /* 4. HEADER & NAVIGATION */
 .site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--light-gray);
-  padding: 0.5rem 0;
-  position: sticky;
+  position: fixed !important;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 9990;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  background-color: var(--white);
 }
+
+.site-header.unstuck {
+  transform: translateY(-100%);
+}
+
+.site-header:not(.unstuck) {
+  transform: translateY(0);
+}
+
 .nav-wrapper {
   display: flex;
   align-items: center;
@@ -167,14 +179,14 @@ main {
 .burger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-/* Улучшенный дизайн мобильного меню */
+
 .mobile-nav {
   display: flex;
   flex-direction: column;
   background: var(--white);
   width: clamp(240px, 65vw, 300px);
   position: absolute;
-  top: calc(100% + 5px); /* Небольшой отступ от шапки */
+  top: calc(100% + 5px);
   right: 5px;
   max-height: 0;
   opacity: 0;
@@ -199,8 +211,8 @@ main {
 
 .mobile-nav a {
   display: flex;
-  align-items: center; /* Выравнивает иконку и текст */
-  gap: 1rem; /* Расстояние между иконкой и текстом */
+  align-items: center;
+  gap: 1rem;
   padding: 0.9rem 1.5rem;
   text-decoration: none;
   color: #343a40;
@@ -341,7 +353,7 @@ main {
   display: inline-block;
   text-decoration: none;
   color: var(--black);
-  transition: var(--transition-link); /* <-- Используем новую переменную */
+  transition: var(--transition-link);
 }
 
 .footer-contact a[href^='tel'] {
@@ -356,7 +368,7 @@ main {
 .footer-contact a:hover,
 .footer-cta .phone a:hover {
   color: var(--primary-color);
-  transform: var(--transform-link-hover); /* <-- Используем новую переменную */
+  transform: var(--transform-link-hover);
 }
 
 .footer-contact i.fa-map-marker-alt {
@@ -364,7 +376,6 @@ main {
   color: var(--primary-color);
 }
 
-/* Social Icons use existing variables for transitions */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -374,7 +385,6 @@ main {
 
 .social-icons a,
 .social-icons i {
-  /* Using existing --transition-speed variable for consistency */
   transition:
     transform var(--transition-speed),
     color var(--transition-speed),
@@ -527,8 +537,8 @@ main {
 }
 /* === QUOTE FORM SECTION === */
 .quote-section {
-  background: var(--light-gray); /* Светло-серый фон для секции */
-  padding-block: 4rem; /* Вертикальные отступы для воздуха */
+  background: var(--light-gray);
+  padding-block: 4rem;
 }
 
 .quote-form {
@@ -537,10 +547,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 2rem; /* Отступы внутри формы */
-  background: var(--white); /* Белый фон для самой формы */
-  border-radius: var(--border-radius-lg); /* Скругленные углы */
-  box-shadow: var(--shadow-medium); /* Тень для объема */
+  padding: 2rem;
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
 }
 
 .quote-form input,
@@ -573,9 +583,6 @@ main {
   resize: vertical;
 }
 
-/* Финальные стили для кастомного поля загрузки файлов */
-
-/* Главный контейнер-метка, которому мы задаем курсор */
 label.file-input-wrapper {
   display: flex;
   align-items: center;
@@ -588,7 +595,7 @@ label.file-input-wrapper {
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
-  cursor: pointer; /* <--- Теперь это будет работать на всем блоке */
+  cursor: pointer;
 }
 
 label.file-input-wrapper:hover {
@@ -596,12 +603,10 @@ label.file-input-wrapper:hover {
   box-shadow: 0 0 0 3px rgba(222, 58, 104, 0.1);
 }
 
-/* Просто скрываем стандартное поле input */
 .file-input-hidden {
   display: none;
 }
 
-/* Стили для видимого контента внутри кнопки */
 .file-input-content {
   display: inline-flex;
   align-items: center;
@@ -611,7 +616,6 @@ label.file-input-wrapper:hover {
   white-space: nowrap;
 }
 
-/* Текст для имени выбранного файла */
 .file-chosen-text {
   font-size: 0.9rem;
   color: #666;
