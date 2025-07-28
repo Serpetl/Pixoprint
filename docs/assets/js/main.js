@@ -384,6 +384,13 @@ window.addEventListener('load', () => {
       })
       .catch(console.error)
   }
+  /* === Enable carousel manually on product pages === */
+  if (
+    !document.querySelector('.products-grid-section') &&
+    document.querySelector('.product-image-carousel')
+  ) {
+    initCarousel(document)
+  }
 
   /* === Laser Cutting Page Specific JS === */
   // Simple JavaScript for FAQ accordion

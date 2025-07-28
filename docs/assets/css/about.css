@@ -1,11 +1,10 @@
 /* ==============================
    About Page Specific Styles
    ============================== */
-body {
-  overflow-x: clip;
-}
+
 .section {
   padding-block: 1rem;
+  overflow-x: clip;
 }
 
 /* Hero Section */
