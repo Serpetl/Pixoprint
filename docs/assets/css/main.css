@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: var(--header-h);
+  padding-top: 3rem;
   overflow-x: clip;
 }
 main {
@@ -48,6 +48,9 @@ main {
 }
 [data-aos] {
   will-change: transform, opacity;
+}
+.site-header {
+  border-bottom: 1px solid var(--light-gray);
 }
 .page-header {
   text-align: center;

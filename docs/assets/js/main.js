@@ -201,9 +201,9 @@ window.addEventListener('load', () => {
             ${(p.images || [])
               .map(
                 (img) => `
-              <picture class="carousel-item">
-                <img src="${imgDir}/${img}-640.jpg" alt="${p.title[locale]}" loading="lazy" decoding="async">
-              </picture>`
+      <picture class="carousel-item">
+        <img src="${imgDir}/${img.base}-640.${img.ext}" alt="${p.title[locale]}" loading="lazy" decoding="async">
+      </picture>`
               )
               .join('')}
           </div>
@@ -375,14 +375,13 @@ window.addEventListener('load', () => {
 
   /* ── 7. Data fetch & initial render ================================= */
   if (container) {
-    // Only fetch data if products container exists
-    fetch(`${baseurl}/assets/data/products.json`)
-      .then((r) => r.json())
-      .then((data) => {
-        allProducts = data
-        applyFilters()
-      })
-      .catch(console.error)
+    // Используем данные, встроенные в HTML, вместо fetch
+    if (typeof initialProductData !== 'undefined') {
+      allProducts = initialProductData
+      applyFilters()
+    } else {
+      console.error('Ошибка: Данные о товарах (initialProductData) не найдены на странице.')
+    }
   }
   /* === Enable carousel manually on product pages === */
   if (
